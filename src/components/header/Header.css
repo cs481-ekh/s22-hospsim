@@ -1,0 +1,26 @@
+/*
+#header -> looking for id of header
+header -> looking for tag
+.bg-primary -> class name
+*/
+
+
+header img {
+    height: 50px;
+    cursor: pointer;
+}
+
+#header h1 {
+    color: white;
+    padding: 1%;
+    font-weight: bold;
+}
+
+
+header .bg-primary {
+    background-color: #0033A0 !important;
+    padding: 2%;
+    
+}
+
+

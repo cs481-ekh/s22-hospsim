@@ -1,2 +1,3 @@
 #!/bin/bash
-exit 127
+npm install || exit 127
+npm run test a || exit 127
