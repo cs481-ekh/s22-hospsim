@@ -1,7 +1,7 @@
 {
-  "name": "f21-angels-of-mercy",
+  "name": "s22-hospsim",
   "version": "0.1.0",
-  "homepage": "/f21-angels-of-mercy",
+  "homepage": "/s22-hospsim",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
