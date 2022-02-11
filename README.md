@@ -9,7 +9,7 @@ This project is to help BSU nursing students practice staffing resource allocati
 
 # Website link
 
-https://cs481-ekh.github.io/f21-angels-of-mercy/
+https://cs481-ekh.github.io/s22-hospsim/
 
 # Overview
 
