@@ -11,7 +11,7 @@
 - [x] Chinwe
 - [x] Derek
 * Ensure GitHub actions (Build/Test and yaml files) are working correctly.
-- [x]
+- [x] build/test
 #### Scrum Roles
 * Scrum Master – Jonathan 
 * Scribe – Jonathan 
