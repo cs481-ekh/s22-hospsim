@@ -6,9 +6,12 @@
 * Sprint 0 Planning
 * Develop Unit Testing
 * Ensure understanding of existing codebase. 
-	Markdown tick boxes here for each person
+- [x] Andrew
+- [x] Jonathan
+- [x] Chinwe
+- [x] Derek
 * Ensure GitHub actions (Build/Test and yaml files) are working correctly.
-	Update as necessary.
+- [x]
 #### Scrum Roles
 * Scrum Master – Jonathan 
 * Scribe – Jonathan 
