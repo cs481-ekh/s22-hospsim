@@ -1,26 +1,26 @@
-### Meeting Minutes 2/8/2022 & 2/10/2022 (Week 5)
-## Scribe: Jonathan McLeod
-# Absent: Chinwe (2/10/2022) (Excused)
+## Meeting Minutes 2/8/2022 & 2/10/2022 (Week 5)
+### Scribe: Jonathan McLeod
+#### Absent: Chinwe (2/10/2022) (Excused)
 
-# Items discussed:
+#### Items discussed:
 * Sprint 0 Planning
 * Develop Unit Testing
 * Ensure understanding of existing codebase. 
 	Markdown tick boxes here for each person
 * Ensure GitHub actions (Build/Test and yaml files) are working correctly.
 	Update as necessary.
-# Scrum Roles
+#### Scrum Roles
 * Scrum Master – Jonathan 
 * Scribe – Jonathan 
 * Product Owner – Derek 
 * Developer(s) – Andrew, Chinwe
 Update GitHub to reflect new semester, team etc.
 
-### Meeting Minutes 2/1/2022 & 2/3/2022 (Week 4)
-## Scribe: Jonathan McLeod
-# Absent: none
+## Meeting Minutes 2/1/2022 & 2/3/2022 (Week 4)
+### Scribe: Jonathan McLeod
+#### Absent: none
 
-Items discussed:
+#### Items discussed:
 •	Next meeting date with Dr. Walters.
 •	Setup of project locally for coding and testing.
 •	GitHub actions.
