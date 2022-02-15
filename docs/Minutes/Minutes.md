@@ -1,5 +1,5 @@
 ## Meeting Minutes 2/8/2022 & 2/10/2022 (Week 5)
-### Scribe: Jonathan McLeod
+#### Scribe: Jonathan McLeod
 #### Absent: Chinwe (2/10/2022) (Excused)
 
 #### Items discussed:
@@ -17,7 +17,7 @@
 Update GitHub to reflect new semester, team etc.
 
 ## Meeting Minutes 2/1/2022 & 2/3/2022 (Week 4)
-### Scribe: Jonathan McLeod
+#### Scribe: Jonathan McLeod
 #### Absent: none
 
 #### Items discussed:
@@ -31,7 +31,7 @@ Update GitHub to reflect new semester, team etc.
 * Jonathan to send Derek his zoom information for bi-weekly meeting setup with Dr. Walters.
 
 ## Sponsor Meeting 1 1/26/2022 – Minutes
-### Scribe: Jonathan McLeod
+#### Scribe: Jonathan McLeod
 #### Absent: None
 #### Items Discussed:
 * Introductions complete
