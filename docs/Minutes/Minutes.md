@@ -8,7 +8,7 @@
   * Sprint 1 Goal: Implementation of ToolTips in the key areas requested by Dr. Walters to include additional filtering options on staff types.
   * User Stories and tasks assigned by eod 2/15 (Andrew)
 * Email Project Plan to Dr Walters (Derek)
-   - [x] email sent
+    - [x] email sent
 
 #### Scrum Roles
 * Scrum Master – Andrew 
