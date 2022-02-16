@@ -1,3 +1,21 @@
+## Meeting Minutes 2/15/2022 (Week 6)
+#### Scribe: Derek Valenzuela
+#### Absent: none
+
+#### Items discussed:
+* Sprint 0 Review
+* Sprint 1 Planning
+  * Sprint 1 Goal: Implementation of ToolTips in the key areas requested by Dr. Walters to include additional filtering options on staff types.
+  * User Stories and tasks assigned by eod 2/15 (Andrew)
+* Email Project Plan to Dr Walters (Derek)
+- [x] email sent
+
+#### Scrum Roles
+* Scrum Master – Andrew 
+* Scribe – Derek 
+* Product Owner – Derek 
+* Developer(s) – Jonathan, Chinwe
+
 ## Meeting Minutes 2/8/2022 & 2/10/2022 (Week 5)
 #### Scribe: Jonathan McLeod
 #### Absent: Chinwe (2/10/2022) (Excused)
