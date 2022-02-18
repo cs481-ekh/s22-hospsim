@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import StaffAdd from './components/main/StaffAdd';
 import Scenario from './components/main/Scenario';
 
+
 // Test buttons for StaffList
 describe("<StaffList/>", () => {
     test('Test delete staff button', () => {
