@@ -1,14 +1,13 @@
 {
-  "name": "f21-angels-of-mercy",
+  "name": "s22-hospsim",
   "version": "0.1.0",
-  "homepage": "/f21-angels-of-mercy",
+  "homepage": "/s22-hospsim",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.1.2",
-    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.4",
     "react-bootstrap-icons": "^1.6.1",
@@ -42,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
