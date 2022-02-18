@@ -7,6 +7,8 @@ import Result from "./Result";
 import RandomHPPDInfo from "./RandomHPPDInfo";
 import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
+import logo from '../../assets/noun-tooltip-3850057.png';
+import Tooltip from "./Tooltip";
 
 class Scenario extends React.Component {
   constructor(props) {
@@ -135,6 +137,10 @@ class Scenario extends React.Component {
           <div className="col-md-8 fs-5">
             <div className="float-sm-end">
               <Form.Check type="checkbox" id="showBudget" label="Show Budget" name="showBudget" data-testid="showbudget-id" checked={this.state.showBudget} onChange={this.handleCheckChange} />
+              <Tooltip content="this is a tool tip" direction="bottem">
+                <img src={logo} alt="Budget Tooltip" width="50" height="50"/>
+              </Tooltip>
+              
             </div>
           </div>
         </div>
