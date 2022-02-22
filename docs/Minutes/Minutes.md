@@ -1,3 +1,17 @@
+## Meeting Minutes 2/22/2022 (Week 7)
+#### Scribe: Derek Valenzuela
+#### Absent: none
+
+#### Items discussed:
+* Sprint 1 Review Progress
+  * Sprint 1 Goal: Implementation of ToolTips in the key areas requested by Dr. Walters to include additional filtering options on staff types.
+  * Tooltips in progress
+  * Filtering added for StaffType
+* Team Contract
+  * Git Etitiquette
+* Email Meeting Reminder to Dr Walters(Derek)
+    - [x] email sent
+
 ## Meeting Minutes 2/15/2022 (Week 6)
 #### Scribe: Derek Valenzuela
 #### Absent: none
