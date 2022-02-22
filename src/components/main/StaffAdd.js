@@ -96,7 +96,7 @@ class StaffAdd extends React.Component {
 
 							<Form.Group className="mb-3" controlId="staffType" required>
 								<Form.Label>Staff Type</Form.Label>
-								<Form.Control as="select" name="staffType">
+								<Form.Control as="select" name="staffType" className="caret">
 									<option value="RN">RN</option>
 									<option value="LVN">LVN</option>
 									<option value="Unlicensed">Unlicensed</option>
