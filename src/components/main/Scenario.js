@@ -147,11 +147,13 @@ class Scenario extends React.Component {
           </div>
 
           {/* Form has to be used instead of form because of validation feedback and bootstrap version used */}
-          <div className="col-md-9 col-sm-6 order-sm-first">
-            <Form className="row" noValidate>
-              <div className="col-md-6 mt-3 fs-5">
-                <Form.Label htmlFor="unit">Hospital unit</Form.Label>
-                <Form.Control type="text" name="unit" id="unit" data-testid="unit-id" placeholder="Hospital Unit" onChange={this.handleInputChange} value={this.state.info.unit} />
+            <div className="col-md-9 col-sm-6 order-sm-first">
+              <Form className="row" noValidate>
+                <div className="col-md-6 mt-3 fs-5">  
+                <Tooltip content="These are wards where patients are admitted depending on the severity of their health condition." direction="top">
+                 <Form.Label htmlFor="unit">Hospital unit</Form.Label>
+                  <Form.Control type="text" name="unit" id="unit" data-testid="unit-id" placeholder="Hospital Unit" onChange={this.handleInputChange} value={this.state.info.unit} />
+                </Tooltip>
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
