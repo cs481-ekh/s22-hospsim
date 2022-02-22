@@ -142,12 +142,14 @@ class Scenario extends React.Component {
                 <label>
                   <input
                     type="checkbox"
+
                     id="showBudget"
                     label="Show Budget"
                     name="showBudget"
                     data-testid="showbudget-id"
                     checked={this.state.showBudget}
                     onChange={this.handleCheckChange}
+
                   />
                   Show Budget
                 </label>
@@ -179,6 +181,7 @@ class Scenario extends React.Component {
           <div className="col-md-9 col-sm-6 order-sm-first">
             <Form className="row" noValidate>
               <div className="col-md-6 mt-3 fs-5">
+
                 <Tooltip
                   content="These are wards where patients are admitted depending on the severity of their health condition."
                   direction="top"
@@ -194,6 +197,7 @@ class Scenario extends React.Component {
                     value={this.state.info.unit}
                   />
                 </Tooltip>
+
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
