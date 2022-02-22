@@ -41,7 +41,7 @@ class RandomHPPDInfo extends React.Component {
             
             <button type="button" className="btn btn-outline-primary" data-testid="random-id" onClick={this.setRandomValues}>Random Scenario</button>
             <Tooltip content="Prepopulates the hospital staffing scenario fields." direction="right">
-                <img src={logo} alt="Budget Tooltip" width="40" height="40"/>
+                <img src={logo} alt="Random Sim Tooltip" width="40" height="40"/>
               </Tooltip>
             </div>
         );
