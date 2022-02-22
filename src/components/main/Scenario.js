@@ -141,8 +141,8 @@ class Scenario extends React.Component {
               
               <Form.Check type="checkbox" id="showBudget" label="Show Budget" name="showBudget" data-testid="showbudget-id" checked={this.state.showBudget} onChange={this.handleCheckChange} />
               <Tooltip content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
-and time of day (Day shift hours, evening shift hours, and night shift hours)." direction="left">
-                <img src={logo} alt="Budget Tooltip" width="40" height="40"/>
+and time of day (Day shift hours, evening shift hours, and night shift hours)" direction="left">
+                <img src={logo} alt="Budget Tooltip" width="30" height="30"/>
               </Tooltip>
             </div>
             

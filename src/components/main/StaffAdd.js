@@ -88,8 +88,8 @@ class StaffAdd extends React.Component {
 		return (
             <div>  
 			<button type="button" className="btn btn-outline-primary" data-testid="addstaff-id" onClick={this.handleShow}>Add Staff</button>
-			<Tooltip content="This button adds staff to the budget information used in the staffing simulator." direction="right">
-                <img src={logo} alt="Add Staff Tooltip" width="40" height="40"/>
+			<Tooltip content="This button adds staff to the budget information used in the staffing simulator" direction="right">
+                <img src={logo} alt="Add Staff Tooltip" width="30" height="30"/>
             </Tooltip>
 				
 				<Modal animation={false} show={this.state.show} data-testid="addStaffModal-id" onHide={this.handleClose}>
