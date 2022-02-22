@@ -1,6 +1,8 @@
 import React from 'react';
 import { Modal, Button, Form } from "react-bootstrap";
 import './StaffAdd.css';
+import logo from '../../assets/noun-tooltip-3850057.png';
+import Tooltip from "./Tooltip";
 
 // also noticing another bug where the url is holding the value of the selected items in the modal. We should look at how to fix this in the next sprint because it might look different after the refactor
 class StaffAdd extends React.Component {
@@ -86,6 +88,9 @@ class StaffAdd extends React.Component {
 		return (
             <div>  
 			<button type="button" className="btn btn-outline-primary" data-testid="addstaff-id" onClick={this.handleShow}>Add Staff</button>
+			<Tooltip content="This button adds staff to the budget information used in the staffing simulator" direction="right">
+                <img src={logo} alt="Add Staff Tooltip" width="30" height="30"/>
+            </Tooltip>
 				
 				<Modal animation={false} show={this.state.show} data-testid="addStaffModal-id" onHide={this.handleClose}>
 					<Form onSubmit={this.handleAdd}>

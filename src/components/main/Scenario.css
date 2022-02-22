@@ -11,3 +11,7 @@
     background-color: #0033A0 !important;
     border-color: #0033A0 !important;
 }
+
+label input {
+    margin-right: 5px;
+ }
