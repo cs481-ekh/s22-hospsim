@@ -69,8 +69,8 @@ class StaffList extends React.Component {
             .filter((staff) =>{
                 if(this.state.shiftFilter)
                 {
-                    return staff.shift === this.state.shiftFilter || this.state.shiftFilter === "All";  
-                }
+                    return staff.shift === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All";  
+                }  
                 return true;
             })
             .map((staff, i) =>
@@ -93,6 +93,7 @@ class StaffList extends React.Component {
         return (
                  this.props.staffs.length > 0 ?
             <div>
+
                 <Form.Group className="mb-3" controlId="shiftType" required>
                     
 								<Form.Label>Filter by Shift</Form.Label>
@@ -100,12 +101,16 @@ class StaffList extends React.Component {
                                     <img src={logo} alt="Filter shift Tooltip" width="30" height="30"/>
                                 </Tooltip>
 								<Form.Control as="select" name="shift" 
+
                                 
                                 onChange={e => {
                                     this.setState({ shiftFilter: e.target.value });
                                   }}
                                 className="caret">
 									<option value="All">All</option>
+                                    <option value="RN">RN</option>
+									<option value="LVN">LVN</option>
+									<option value="Unlicensed">Unlicensed</option>
 									<option value="12 Hours Day">12 Hours Day</option>
 									<option value="12 Hours Night">12 Hours Night</option>
 									<option value="8 Hours Day">8 Hours Day</option>
