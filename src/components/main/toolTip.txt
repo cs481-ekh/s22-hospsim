@@ -1,0 +1,42 @@
+Random Scenario: Prepopulates the hospital staffing scenario fields.
+
+Hospital Units: These are wards where patients are admitted depending on the severity of their health condition. Some of the hospital units are:
+intensive care, non-intensive care, and other specialty units.
+
+Number of beds: The total number of beds available in the hospital wards.
+
+Hours for Day Remaining: The amount of hours left in the budget after staffing.
+
+HPPD (Hours Per Patient Day): is the measurement of the average number of hours needed to care for each patient on the unit. To calculate HPPD - totalHPPD 
+= (numberPatients * inputHPPD) - totalStaffHours
+
+Census: This is the total number of patients admitted to the health facility at any time of the day.
+
+Add Staff: This button adds staff to the budget information used in the staffing simulator.
+
+Filter by Shift: This helps nurses filter the shift by the amount of hours worked.
+
+Show Budget: This displays the budget of Hours for days Remaining, total staff expenses, shift per hours
+and time of day (Day shift hours, evening shift hours, and night shift hours).
+
+Staff Budget: This is the total amount of money set aside for staffing the various units based on the staff qualification. To calculate the staff budget-
+totalBudget = totalRNs * 35 + totalLVNs * 24 + totalUnlicensed * 15
+
+Staff Type: This enables the nurses schedule staff members based on their license (RN, LVN, UNLICENSED).
+
+Shift: The work schedule that employees complete at different rotations. It can be an 8 hour or a 12 hour rotation.
+
+Quantity: The total amount of rotations a nurse completes in a day.
+
+Shift Total: The total amount of hours nurses completes at the end of a particular pay period.
+
+Day Shift Hours: The shift that is done during the day. It usually occur between morning - afternoon period.
+
+Evening Shift Hours: This can also be called swing shift. It's a shift that starts in the evenings and ends sometimes in the early hours of the night.
+
+Night Shift Hours: This shift can also be called graveyard shift. It's a shift that starts at midnight and ends in the early hours of the morning .
+
+Total Staff Expenses: The total amount of money budgeted by the hospital for staff welfare.
+
+
+
