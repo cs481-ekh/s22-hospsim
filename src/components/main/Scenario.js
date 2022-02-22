@@ -7,7 +7,7 @@ import Result from "./Result";
 import RandomHPPDInfo from "./RandomHPPDInfo";
 import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
-import logo from '../../assets/noun-tooltip-3850057.png';
+import logo from "../../assets/noun-tooltip-3850057.png";
 import Tooltip from "./Tooltip";
 
 class Scenario extends React.Component {
@@ -138,21 +138,37 @@ class Scenario extends React.Component {
 
           <div className="col-md-8 fs-5">
             <div className="float-sm-end">
-              
-              <Form.Check type="checkbox" id="showBudget" label="Show Budget" name="showBudget" data-testid="showbudget-id" checked={this.state.showBudget} onChange={this.handleCheckChange} />
-              <Tooltip content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
-and time of day (Day shift hours, evening shift hours, and night shift hours)" direction="left">
-                <img src={logo} alt="Budget Tooltip" width="30" height="30"/>
-              </Tooltip>
+              <div id="righticon">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={this.state.showBudget}
+                    onChange={this.handleCheckChange}
+                    marg
+                  />
+                  Show Budget
+                </label>
+                <Tooltip
+                  content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
+                          and time of day (Day shift hours, evening shift hours, and night shift hours)"
+                  direction="left"
+                >
+                  <img src={logo} alt="Budget Tooltip" width="30" height="30" />
+                </Tooltip>
+              </div>
+
+              <div></div>
             </div>
-            
           </div>
         </div>
 
         <div className="row mt-5">
           <div className="col-md-3 col-sm-6 order-sm-last">
             <Result staffs={this.state.staffs} info={this.state.info}></Result>
-            <StaffBudget staffs={this.state.staffs} showBudget={this.state.showBudget}></StaffBudget>
+            <StaffBudget
+              staffs={this.state.staffs}
+              showBudget={this.state.showBudget}
+            ></StaffBudget>
             <ShiftTotals staffs={this.state.staffs}></ShiftTotals>
           </div>
 
@@ -169,33 +185,75 @@ and time of day (Day shift hours, evening shift hours, and night shift hours)" d
 
               <div className="col-md-6 mt-3 fs-5">
                 <Form.Label htmlFor="bedUnit">Number of beds</Form.Label>
-                <Form.Control type="number" name="bedUnit" id="bedUnit" data-testid="numbeds-id" placeholder="Number of Beds"  onChange={this.handleInputChange} value={this.state.info.bedUnit}  isInvalid={!!this.state.errors.bedUnit} />
-                <Form.Control.Feedback type="invalid"> {this.state.errors.bedUnit} </Form.Control.Feedback>
+                <Form.Control
+                  type="number"
+                  name="bedUnit"
+                  id="bedUnit"
+                  data-testid="numbeds-id"
+                  placeholder="Number of Beds"
+                  onChange={this.handleInputChange}
+                  value={this.state.info.bedUnit}
+                  isInvalid={!!this.state.errors.bedUnit}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {" "}
+                  {this.state.errors.bedUnit}{" "}
+                </Form.Control.Feedback>
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
                 <Form.Label htmlFor="HPPD">HPPD</Form.Label>
-                <Form.Control type="number"  name="HPPD" id="HPPD" data-testid="hppd-id" placeholder="HPPD" onChange={this.handleInputChange} value={this.state.info.HPPD} isInvalid={!!this.state.errors.HPPD} />
-                <Form.Control.Feedback type="invalid"> {this.state.errors.HPPD} </Form.Control.Feedback>
+                <Form.Control
+                  type="number"
+                  name="HPPD"
+                  id="HPPD"
+                  data-testid="hppd-id"
+                  placeholder="HPPD"
+                  onChange={this.handleInputChange}
+                  value={this.state.info.HPPD}
+                  isInvalid={!!this.state.errors.HPPD}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {" "}
+                  {this.state.errors.HPPD}{" "}
+                </Form.Control.Feedback>
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
                 <Form.Label htmlFor="census">Census</Form.Label>
-                <Form.Control type="number" name="census" id="census" data-testid="census-id" placeholder="Census" onChange={this.handleInputChange} value={this.state.info.census} isInvalid={!!this.state.errors.census}/>
-                <Form.Control.Feedback type="invalid"> {this.state.errors.census} </Form.Control.Feedback>
+                <Form.Control
+                  type="number"
+                  name="census"
+                  id="census"
+                  data-testid="census-id"
+                  placeholder="Census"
+                  onChange={this.handleInputChange}
+                  value={this.state.info.census}
+                  isInvalid={!!this.state.errors.census}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {" "}
+                  {this.state.errors.census}{" "}
+                </Form.Control.Feedback>
               </div>
             </Form>
             <div className="row">
               <div className="col-md-4 mt-4 ">
-                <StaffAdd  onStaffChange={this.handleStaffChange} onStaffAdd={this.handleStaffAdd} staffs={this.state.staffs} />
+                <StaffAdd
+                  onStaffChange={this.handleStaffChange}
+                  onStaffAdd={this.handleStaffAdd}
+                  staffs={this.state.staffs}
+                />
               </div>
             </div>
 
             <div className="row mt-5 ">
-              <div className ="mb-10">
-              <StaffList staffs={this.state.staffs} onStaffChangeOnUpdate={this.handleStaffChange}></StaffList>
+              <div className="mb-10">
+                <StaffList
+                  staffs={this.state.staffs}
+                  onStaffChangeOnUpdate={this.handleStaffChange}
+                ></StaffList>
               </div>
-              
             </div>
           </div>
         </div>
