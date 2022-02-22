@@ -1,4 +1,6 @@
+
 Random Scenario: Prepopulates the hospital staffing scenario fields.
+
 
 Hospital Units: These are wards where patients are admitted depending on the severity of their health condition. Some of the hospital units are:
 intensive care, non-intensive care, and other specialty units.
@@ -12,7 +14,9 @@ HPPD (Hours Per Patient Day): is the measurement of the average number of hours 
 
 Census: This is the total number of patients admitted to the health facility at any time of the day.
 
+
 Add Staff: This button adds staff to the budget information used in the staffing simulator.
+
 
 Filter by Shift: This helps nurses filter the shift by the amount of hours worked.
 
