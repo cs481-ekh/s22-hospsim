@@ -2,6 +2,8 @@ import React from 'react';
 import './StaffList.css';
 import { Dash, Plus, Trash } from 'react-bootstrap-icons';
 import { Form } from "react-bootstrap";
+import logo from '../../assets/noun-tooltip-3850057.png';
+import Tooltip from "./Tooltip";
 
 class StaffList extends React.Component {
     constructor(props) {
@@ -92,7 +94,11 @@ class StaffList extends React.Component {
                  this.props.staffs.length > 0 ?
             <div>
                 <Form.Group className="mb-3" controlId="shiftType" required>
+                    
 								<Form.Label>Filter by Shift</Form.Label>
+                                <Tooltip content="This helps nurses filter the shift schedule by various groupings" direction="right">
+                                    <img src={logo} alt="Filter shift Tooltip" width="30" height="30"/>
+                                </Tooltip>
 								<Form.Control as="select" name="shift" 
                                 
                                 onChange={e => {
