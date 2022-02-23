@@ -178,8 +178,7 @@ class Scenario extends React.Component {
 
           <div className="col-md-9 col-sm-6 order-sm-first">
             <Form className="row" noValidate>
-              <div className="col-md-6 mt-3 fs-5">
-                
+              <div className="col-md-6 mt-3 fs-5">      
               <Tooltip content="These are wards where patients are admitted depending on the severity of their health condition." direction="top">
                 <Form.Label htmlFor="unit">Hospital unit</Form.Label>
                 <Form.Control type="text" name="unit" id="unit" data-testid="unit-id" placeholder="Hospital Unit" onChange={this.handleInputChange} value={this.state.info.unit} />
@@ -188,6 +187,7 @@ class Scenario extends React.Component {
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
+              <Tooltip content="The total number of beds available in the hospital wards." direction="top">
                 <Form.Label htmlFor="bedUnit">Number of beds</Form.Label>
                 <Form.Control
                   type="number"
@@ -203,9 +203,11 @@ class Scenario extends React.Component {
                   {" "}
                   {this.state.errors.bedUnit}{" "}
                 </Form.Control.Feedback>
+                </Tooltip>
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
+              <Tooltip content= "Hours Per Patient Day is the measurement of the average number of hours needed to care for each patient on the unit." direction="right">
                 <Form.Label htmlFor="HPPD">HPPD</Form.Label>
                 <Form.Control
                   type="number"
@@ -221,24 +223,27 @@ class Scenario extends React.Component {
                   {" "}
                   {this.state.errors.HPPD}{" "}
                 </Form.Control.Feedback>
+                </Tooltip>
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
-                <Form.Label htmlFor="census">Census</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="census"
-                  id="census"
-                  data-testid="census-id"
-                  placeholder="Census"
-                  onChange={this.handleInputChange}
-                  value={this.state.info.census}
-                  isInvalid={!!this.state.errors.census}
-                />
-                <Form.Control.Feedback type="invalid">
-                  {" "}
-                  {this.state.errors.census}{" "}
-                </Form.Control.Feedback>
+                <Tooltip content="This is the total number of patients admitted to the health facility at any time of the day." direction="top">
+                  <Form.Label htmlFor="census">Census</Form.Label>
+                  <Form.Control
+                   type="number"
+                   name="census"
+                   id="census"
+                   data-testid="census-id"
+                   placeholder="Census"
+                   onChange={this.handleInputChange}
+                   value={this.state.info.census}
+                   isInvalid={!!this.state.errors.census}
+                 />
+                 <Form.Control.Feedback type="invalid">
+                   {" "}
+                   {this.state.errors.census}{" "}
+                 </Form.Control.Feedback>
+                </Tooltip>
               </div>
             </Form>
             <div className="row">

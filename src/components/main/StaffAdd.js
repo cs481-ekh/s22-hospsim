@@ -100,28 +100,36 @@ class StaffAdd extends React.Component {
 						<Modal.Body>
 
 							<Form.Group className="mb-3" controlId="staffType" required>
-								<Form.Label>Staff Type</Form.Label>
-								<Form.Control as="select" name="staffType">
-									<option value="RN">RN</option>
-									<option value="LVN">LVN</option>
-									<option value="Unlicensed">Unlicensed</option>
-								</Form.Control>
+								<Tooltip content="This enables the nurses schedule staff members based on their license (RN, LVN, UNLICENSED)." direction="top">
+									<Form.Label>Staff Type</Form.Label>
+									<Form.Control as="select" name="staffType">
+										<option value="RN">RN</option>
+										<option value="LVN">LVN</option>
+										<option value="Unlicensed">Unlicensed</option>
+									</Form.Control>
+								</Tooltip>
 							</Form.Group>
+
 							<Form.Group className="mb-3" controlId="shiftType" required>
-								<Form.Label>Shift Type</Form.Label>
-								<Form.Control as="select" name="shift" className="caret">
-									<option value="12 Hours Day">12 Hours Day</option>
-									<option value="12 Hours Night">12 Hours Night</option>
-									<option value="8 Hours Day">8 Hours Day</option>
-									<option value="8 Hours Evening">8 Hours Evening</option>
-									<option value="8 Hours Night">8 Hours Night</option>
-								</Form.Control>
+								<Tooltip content="The work schedule that employees complete at different rotations. It can be an 8 hour or a 12 hour rotation." direction="top">
+									<Form.Label>Shift Type</Form.Label>
+									<Form.Control as="select" name="shift" className="caret">
+										<option value="12 Hours Day">12 Hours Day</option>
+										<option value="12 Hours Night">12 Hours Night</option>
+										<option value="8 Hours Day">8 Hours Day</option>
+										<option value="8 Hours Evening">8 Hours Evening</option>
+										<option value="8 Hours Night">8 Hours Night</option>
+									</Form.Control>
+								</Tooltip>
 							</Form.Group>
+
 							<Form.Group className="mb-3" controlId="quantity" required>
+							<Tooltip content="The total amount of rotations a nurse completes in a day." direction="top">
 								<Form.Label>Quantity</Form.Label>
 								<Form.Control as="select" name="quantity">
 									{qtyList}
 								</Form.Control>
+							</Tooltip>
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>
@@ -129,8 +137,10 @@ class StaffAdd extends React.Component {
 								Close
 							</Button>
 							<Button variant="outline-primary" data-testid = "addStaffConfirm-id" type="submit">
+							<Tooltip content="This button enables nurses add the budget information to the staffing simulator." direction="top">
 								Add New Staff
-							</Button>
+							</Tooltip>
+							</Button>			
 						</Modal.Footer>
 					</Form>
 				</Modal>
