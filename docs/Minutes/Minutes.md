@@ -1,3 +1,18 @@
+## Meeting Minutes 2/23/2022 (Week 7)
+#### Scribe: Andrew Gerber
+#### Absent: Jonathan (Notice)
+
+#### Items discussed:
+##### Greetings
+##### Showed off the tooltips and filtering
+##### Feedback:
+* Add a day overviews of the staff to show who’s working that day
+* Color is fine for tooltips, up to use
+* She likes more filter options
+* The calendar will eventually be used for case specific scenarios with students
+* She likes the idea of adding day field on ‘Add staff’ so that it can automatically populate into the calendar
+
+
 ## Meeting Minutes 2/22/2022 (Week 7)
 #### Scribe: Derek Valenzuela
 #### Absent: none
