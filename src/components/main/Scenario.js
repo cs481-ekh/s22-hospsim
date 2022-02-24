@@ -7,7 +7,7 @@ import Result from "./Result";
 import RandomHPPDInfo from "./RandomHPPDInfo";
 import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
-import logo from "../../assets/noun-tooltip-3850057.png";
+import logo from "../../assets/noun-help-2492040.png";
 import Tooltip from "./Tooltip";
 
 class Scenario extends React.Component {
@@ -158,7 +158,7 @@ class Scenario extends React.Component {
                           and time of day (Day shift hours, evening shift hours, and night shift hours)"
                   direction="left"
                 >
-                  <img src={logo} alt="Budget Tooltip" width="30" height="30" />
+                  <img src={logo} alt="Budget Tooltip" width="50" height="50" />
                 </Tooltip>
               </div>
 
