@@ -2,7 +2,7 @@ import React from 'react';
 import './StaffList.css';
 import { Dash, Plus, Trash } from 'react-bootstrap-icons';
 import { Form } from "react-bootstrap";
-import logo from '../../assets/noun-tooltip-3850057.png';
+import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
 
 class StaffList extends React.Component {
@@ -98,7 +98,7 @@ class StaffList extends React.Component {
                     
 								<Form.Label>Filter by Shift</Form.Label>
                                 <Tooltip content="This helps nurses filter the shift schedule by various groupings" direction="right">
-                                    <img src={logo} alt="Filter shift Tooltip" width="30" height="30"/>
+                                    <img src={logo} alt="Filter shift Tooltip" width="50" height="50"/>
                                 </Tooltip>
 								<Form.Control as="select" name="shift" 
 

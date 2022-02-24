@@ -1,7 +1,7 @@
 import React from 'react';
 import './RandomHPPDInfo.css';
 
-import logo from '../../assets/noun-tooltip-3850057.png';
+import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
 
 class RandomHPPDInfo extends React.Component {
@@ -41,7 +41,7 @@ class RandomHPPDInfo extends React.Component {
             
             <button type="button" className="btn btn-outline-primary" data-testid="random-id" onClick={this.setRandomValues}>Random Scenario</button>
             <Tooltip content="Prepopulates the hospital staffing scenario fields" direction="right">
-                <img src={logo} alt="Random Sim Tooltip" width="30" height="30"/>
+                <img src={logo} alt="Random Sim Tooltip" width="50" height="50"/>
               </Tooltip>
             </div>
         );
