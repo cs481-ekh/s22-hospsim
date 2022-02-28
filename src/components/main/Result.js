@@ -77,12 +77,12 @@ class Result extends React.Component {
             <div className="card">
                 <Tooltip content="Hours for Day Remaining: The amount of hours left in the budget after staffing." direction="top">
                 <div className="card-header">Hours for Day Remaining</div>
+                </Tooltip>
                 <div id="results" className="card-body">
                     <label>HPPD</label>
                     <h1 data-testid="result" className={calc < 0 ? 'negCalc' : ''}>{calc !== '--' ? calc.toFixed(0) : calc}</h1>
 
                 </div>
-                </Tooltip>
             </div>
 
 
