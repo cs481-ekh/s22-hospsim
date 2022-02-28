@@ -1,5 +1,6 @@
 import React from 'react';
-import Tooltip from "./Tooltip";
+
+import Tooltip from './Tooltip';
 
 class StaffBudget extends React.Component {
 
@@ -26,11 +27,17 @@ class StaffBudget extends React.Component {
 
         const shiftBudget = this.getShiftBudget(this.props.staffs);
         return (
-
-            this.props.showBudget ?
+            
+                this.props.showBudget ?
+                
                 <div className="card mt-4">
-                    <Tooltip content= "Total Staff Expenses: The total amount of money budgeted by the hospital for staff welfare." direction="left">
+
+                   
+
+                    <Tooltip content="The total amount of money budgeted by the hospital for staff welfare" direction="left">
                     <div className="card-header">Total Staff Expenses</div>
+                    </Tooltip>
+                    <Tooltip content="(Total number of RNs x 35) + (Total number of LVNs x 24) + (Total Unlicensed Staff x 15)" direction="left">
                     <div id="budget" className="card-body">
                         <h1 data-testid="shiftBudgetValue-id">${shiftBudget}</h1>
                     </div>
@@ -38,6 +45,7 @@ class StaffBudget extends React.Component {
                 </div>
             :
             null
+            
         )
     }
 }

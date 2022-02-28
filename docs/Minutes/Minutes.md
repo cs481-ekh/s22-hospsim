@@ -1,3 +1,32 @@
+## Meeting Minutes 2/23/2022 (Week 7)
+#### Scribe: Andrew Gerber
+#### Absent: Jonathan (Notice)
+
+#### Items discussed:
+##### Greetings
+##### Showed off the tooltips and filtering
+##### Feedback:
+* Add a day overviews of the staff to show who’s working that day
+* Color is fine for tooltips, up to use
+* She likes more filter options
+* The calendar will eventually be used for case specific scenarios with students
+* She likes the idea of adding day field on ‘Add staff’ so that it can automatically populate into the calendar
+
+
+## Meeting Minutes 2/22/2022 (Week 7)
+#### Scribe: Derek Valenzuela
+#### Absent: none
+
+#### Items discussed:
+* Sprint 1 Review Progress
+  * Sprint 1 Goal: Implementation of ToolTips in the key areas requested by Dr. Walters to include additional filtering options on staff types.
+  * Tooltips in progress
+  * Filtering added for StaffType
+* Team Contract
+  * Git Etitiquette
+* Email Meeting Reminder to Dr Walters(Derek)
+    - [x] email sent
+
 ## Meeting Minutes 2/15/2022 (Week 6)
 #### Scribe: Derek Valenzuela
 #### Absent: none

@@ -2,7 +2,7 @@ import React from 'react';
 import './StaffList.css';
 import { Dash, Plus, Trash } from 'react-bootstrap-icons';
 import { Form } from "react-bootstrap";
-import logo from '../../assets/noun-tooltip-3850057.png';
+import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
 
 class StaffList extends React.Component {
@@ -69,8 +69,8 @@ class StaffList extends React.Component {
             .filter((staff) =>{
                 if(this.state.shiftFilter)
                 {
-                    return staff.shift === this.state.shiftFilter || this.state.shiftFilter === "All";  
-                }
+                    return staff.shift === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All";  
+                }  
                 return true;
             })
             .map((staff, i) =>
@@ -78,13 +78,14 @@ class StaffList extends React.Component {
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
             </td>
-            <td >{staff.type}</td>
+            
             <td>
                <Plus className="bPlus" data-testid="add-id" onClick={this.listAdd.bind(staff,i)}/> 
                {staff.quantity} 
                <Dash className="bDash" data-testid="minus-id" onClick={this.listSub.bind(staff,i)}/>
             </td>
             <td>{staff.shift}</td>
+           
             <td>{staff.shiftTotal}</td>
         </tr>
 
@@ -93,19 +94,24 @@ class StaffList extends React.Component {
         return (
                  this.props.staffs.length > 0 ?
             <div>
+
                 <Form.Group className="mb-3" controlId="shiftType" required>
                     
 								<Form.Label>Filter by Shift</Form.Label>
                                 <Tooltip content="This helps nurses filter the shift schedule by various groupings" direction="right">
-                                    <img src={logo} alt="Filter shift Tooltip" width="30" height="30"/>
+                                    <img src={logo} alt="Filter shift Tooltip" width="50" height="50"/>
                                 </Tooltip>
 								<Form.Control as="select" name="shift" 
+
                                 
                                 onChange={e => {
                                     this.setState({ shiftFilter: e.target.value });
                                   }}
                                 className="caret">
 									<option value="All">All</option>
+                                    <option value="RN">RN</option>
+									<option value="LVN">LVN</option>
+									<option value="Unlicensed">Unlicensed</option>
 									<option value="12 Hours Day">12 Hours Day</option>
 									<option value="12 Hours Night">12 Hours Night</option>
 									<option value="8 Hours Day">8 Hours Day</option>

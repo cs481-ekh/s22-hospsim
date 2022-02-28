@@ -7,7 +7,7 @@ import Result from "./Result";
 import RandomHPPDInfo from "./RandomHPPDInfo";
 import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
-import logo from "../../assets/noun-tooltip-3850057.png";
+import logo from "../../assets/noun-help-2492040.png";
 import Tooltip from "./Tooltip";
 
 class Scenario extends React.Component {
@@ -142,9 +142,14 @@ class Scenario extends React.Component {
                 <label>
                   <input
                     type="checkbox"
+
+                    id="showBudget"
+                    label="Show Budget"
+                    name="showBudget"
+                    data-testid="showbudget-id"
                     checked={this.state.showBudget}
                     onChange={this.handleCheckChange}
-                    marg
+
                   />
                   Show Budget
                 </label>
@@ -153,7 +158,7 @@ class Scenario extends React.Component {
                           and time of day (Day shift hours, evening shift hours, and night shift hours)"
                   direction="left"
                 >
-                  <img src={logo} alt="Budget Tooltip" width="30" height="30" />
+                  <img src={logo} alt="Budget Tooltip" width="50" height="50" />
                 </Tooltip>
               </div>
 
@@ -178,13 +183,33 @@ class Scenario extends React.Component {
 
           <div className="col-md-9 col-sm-6 order-sm-first">
             <Form className="row" noValidate>
+
               <div className="col-md-6 mt-3 fs-5">      
               <Tooltip content="These are wards where patients are admitted depending on the severity of their health condition." direction="right">
                 <Form.Label htmlFor="unit">Hospital unit</Form.Label>
               </Tooltip>
 
                 <Form.Control type="text" name="unit" id="unit" data-testid="unit-id" placeholder="Hospital Unit" onChange={this.handleInputChange} value={this.state.info.unit} />
-             
+           
+              <div className="col-md-6 mt-3 fs-5">
+
+                <Tooltip
+                  content="These are wards where patients are admitted depending on the severity of their health condition."
+                  direction="top"
+                >
+                  <Form.Label htmlFor="unit">Hospital unit</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="unit"
+                    id="unit"
+                    data-testid="unit-id"
+                    placeholder="Hospital Unit"
+                    onChange={this.handleInputChange}
+                    value={this.state.info.unit}
+                  />
+                </Tooltip>
+
+
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
