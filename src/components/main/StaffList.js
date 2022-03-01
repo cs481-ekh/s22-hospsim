@@ -78,14 +78,13 @@ class StaffList extends React.Component {
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
             </td>
-            
+            <td>{staff.staffType}</td>
             <td>
                <Plus className="bPlus" data-testid="add-id" onClick={this.listAdd.bind(staff,i)}/> 
                {staff.quantity} 
                <Dash className="bDash" data-testid="minus-id" onClick={this.listSub.bind(staff,i)}/>
             </td>
             <td>{staff.shift}</td>
-           
             <td>{staff.shiftTotal}</td>
         </tr>
 
