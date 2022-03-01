@@ -88,3 +88,5 @@ For example, to set a breakpoint in Scenario.js, expand "localhost" --> expand t
 - React-Bootstrap 5 tooltips: https://getbootstrap.com/docs/5.0/components/tooltips/
 
 - VS Code extension: ES7 React/Redux/GraphQL/React-Native snippets
+
+- Tooltip icon: Help by Travis Avery from NounProject.com
