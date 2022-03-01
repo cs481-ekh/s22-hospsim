@@ -253,7 +253,7 @@ class Scenario extends React.Component {
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
-                <Tooltip content="This is the total number of patients admitted to the health facility at any time of the day." direction="top">
+                <Tooltip content="This is the total number of patients admitted to the health facility at any time of the day." direction="right">
                   <Form.Label htmlFor="census">Census</Form.Label>
                 </Tooltip>
                   <Form.Control
@@ -271,6 +271,7 @@ class Scenario extends React.Component {
                    {this.state.errors.census}{" "}
                  </Form.Control.Feedback>
               </div>
+            </div>
             </Form>
             <div className="row">
               <div className="col-md-4 mt-4 ">
