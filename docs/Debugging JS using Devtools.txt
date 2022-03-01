@@ -1,0 +1,10 @@
+Chrome DevTools root link with explanations and tutorials.
+https://developer.chrome.com/docs/devtools/
+
+How to debug Javascript (tutorials, explanations, videos) using DevTools
+https://developer.chrome.com/docs/devtools/javascript/
+
+https://javascript.info/debugging-chrome
+
+Useful techniques for debugging using chrome devtools
+https://indepth.dev/posts/1354/useful-techniques-for-debugging-code-using-chrome-devtools
