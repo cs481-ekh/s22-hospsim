@@ -78,7 +78,7 @@ class StaffList extends React.Component {
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
             </td>
-            <td>{staff.staffType}</td>
+            <td>{staff.type}</td>
             <td>
                <Plus className="bPlus" data-testid="add-id" onClick={this.listAdd.bind(staff,i)}/> 
                {staff.quantity} 
