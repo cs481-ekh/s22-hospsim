@@ -9,11 +9,11 @@
   * research
   * tasks
   
-#### Scrum Roles
-* Scrum Master – Derek
-* Scribe – Andrew 
-* Product Owner – Jonathan
-* Developer(s) – Andrew, Chinwe
+* Scrum Roles
+  * Scrum Master – Derek
+  * Scribe – Andrew 
+  * Product Owner – Jonathan
+  * Developer(s) – Andrew, Chinwe
 
 * Sprint 1 Review 
   * Sprint 1 Goal: Implementation of ToolTips in the key areas requested by Dr. Walters to include additional filtering options on staff types.
