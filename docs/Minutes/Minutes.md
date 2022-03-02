@@ -1,3 +1,24 @@
+## Meeting Minutes 3/1/2022 (Week 8)
+#### Scribe: Derek Valenzuela
+#### Absent: none
+
+#### Items discussed:
+* Sprint 2 Planning
+  * Sprint 2 Goal: Implementation of Calendar framework and functionality.
+  * User stories
+  * research
+  * tasks
+* Sprint 1 Review Progress
+  * Sprint 1 Goal: Implementation of ToolTips in the key areas requested by Dr. Walters to include additional filtering options on staff types.
+  * Tooltips mostly done (finsihed later night of 3/1)
+  * Filtering added for StaffType
+  * Move additional filtering to sprint 2 as concuurent project with calendar
+* Team Contract
+  * Git Etitiquette
+  * production level code
+  * team contract warnings
+
+
 ## Meeting Minutes 2/23/2022 (Week 7)
 #### Scribe: Andrew Gerber
 #### Absent: Jonathan (Notice)
