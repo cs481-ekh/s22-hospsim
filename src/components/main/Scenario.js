@@ -183,14 +183,6 @@ class Scenario extends React.Component {
 
           <div className="col-md-9 col-sm-6 order-sm-first">
             <Form className="row" noValidate>
-
-              <div className="col-md-6 mt-3 fs-5">      
-              <Tooltip content="These are wards where patients are admitted depending on the severity of their health condition." direction="right">
-                <Form.Label htmlFor="unit">Hospital unit</Form.Label>
-              </Tooltip>
-
-                <Form.Control type="text" name="unit" id="unit" data-testid="unit-id" placeholder="Hospital Unit" onChange={this.handleInputChange} value={this.state.info.unit} />
-           
               <div className="col-md-6 mt-3 fs-5">
 
                 <Tooltip
@@ -276,8 +268,8 @@ class Scenario extends React.Component {
                   {" "}
                   {this.state.errors.census}{" "}
                 </Form.Control.Feedback>
+
               </div>
-            </div>
             </Form>
             <div className="row">
               <div className="col-md-4 mt-4 ">
