@@ -8,7 +8,7 @@
   * User stories
   * research
   * tasks
-* Sprint 1 Review Progress
+* Sprint 1 Review 
   * Sprint 1 Goal: Implementation of ToolTips in the key areas requested by Dr. Walters to include additional filtering options on staff types.
   * Tooltips mostly done (finsihed later night of 3/1)
   * Filtering added for StaffType
