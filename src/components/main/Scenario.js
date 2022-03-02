@@ -195,9 +195,9 @@ class Scenario extends React.Component {
 
                 <Tooltip
                   content="These are wards where patients are admitted depending on the severity of their health condition."
-                  direction="top"
-                >
+                  direction="right">
                   <Form.Label htmlFor="unit">Hospital unit</Form.Label>
+                </Tooltip>
                   <Form.Control
                     type="text"
                     name="unit"
@@ -207,13 +207,14 @@ class Scenario extends React.Component {
                     onChange={this.handleInputChange}
                     value={this.state.info.unit}
                   />
-                </Tooltip>
+                
 
 
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
-              <Tooltip content="The total number of beds available in the hospital wards." direction="top">
+              <Tooltip
+                  content="The total number of beds available in the hospital wards." direction="top">
                 <Form.Label htmlFor="bedUnit">Number of beds</Form.Label>
               </Tooltip>
                 <Form.Control
@@ -233,7 +234,9 @@ class Scenario extends React.Component {
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
-              <Tooltip content= "Hours Per Patient Day is the measurement of the average number of hours needed to care for each patient on the unit." direction="right">
+
+              <Tooltip
+                  content="This is the measurement of the average number of hours needed to care for each patient on the unit." direction="right">
                 <Form.Label htmlFor="HPPD">HPPD</Form.Label>
               </Tooltip>
                 <Form.Control
@@ -253,23 +256,26 @@ class Scenario extends React.Component {
               </div>
 
               <div className="col-md-6 mt-3 fs-5">
-                <Tooltip content="This is the total number of patients admitted to the health facility at any time of the day." direction="right">
-                  <Form.Label htmlFor="census">Census</Form.Label>
-                </Tooltip>
-                  <Form.Control
-                   type="number"
-                   name="census"
-                   id="census"
-                   data-testid="census-id"
-                   placeholder="Census"
-                   onChange={this.handleInputChange}
-                   value={this.state.info.census}
-                   isInvalid={!!this.state.errors.census}
-                 />
-                 <Form.Control.Feedback type="invalid">
-                   {" "}
-                   {this.state.errors.census}{" "}
-                 </Form.Control.Feedback>
+
+              <Tooltip
+                  content="This is the total number of patients admitted to the health facility at any time of the day.
+                  " direction="right">
+                <Form.Label htmlFor="census">Census</Form.Label>
+              </Tooltip>
+                <Form.Control
+                  type="number"
+                  name="census"
+                  id="census"
+                  data-testid="census-id"
+                  placeholder="Census"
+                  onChange={this.handleInputChange}
+                  value={this.state.info.census}
+                  isInvalid={!!this.state.errors.census}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {" "}
+                  {this.state.errors.census}{" "}
+                </Form.Control.Feedback>
               </div>
             </div>
             </Form>

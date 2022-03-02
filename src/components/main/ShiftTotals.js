@@ -55,30 +55,34 @@ class ShiftTotals extends React.Component {
             this.props.staffs.length > 0 ?
             <div>
                 <div className="card mt-4">
-                    <Tooltip content="Day Shift Hours: The shift that is done during the day. It usually occur between morning - afternoon period." direction="top">
-                        <div className="card-header"> Day Shift Hours</div>
-                        <div id="dayTotal" className="card-body">
-                         <h1>{dayShiftHours}</h1>
-                     </div>
-                    </Tooltip>
+
+                <Tooltip
+                  content="The shift that is done during the day. It usually occur between morning - afternoon period."direction="top">
+                    <div className="card-header"> Day Shift Hours</div>
+                </Tooltip>
+                    <div id="dayTotal" className="card-body">
+                        <h1>{dayShiftHours}</h1>
+                    </div>
                 </div>
 
                 <div className="card mt-4">
-                <Tooltip content="Evening Shift Hours: This can also be called swing shift. It's a shift that starts in the evenings and ends sometimes in the early hours of the night." direction="left">
+                <Tooltip
+                  content="This can also be called swing shift. It's a shift that starts in the evenings and ends sometimes in the early hours of the night."direction="left">
                     <div className="card-header">Evening Shift Hours</div>
+                </Tooltip>
                     <div id="eveningTotal" className="card-body">
                         <h1>{eveningShiftHours}</h1>
                     </div>
-                </Tooltip>
                 </div>
 
                 <div className="card mt-4">
-                <Tooltip content="Night Shift Hours: This shift can also be called graveyard shift. It's a shift that starts at midnight and ends in the early hours of the morning ." direction="left">
+                <Tooltip
+                  content="This shift can also be called graveyard shift. It's a shift that starts at midnight and ends in the early hours of the morning ."direction="left">
                     <div className="card-header"> Night Shift Hours</div>
+                </Tooltip>
                     <div id="nightTotal" className="card-body">
                         <h1>{nightShiftHours}</h1>
                     </div>
-                </Tooltip>
                 </div>
             
             </div>

@@ -22,7 +22,7 @@ Number of beds: The total number of beds available in the hospital wards.
 
 Hours for Day Remaining: The amount of hours left in the budget after staffing.
 
-HPPD (Hours Per Patient Day): is the measurement of the average number of hours needed to care for each patient on the unit. To calculate HPPD - totalHPPD 
+HPPD (Hours Per Patient Day): This is the measurement of the average number of hours needed to care for each patient on the unit. To calculate HPPD - totalHPPD 
 = (numberPatients * inputHPPD) - totalStaffHours
 
 Census: This is the total number of patients admitted to the health facility at any time of the day.
