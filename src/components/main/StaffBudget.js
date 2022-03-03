@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Tooltip from './Tooltip';
 
 class StaffBudget extends React.Component {
@@ -30,6 +31,9 @@ class StaffBudget extends React.Component {
                 this.props.showBudget ?
                 
                 <div className="card mt-4">
+
+                   
+
                     <Tooltip content="The total amount of money budgeted by the hospital for staff welfare" direction="left">
                     <div className="card-header">Total Staff Expenses</div>
                     </Tooltip>
