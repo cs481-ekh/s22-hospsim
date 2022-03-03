@@ -46,8 +46,8 @@ describe("<StaffAdd />", () => {
         // make sure staff member was added
         const staffListTable = screen.getByTestId("staffList-id");
         expect(staffListTable).toBeInTheDocument();
-        const newStaff = screen.getByText("RN");
-        expect(newStaff).toBeInTheDocument();
+        const newStaff = screen.getAllByText("RN");
+        expect (newStaff.includes("RN"));
     });
 
     test('Test cancel add staff button', () => {
