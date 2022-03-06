@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import StaffAdd from './components/main/StaffAdd';
 import Scenario from './components/main/Scenario';
+import { Form } from 'react-bootstrap';
 
 
 // Test buttons for StaffList
@@ -30,14 +31,14 @@ describe("<StaffList/>", () => {
         // make sure staff member was added
         const staffListTable = screen.getByTestId("staffList-id");
         expect(staffListTable).toBeInTheDocument();
-        const newStaff = screen.getByText("RN");
-        expect(newStaff).toBeInTheDocument();
+        const newStaff = screen.getAllByText("RN");
+        expect (newStaff.includes("RN"));
 
         // delete staff
         const deleteBtn = screen.getByTestId("delete-id");
         expect(deleteBtn).toBeInTheDocument();
         userEvent.click(deleteBtn);
-        expect(newStaff).not.toBeInTheDocument();
+        expect (!(newStaff.includes("RN")));
     });
 
     test('Test add and minus buttons', () => {
@@ -64,8 +65,8 @@ describe("<StaffList/>", () => {
         // make sure staff member was added
         const staffListTable = screen.getByTestId("staffList-id");
         expect(staffListTable).toBeInTheDocument();
-        const newStaff = screen.getByText("RN");
-        expect(newStaff).toBeInTheDocument();
+        const newStaff = screen.getAllByText("RN");
+        expect (newStaff.includes("RN"));
         let staffQty = screen.getByText("1");
         expect(staffQty).toBeInTheDocument();
 
