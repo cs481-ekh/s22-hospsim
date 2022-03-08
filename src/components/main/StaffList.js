@@ -122,10 +122,44 @@ class StaffList extends React.Component {
                 <thead className="table-BSU">
                     {staffList.length > 0 ? <tr data-testid="staffList-id">
                         <th></th>
-                        <th scope="col">Staff Type</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Shift</th>
-                        <th scope="col">Shift Total</th>
+                        <th scope="col">					
+								<Form.Label>Staff Type</Form.Label>
+								<Form.Control as="select" name="staffType" className="caret">
+                                    <option value="Select">Select</option>
+									<option value="RN">RN</option>
+									<option value="LVN">LVN</option>
+									<option value="Unlicensed">Unlicensed</option>
+								</Form.Control>					
+                        </th>
+                        <th scope="col">
+                        <Form.Label>Shift Type</Form.Label>
+                        <Form.Control as="select" name="shiftType" className="caret">
+                                    <option value="Select">Select</option>
+                                    <option value="8 Hours Day">8 Hours Day</option>
+									<option value="12 Hours Day">12 Hours Day</option>
+                                    <option value="8 Hours Evening">8 Hours Evening</option>
+									<option value="8 Hours Night">8 Hours Night</option>
+									<option value="12 Hours Night">12 Hours Night</option>
+								</Form.Control>
+                            
+                        </th>
+                        <th scope="col">
+                        <Form.Label>Shift </Form.Label>
+                        <Form.Control as="select" name="shift" className="caret">
+                                    <option value="Select">Select</option>
+									<option value="Day"> Day </option>
+									<option value="Evening"> Evening </option>
+									<option value="Night"> Night </option>
+                                 </Form.Control>
+                        </th>
+                        <th scope="col">
+                        <Form.Label>Shift Total</Form.Label>
+                        <Form.Control as="select" name="shiftTotal" className="caret">
+                                    <option value="Select">Select</option>
+									<option value="8"> 8 </option>
+									<option value="12"> 12 </option>
+                                </Form.Control>
+                        </th>
                     </tr> : false}
                 </thead>
                 <tbody>
