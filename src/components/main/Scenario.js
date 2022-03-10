@@ -108,10 +108,11 @@ class Scenario extends React.Component {
     const value = target.checked;
 
     this.setState((prevState) => {
-      let showBudget = Object.assign({}, prevState.showBudget);
-      showBudget = value;
-      return { showBudget };
+      let showCal = Object.assign({}, prevState.showCal);
+      showCal = value;
+      return { showCal };
     });
+
   };
 
   // https://dev.to/alecgrey/controlled-forms-with-front-and-backend-validations-using-react-bootstrap-5a2
@@ -178,13 +179,12 @@ class Scenario extends React.Component {
                 <label>
                   <input
                     type="checkbox"
-
                     id="showCal"
                     label="Show Calender"
                     name="showCal"
                     data-testid="showcal-id"
                     checked={this.state.showCal}
-                    onChange={this.handleCheckChange}
+                    onChange={this.handleCheckChangeCal}
 
                   />
                   Show Calender
@@ -328,7 +328,7 @@ class Scenario extends React.Component {
         </div>
         <div id='calendar'>
             <EventCalendar>
-              
+            
             </EventCalendar>
           </div>
       </div>
