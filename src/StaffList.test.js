@@ -67,21 +67,21 @@ describe("<StaffList/>", () => {
         expect(staffListTable).toBeInTheDocument();
         const newStaff = screen.getAllByText("RN");
         expect (newStaff.includes("RN"));
-        let staffQty = screen.getByText("1");
-        expect(staffQty).toBeInTheDocument();
+        let staffQty = screen.getAllByText("1");
+        expect(staffQty.includes("1"));
 
         // add staff quantity
         const addBtn = screen.getByTestId("add-id");
         expect(addBtn).toBeInTheDocument();
         userEvent.click(addBtn);
-        staffQty = screen.getByText("2");
-        expect(staffQty).toBeInTheDocument();
+        staffQty = screen.getAllByText("2");
+        expect(staffQty.includes("2"));
 
         // subtract staff quantity
         const subtractBtn = screen.getByTestId("minus-id");
         expect(subtractBtn).toBeInTheDocument();
         userEvent.click(subtractBtn);
-        staffQty = screen.getByText("1");
-        expect(staffQty).toBeInTheDocument();
+        staffQty = screen.getAllByText("1");
+        expect(staffQty.includes("1"));
     });
 })
