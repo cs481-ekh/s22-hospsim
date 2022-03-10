@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import "./Scenario.css";
 import StaffAdd from "./StaffAdd";
 import StaffList from "./StaffList";
+import EventCalendar from "./EventCalendar";
 import Result from "./Result";
 import RandomHPPDInfo from "./RandomHPPDInfo";
 import StaffBudget from "./StaffBudget";
@@ -291,9 +292,15 @@ class Scenario extends React.Component {
             </div>
           </div>
         </div>
+        <div id='calendar'>
+            <EventCalendar>
+              
+            </EventCalendar>
+          </div>
       </div>
     );
   }
 }
+
 
 export default Scenario;
