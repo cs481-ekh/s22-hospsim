@@ -21,6 +21,7 @@ class Scenario extends React.Component {
       center: { "text-align": "center" },
       staffs: [],
       showBudget: false,
+      showCal: false,
       info: {
         unit: "",
         HPPD: "",
@@ -149,6 +150,29 @@ class Scenario extends React.Component {
                     name="showBudget"
                     data-testid="showbudget-id"
                     checked={this.state.showBudget}
+                    onChange={this.handleCheckChange}
+
+                  />
+                  Show Budget
+                </label>
+                <Tooltip
+                  content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
+                          and time of day (Day shift hours, evening shift hours, and night shift hours)"
+                  direction="left"
+                >
+                  <img src={logo} alt="Budget Tooltip" width="50" height="50" />
+                </Tooltip>
+              </div>
+              <div id="show cal">
+                <label>
+                  <input
+                    type="checkbox"
+
+                    id="showCal"
+                    label="Show Calender"
+                    name="showCal"
+                    data-testid="showcal-id"
+                    // checked={this.state.showBudget}
                     onChange={this.handleCheckChange}
 
                   />
