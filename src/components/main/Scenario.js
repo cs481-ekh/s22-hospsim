@@ -92,7 +92,18 @@ class Scenario extends React.Component {
   }
 
   // handle show budget check change
-  handleCheckChange = (event) => {
+  handleCheckChangeBudget = (event) => {
+    const target = event.target;
+    const value = target.checked;
+
+    this.setState((prevState) => {
+      let showBudget = Object.assign({}, prevState.showBudget);
+      showBudget = value;
+      return { showBudget };
+    });
+  };
+  // handle show budget check change
+  handleCheckChangeCal = (event) => {
     const target = event.target;
     const value = target.checked;
 
@@ -150,7 +161,7 @@ class Scenario extends React.Component {
                     name="showBudget"
                     data-testid="showbudget-id"
                     checked={this.state.showBudget}
-                    onChange={this.handleCheckChange}
+                    onChange={this.handleCheckChangeBudget}
 
                   />
                   Show Budget
@@ -172,15 +183,14 @@ class Scenario extends React.Component {
                     label="Show Calender"
                     name="showCal"
                     data-testid="showcal-id"
-                    // checked={this.state.showBudget}
+                    checked={this.state.showCal}
                     onChange={this.handleCheckChange}
 
                   />
-                  Show Budget
+                  Show Calender
                 </label>
                 <Tooltip
-                  content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
-                          and time of day (Day shift hours, evening shift hours, and night shift hours)"
+                  content="This displays the monthly calender for use with staffing"
                   direction="left"
                 >
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
