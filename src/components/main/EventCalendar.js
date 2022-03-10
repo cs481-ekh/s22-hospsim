@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import '../EventCalendar.css'
+import "./Scenario.css";
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 
