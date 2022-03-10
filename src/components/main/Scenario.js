@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import "./Scenario.css";
 import StaffAdd from "./StaffAdd";
 import StaffList from "./StaffList";
+import EventCalendar from "./EventCalendar";
 import Result from "./Result";
 import RandomHPPDInfo from "./RandomHPPDInfo";
 import StaffBudget from "./StaffBudget";
@@ -291,9 +292,22 @@ class Scenario extends React.Component {
             </div>
           </div>
         </div>
+        <div id='calendar'>
+            <EventCalendar>
+              
+            </EventCalendar>
+          </div>
       </div>
     );
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth'
+  });
+  calendar.render();
+});
 
 export default Scenario;

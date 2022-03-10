@@ -4,6 +4,8 @@
   "homepage": "/s22-hospsim",
   "private": true,
   "dependencies": {
+    "@fullcalendar/common": "^5.10.1",
+    "@fullcalendar/core": "^5.10.1",
     "@fullcalendar/daygrid": "^5.10.1",
     "@fullcalendar/react": "^5.10.1",
     "@testing-library/jest-dom": "^5.14.1",

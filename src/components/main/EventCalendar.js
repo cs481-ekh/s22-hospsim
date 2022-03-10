@@ -13,7 +13,7 @@ export default class EventCalendar extends Component{
             plugins={[ dayGridPlugin ]}
             events={[
                 //event code here
-                {title: 'staff code here'},
+                { title: 'added staff here', date: '2022-03-10' }
             ]}
             />
         )
