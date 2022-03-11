@@ -327,14 +327,14 @@ class Scenario extends React.Component {
           </div>
         </div>
         <div id='calendar'>
+
             <EventCalendar
             
             showCal={this.state.showCal}>
             
             </EventCalendar>
           </div>
-          
-          
+
       </div>
       
     );

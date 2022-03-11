@@ -11,7 +11,6 @@ export default class EventCalendar extends Component{
             this.props.showCal ?
                 <div>
 
-            
                 <FullCalendar
 
                 defaultView="dayGridMonth"
@@ -25,7 +24,6 @@ export default class EventCalendar extends Component{
             :
             null
 
-            
         )
 
     }

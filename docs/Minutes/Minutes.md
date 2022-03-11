@@ -1,3 +1,16 @@
+## Meeting Minutes 3/8/2022 (Week 9)
+#### Scribe: Derek Valenzuela
+#### Absent: none
+
+#### Items discussed:
+* Sprint 2 Progress
+  * Sprint 2 Goal: Implementation of Calendar framework and functionality.
+  * Task 41 nearly complete
+  * Task 42 nearly complete
+  * Additional Filtering
+    * Filter icon on-click Descending Order Alpha or Numeric
+    * On click again reverse
+
 ## Meeting Minutes 3/1/2022 (Week 8)
 #### Scribe: Derek Valenzuela
 #### Absent: none
