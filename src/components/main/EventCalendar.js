@@ -6,16 +6,24 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 export default class EventCalendar extends Component{
 
     render(){
+        
         return(
-            <FullCalendar
+            this.props.showCal ?
+                <div>
 
-            defaultView="dayGridMonth"
-            plugins={[ dayGridPlugin ]}
-            events={[
-                //event code here
-                { title: 'added staff here', date: '2022-03-10' }
-            ]}
-            />
+                <FullCalendar
+
+                defaultView="dayGridMonth"
+                plugins={[ dayGridPlugin ]}
+                events={[
+                    //event code here
+                    { title: 'added staff here', date: '2022-03-10' }
+                ]}
+                />
+                </div>
+            :
+            null
+
         )
 
     }
