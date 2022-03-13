@@ -13,6 +13,11 @@
   color: #fff;
 }
 
+.staffType li :hover{
+  cursor: pointer;
+  color: #fff;
+}
+
 .blue {background-color: #648FFF;}
 .purple {background-color: #785EF0;}
 .pink {background-color: #DC267F;}
