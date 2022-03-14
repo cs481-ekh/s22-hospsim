@@ -5,6 +5,28 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 
 export default class EventCalendar extends Component{
 
+    getStaff = () => {
+        let staffList = [];
+        staffList = this.props.staffs;
+        var eventsArr = [];
+
+        staffList.forEach(element => {
+            if (element.day == "week") {
+                eventsArr.push({title: element.shift, date: '2022-03-7'})
+                eventsArr.push({title: element.shift, date: '2022-03-8'})
+                eventsArr.push({title: element.shift, date: '2022-03-9'})
+                eventsArr.push({title: element.shift, date: '2022-03-10'})
+                eventsArr.push({title: element.shift, date: '2022-03-11'})
+            }else{
+                eventsArr.push({title: element.shift, date: '2022-03-12'})
+                eventsArr.push({title: element.shift, date: '2022-03-13'})
+            }
+            
+        });
+
+        return eventsArr;
+    }
+
     render(){
         
         return(
@@ -15,10 +37,7 @@ export default class EventCalendar extends Component{
 
                 defaultView="dayGridMonth"
                 plugins={[ dayGridPlugin ]}
-                events={[
-                    //event code here
-                    { title: 'added staff here', date: '2022-03-10' }
-                ]}
+                events={this.getStaff}
                 />
                 </div>
             :
