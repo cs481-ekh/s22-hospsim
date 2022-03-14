@@ -30,7 +30,7 @@ class StaffList extends React.Component {
            this.props.staffs[index].quantity = quantity
            this.props.staffs[index].shiftTotal = shiftTotal
            this.props.onStaffChangeOnUpdate(this.props.staffs)
-       }
+       } 
        
     }
 
@@ -63,17 +63,22 @@ class StaffList extends React.Component {
 
     }
 
-
+    //Filter by staff
     render() {
         const staffList = this.props.staffs
-            .filter((staff) =>{
-                if(this.state.shiftFilter)
-                {
-                    return staff.shift === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All";  
-                }  
-                return true;
-            })
-            .map((staff, i) =>
+        .filter((staff) =>{
+            if(this.state.shiftFilter)
+            {
+                return staff.shift === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All";  
+            }
+            // Ascending
+            const ascending = staffList.sort((a, b) => a[staff].localeCompare(b[this.state.shiftFilter]))
+            // Descending
+           const descending = ascending.reverse()
+            return true;
+        })
+
+        .map((staff, i) =>
         <tr key={staff.id} id={staff.id} >
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
@@ -124,7 +129,7 @@ class StaffList extends React.Component {
                         <th></th>
                         <th scope="col">					
 								<Form.Label>Staff Type</Form.Label>
-								<select id="Dropdown menu">
+								<select id="#DropdownMenu">
                                 var src = [
                                     "Select",
                                     "LVN",
@@ -137,7 +142,7 @@ class StaffList extends React.Component {
                         </th>
                         <th scope="col">
                         <Form.Label>Shift Type</Form.Label>
-                        <select id="Dropdown menu">
+                        <select id="#DropdownMenu">
                                 var src = [
                                     "Select",
                                     "8 Hours Day",
@@ -150,7 +155,7 @@ class StaffList extends React.Component {
                         </th>
                         <th scope="col">
                         <Form.Label>Shift </Form.Label>
-                        <select id="Dropdown menu ">
+                        <select id="#DropdownMenu ">
                                 var src = [
                                     "Select",
                                     " Day",                             
@@ -161,7 +166,7 @@ class StaffList extends React.Component {
                         </th>
                         <th scope="col">
                         <Form.Label>Shift Total</Form.Label>
-                        <select id= "Dropdown menu ">
+                        <select id= "#DropdownMenu ">
                                 var src = [
                                     "Select",
                                     "8 ",
