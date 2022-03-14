@@ -73,6 +73,14 @@ class StaffList extends React.Component {
                 }  
                 return true;
             })
+
+            //Filters by quantity
+            .filter((quantity) =>{   
+                if(this.state.shiftFilter)
+                {
+                    return quantity.shift === this.state.shiftFilter || quantity.type === this.state.shiftFilter ||this.state.shiftFilter === "All";          
+                }
+            })
             .map((staff, i) =>
         <tr key={staff.id} id={staff.id} >
             <td >
