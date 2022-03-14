@@ -22,7 +22,7 @@ export default class EventCalendar extends Component{
                       buttonText: '3 day'
                  }
                 }}
-                selectable
+                //selectable
                 initialView = 'agendaThreeDay'
                 headerToolbar={{
                     center: 'dayGridMonth,agendaThreeDay,timeGridDay new',
