@@ -15,12 +15,21 @@ export default class EventCalendar extends Component{
 
                 <FullCalendar
 
-                defaultView="dayGridMonth"
-                plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
+                plugins={[ dayGridPlugin, interactionPlugin , timeGridPlugin]}
+              
+                //selectable
+                initialView = 'dayGridMonth'
                 headerToolbar={{
-                    end: 'timeGridWeek,prev,next',
-                }}
-                initialView='timeGridWeek'
+                    end: 'dayGridMonth,twoWeekView,timeGridDay,prev,next',
+                  }}
+                views = {{
+                    twoWeekView: {
+                         type: 'timeGridWeek',
+                         duration: { week: 2 },
+                         buttonText: '2 weeks'
+                    }
+                   }}
+
                 events={[
                     //event code here
                     { title: 'added staff here', date: '2022-03-10' }
@@ -33,5 +42,6 @@ export default class EventCalendar extends Component{
         )
 
     }
+    
 
 }
