@@ -75,7 +75,7 @@ class StaffList extends React.Component {
             const ascending = staffList.sort((a, b) => a[staff].localeCompare(b[this.state.shiftFilter]))
             // Descending
            const descending = ascending.reverse()
-            return true;
+            return descending;
         })
 
         .map((staff, i) =>
