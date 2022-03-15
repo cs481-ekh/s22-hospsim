@@ -1,3 +1,17 @@
+## Meeting Minutes 3/15/2022 (Week 10)
+#### Scrum Master: Chinwendum Njoku
+#### Scribe: Chinwendum Njoku
+#### Absent: none
+
+#### Items discussed:
+* Sprint 3 Planning
+  * Sprint 3 Goal: Implementation of Date ranges and Display User on the calendar.
+  * Moved the last Task in sprint 2 to sprint 3 board to be completed.
+  * Creating more tasks for the calendar functionality.
+  * Meeting with Dr. Walters tomorrow morning.
+  
+  
+
 ## Meeting Minutes 3/8/2022 (Week 9)
 #### Scribe: Derek Valenzuela
 #### Absent: none
