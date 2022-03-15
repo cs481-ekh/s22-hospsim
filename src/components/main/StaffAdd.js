@@ -3,7 +3,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import './StaffAdd.css';
 import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
-import EventCalendar from "./EventCalendar";
+// import EventCalendar from "./EventCalendar";
 
 // also noticing another bug where the url is holding the value of the selected items in the modal. We should look at how to fix this in the next sprint because it might look different after the refactor
 class StaffAdd extends React.Component {
@@ -63,6 +63,7 @@ class StaffAdd extends React.Component {
 		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, days: formDataObj.days };
 
 		this.props.onStaffAdd(staff);
+		// this.props.calEvents.push({ title: formDataObj.staffType, date: '2022-03-10' })
 		this.handleClose();
 	}
 

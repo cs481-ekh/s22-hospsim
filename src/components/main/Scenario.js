@@ -22,6 +22,7 @@ class Scenario extends React.Component {
       staffs: [],
       showBudget: false,
       showCal: false,
+      calEvents: [],
       info: {
         unit: "",
         HPPD: "",
@@ -44,8 +45,15 @@ class Scenario extends React.Component {
 
   handleStaffAdd = (staffItem) => {
     console.log(staffItem);
+    console.log(staffItem.days);
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
+    let events = [...this.state.calEvents, {title: staffItem, date: '2022-03-10' }];
+    this.setState({ calEvents: events});
+
+    console.log(events);
+    console.log(this.state.calEvents);
+
   };
 
   handleInfoChange = (info) => {
