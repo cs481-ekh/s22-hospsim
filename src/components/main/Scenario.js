@@ -22,6 +22,7 @@ class Scenario extends React.Component {
       staffs: [],
       showBudget: false,
       showCal: false,
+      calEvents: [],
       info: {
         unit: "",
         HPPD: "",
@@ -41,15 +42,29 @@ class Scenario extends React.Component {
   handleStaffChange = (staff) => {
     this.setState({ staffs: staff });
   };
+  handleStaffChangeCal = (event) => {
+    this.setState({ calEvents: event})
+  };
+
 
   handleStaffAdd = (staffItem) => {
     console.log(staffItem);
+    console.log(staffItem.days);
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
+    let events = [...this.state.calEvents, {title: staffItem.type, start: '2022-03-02', end: '2018-03-08'}]
+    console.log(events)
+    this.setState({ calEvents: events});
+
+    // console.log(events);
+    // console.log(this.state.calEvents);
+
   };
 
   handleInfoChange = (info) => {
     this.setState({ info: info });
+
+    
   };
 
   handleInputChange(event) {
@@ -321,6 +336,8 @@ class Scenario extends React.Component {
                 <StaffList
                   staffs={this.state.staffs}
                   onStaffChangeOnUpdate={this.handleStaffChange}
+                  onStaffChangeOnUpdateCal={this.handleStaffChangeCal}
+                  events={this.state.calEvents}
                 ></StaffList>
               </div>
             </div>
@@ -329,8 +346,9 @@ class Scenario extends React.Component {
         <div id='calendar'>
 
             <EventCalendar
-            
+            eventsArry={this.state.calEvents}
             showCal={this.state.showCal}>
+            
             
             </EventCalendar>
           </div>
