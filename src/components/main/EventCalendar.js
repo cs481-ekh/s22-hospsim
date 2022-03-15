@@ -2,12 +2,12 @@ import React,{Component} from 'react'
 import "./Scenario.css";
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
+import interactionPlugin from '@fullcalendar/interaction'
 
 export default class EventCalendar extends Component{
 
     render(){
-        console.log(this.props.eventsArry)
-        console.log(this.props.showCal)
         
         return(
             this.props.showCal ?
@@ -15,8 +15,20 @@ export default class EventCalendar extends Component{
 
                 <FullCalendar
 
-                defaultView="dayGridMonth"
-                plugins={[ dayGridPlugin ]}
+                plugins={[ dayGridPlugin, interactionPlugin , timeGridPlugin]}
+              
+                //selectable
+                initialView = 'dayGridMonth'
+                headerToolbar={{
+                    end: 'dayGridMonth,twoWeekView,timeGridDay,prev,next',
+                  }}
+                views = {{
+                    twoWeekView: {
+                         type: 'timeGridWeek',
+                         duration: { week: 2 },
+                         buttonText: '2 weeks'
+                    }
+                   }}
                 events={this.props.eventsArry}
                 />
                 </div>
@@ -26,5 +38,6 @@ export default class EventCalendar extends Component{
         )
 
     }
+    
 
 }

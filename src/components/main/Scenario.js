@@ -58,6 +58,8 @@ class Scenario extends React.Component {
 
   handleInfoChange = (info) => {
     this.setState({ info: info });
+
+    
   };
 
   handleInputChange(event) {
