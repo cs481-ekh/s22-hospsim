@@ -71,11 +71,6 @@ class StaffList extends React.Component {
             {
                 return staff.shift === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All";  
             }
-            // Ascending
-            const ascending = staffList.sort((a, b) => a[staff].localeCompare(b[this.state.shiftFilter]))
-            // Descending
-           const descending = ascending.reverse()
-            return descending;
         })
 
         .map((staff, i) =>
@@ -129,8 +124,8 @@ class StaffList extends React.Component {
                         <th></th>
                         <th scope="col">					
 								<Form.Label>Staff Type</Form.Label>
-								<select id="#DropdownMenu">
-                                var src = [
+								<select id="DropdownMenu">
+                                const src = [
                                     "Select",
                                     "LVN",
                                     "RN",
@@ -138,11 +133,11 @@ class StaffList extends React.Component {
                                     "8 Hours Night",
                                     "12 Hours Night"
                                 ];
-                            </select>												
+                            </select>								
                         </th>
                         <th scope="col">
                         <Form.Label>Shift Type</Form.Label>
-                        <select id="#DropdownMenu">
+                        <select id="DropdownMenu">
                                 var src = [
                                     "Select",
                                     "8 Hours Day",
@@ -155,7 +150,7 @@ class StaffList extends React.Component {
                         </th>
                         <th scope="col">
                         <Form.Label>Shift </Form.Label>
-                        <select id="#DropdownMenu ">
+                        <select id="DropdownMenu ">
                                 var src = [
                                     "Select",
                                     " Day",                             
@@ -166,7 +161,7 @@ class StaffList extends React.Component {
                         </th>
                         <th scope="col">
                         <Form.Label>Shift Total</Form.Label>
-                        <select id= "#DropdownMenu ">
+                        <select id= "DropdownMenu ">
                                 var src = [
                                     "Select",
                                     "8 ",
