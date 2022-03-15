@@ -21,6 +21,7 @@ class Scenario extends React.Component {
       center: { "text-align": "center" },
       staffs: [],
       showBudget: false,
+      showCal: false,
       info: {
         unit: "",
         HPPD: "",
@@ -91,7 +92,7 @@ class Scenario extends React.Component {
   }
 
   // handle show budget check change
-  handleCheckChange = (event) => {
+  handleCheckChangeBudget = (event) => {
     const target = event.target;
     const value = target.checked;
 
@@ -100,6 +101,18 @@ class Scenario extends React.Component {
       showBudget = value;
       return { showBudget };
     });
+  };
+  // handle show budget check change
+  handleCheckChangeCal = (event) => {
+    const target = event.target;
+    const value = target.checked;
+
+    this.setState((prevState) => {
+      let showCal = Object.assign({}, prevState.showCal);
+      showCal = value;
+      return { showCal };
+    });
+
   };
 
   // https://dev.to/alecgrey/controlled-forms-with-front-and-backend-validations-using-react-bootstrap-5a2
@@ -149,7 +162,7 @@ class Scenario extends React.Component {
                     name="showBudget"
                     data-testid="showbudget-id"
                     checked={this.state.showBudget}
-                    onChange={this.handleCheckChange}
+                    onChange={this.handleCheckChangeBudget}
 
                   />
                   Show Budget
@@ -157,6 +170,27 @@ class Scenario extends React.Component {
                 <Tooltip
                   content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
                           and time of day (Day shift hours, evening shift hours, and night shift hours)"
+                  direction="left"
+                >
+                  <img src={logo} alt="Budget Tooltip" width="50" height="50" />
+                </Tooltip>
+              </div>
+              <div id="show cal">
+                <label>
+                  <input
+                    type="checkbox"
+                    id="showCal"
+                    label="Show Calender"
+                    name="showCal"
+                    data-testid="showcal-id"
+                    checked={this.state.showCal}
+                    onChange={this.handleCheckChangeCal}
+
+                  />
+                  Show Calender
+                </label>
+                <Tooltip
+                  content="This displays the monthly calender for use with staffing"
                   direction="left"
                 >
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
@@ -293,11 +327,16 @@ class Scenario extends React.Component {
           </div>
         </div>
         <div id='calendar'>
-            <EventCalendar>
-              
+
+            <EventCalendar
+            
+            showCal={this.state.showCal}>
+            
             </EventCalendar>
           </div>
+
       </div>
+      
     );
   }
 }
