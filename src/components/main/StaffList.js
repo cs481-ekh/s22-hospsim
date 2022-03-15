@@ -74,8 +74,9 @@ class StaffList extends React.Component {
                 return true;
             })
 
-            //Filters by quantity
-            .filter((quantity) =>{   
+            
+            .filter((quantity) => {   
+                //Filters by quantity
                 if(this.state.shiftFilter)
                 {
                     return quantity.shift === this.state.shiftFilter || quantity.type === this.state.shiftFilter ||this.state.shiftFilter === "All";          
