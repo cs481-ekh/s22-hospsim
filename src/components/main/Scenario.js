@@ -42,6 +42,10 @@ class Scenario extends React.Component {
   handleStaffChange = (staff) => {
     this.setState({ staffs: staff });
   };
+  handleStaffChangeCal = (event) => {
+    this.setState({ calEvents: event})
+  };
+
 
   handleStaffAdd = (staffItem) => {
     console.log(staffItem);
@@ -331,6 +335,8 @@ class Scenario extends React.Component {
                 <StaffList
                   staffs={this.state.staffs}
                   onStaffChangeOnUpdate={this.handleStaffChange}
+                  onStaffChangeOnUpdateCal={this.handleStaffChangeCal}
+                  events={this.state.calEvents}
                 ></StaffList>
               </div>
             </div>

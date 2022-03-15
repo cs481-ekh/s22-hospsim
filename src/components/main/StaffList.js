@@ -59,7 +59,10 @@ class StaffList extends React.Component {
     listRemove = (index) =>{
 
         this.props.staffs.splice(index,1)
+        this.props.events.splice(index,1)
         this.props.onStaffChangeOnUpdate(this.props.staffs)
+        this.props.onStaffChangeOnUpdateCal(this.props.events)
+
 
     }
 
