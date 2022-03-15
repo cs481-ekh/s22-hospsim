@@ -2,8 +2,8 @@ import React,{Component} from 'react'
 import "./Scenario.css";
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction';
-import timeGridPlugin from '@fullcalendar/timegrid';
+import timeGridPlugin from '@fullcalendar/timegrid'
+import interactionPlugin from '@fullcalendar/interaction'
 
 export default class EventCalendar extends Component{
 
@@ -14,6 +14,7 @@ export default class EventCalendar extends Component{
                 <div>
 
                 <FullCalendar
+
                 plugins={[ dayGridPlugin, interactionPlugin , timeGridPlugin]}
               
                 //selectable
@@ -28,6 +29,7 @@ export default class EventCalendar extends Component{
                          buttonText: '2 weeks'
                     }
                    }}
+
                 events={[
                     //event code here
                     { title: 'added staff here', date: '2022-03-10' }

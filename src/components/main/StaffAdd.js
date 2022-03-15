@@ -59,7 +59,7 @@ class StaffAdd extends React.Component {
 
 		var uuid = this.generateUUID();
 		var shiftTotal = parseInt(formDataObj.quantity) * this.getShiftValue(formDataObj.shift);
-		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal };
+		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, days: formDataObj.days };
 
 		this.props.onStaffAdd(staff);
 		this.handleClose();
@@ -132,6 +132,16 @@ class StaffAdd extends React.Component {
 							</Tooltip>
 								<Form.Control as="select" name="quantity">
 									{qtyList}
+								</Form.Control>
+							</Form.Group>
+							<Form.Group className="mb-3" controlId="dayOfWeek" required>
+							<Tooltip
+                  				content="Days of the week they work"direction="right">
+								<Form.Label>Days of the Week</Form.Label>
+							</Tooltip>
+								<Form.Control as="select" name="days" className="caret">
+									<option value="week">M, Tu, W, Th, F</option>
+									<option value="weekend">Sa, Su</option>
 								</Form.Control>
 							</Form.Group>
 						</Modal.Body>
