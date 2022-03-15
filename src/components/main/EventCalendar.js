@@ -8,6 +8,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 export default class EventCalendar extends Component{
 
     render(){
+        console.log("rendered cal")
         
         return(
             this.props.showCal ?
