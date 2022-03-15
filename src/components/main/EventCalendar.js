@@ -30,7 +30,15 @@ export default class EventCalendar extends Component{
                          buttonText: '2 weeks'
                     }
                    }}
+<<<<<<< gerber-58
                 events={this.props.eventsArry}
+=======
+
+                events={[
+                    //event code here
+                    { title: 'added staff here', date: '2022-03-10' }
+                ]}
+>>>>>>> main
                 />
                 </div>
             :
