@@ -48,11 +48,11 @@ class Scenario extends React.Component {
     console.log(staffItem.days);
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
-    let events = [...this.state.calEvents, {title: staffItem, date: '2022-03-10' }];
+    let events = [...this.state.calEvents, {title: staffItem.type, date: '2022-03-10' }];
     this.setState({ calEvents: events});
 
-    console.log(events);
-    console.log(this.state.calEvents);
+    // console.log(events);
+    // console.log(this.state.calEvents);
 
   };
 
@@ -337,8 +337,9 @@ class Scenario extends React.Component {
         <div id='calendar'>
 
             <EventCalendar
-            
+            eventsArry={this.state.calEvents}
             showCal={this.state.showCal}>
+            
             
             </EventCalendar>
           </div>

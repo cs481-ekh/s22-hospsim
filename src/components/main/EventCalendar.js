@@ -6,6 +6,8 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 export default class EventCalendar extends Component{
 
     render(){
+        console.log(this.props.eventsArry)
+        console.log(this.props.showCal)
         
         return(
             this.props.showCal ?
@@ -15,7 +17,7 @@ export default class EventCalendar extends Component{
 
                 defaultView="dayGridMonth"
                 plugins={[ dayGridPlugin ]}
-                events={this.props.calEvents}
+                events={this.props.eventsArry}
                 />
                 </div>
             :
