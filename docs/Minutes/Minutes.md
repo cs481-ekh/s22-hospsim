@@ -1,5 +1,5 @@
 ## Meeting Minutes 3/15/2022 (Week 10)
-#### Scrum Master: Chinwendum Njoku
+#### Scrum Master: Jonathan
 #### Scribe: Chinwendum Njoku
 #### Absent: none
 
