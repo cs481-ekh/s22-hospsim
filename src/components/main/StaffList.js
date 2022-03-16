@@ -77,6 +77,8 @@ class StaffList extends React.Component {
             
             .filter((quantity) => {   
                 //Filters by quantity
+                //We realized last minute that this functionality was already embedded into a different implementation by the last team. 
+                //This implementation doesn't break anything but it doesn't improve anything either. That is why it was never pushed to main.
                 if(this.state.shiftFilter)
                 {
                     return quantity.shift === this.state.shiftFilter || quantity.type === this.state.shiftFilter ||this.state.shiftFilter === "All";          
