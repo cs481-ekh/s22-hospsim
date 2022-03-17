@@ -20,6 +20,8 @@ class Scenario extends React.Component {
       num: "",
       center: { "text-align": "center" },
       staffs: [],
+      textColor: ["Red","Green","Yellow"], //0 is RN, 1 is LVN, 2 is Unlic
+      backgroundColor: ["SlateGrey","DarkGrey","Lavender","DarkOrchid","DarkSlateBlue"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
       showBudget: false,
       showCal: true,  //just cuz
       calEvents: [],
@@ -321,6 +323,8 @@ class Scenario extends React.Component {
                   onStaffChange={this.handleStaffChange}
                   onStaffAdd={this.handleStaffAdd}
                   staffs={this.state.staffs}
+                  backgroundColor = {this.state.backgroundColor}
+                  textColor = {this.state.textColor}
                 />
               </div>
             </div>
