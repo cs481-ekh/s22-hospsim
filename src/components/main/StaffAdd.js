@@ -65,26 +65,46 @@ class StaffAdd extends React.Component {
 		let year = timeStart.substring(0,4)
 		let month = timeStart.substring(5,7)
 		let day = timeStart.substring(8,10)
+		var textColorVar = "black";
+		var backgroundColorVar = 'lightgrey';
+
+		//check for day times
 		if(formDataObj.shift === "12 Hours Day"){
 			timeStart = timeStart+"T07:00:00";
 			timeEnd = timeEnd+"T19:00:00";
+			backgroundColorVar = "SlateGrey";
 		}else if (formDataObj.shift === "12 Hours Night"){
 			timeStart = timeStart+"T19:00:00";
 			day++;
 			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+			backgroundColorVar = "DarkGrey";
 		}else if (formDataObj.shift === "8 Hours Day"){
 			timeStart = timeStart+"T07:00:00";
 			timeEnd = timeEnd+"T15:00:00";
+			backgroundColorVar = "Lavender";
 		}else if (formDataObj.shift === "8 Hours Evening"){
 			timeStart = timeStart+"T15:00:00";
 			timeEnd = timeEnd+"T23:00:00";
+			backgroundColorVar = "DarkOrchid";
 		}else if (formDataObj.shift === "8 Hours Night"){
 			timeStart = timeStart+"T23:00:00";
 			day++;
 			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+			backgroundColorVar = "DarkSlateBlue";
 		}
+
+		//check for shift type
+		if(formDataObj.staffType === "RN"){
+			textColorVar = "PeachPuff";
+		}else if(formDataObj.staffType === "LVN"){
+			textColorVar = "lightPink"
+		}else if(formDataObj.staffType === "Unlicensed"){
+			textColorVar = "black";
+		}
+
+
 	
-		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, start: timeStart, end: timeEnd, name: formDataObj.name };
+		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, start: timeStart, end: timeEnd, name: formDataObj.name, textColor: textColorVar, backgroundColor: backgroundColorVar};
 		
 		this.props.onStaffAdd(staff);
 		this.handleClose();

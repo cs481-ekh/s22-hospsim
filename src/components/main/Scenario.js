@@ -21,7 +21,7 @@ class Scenario extends React.Component {
       center: { "text-align": "center" },
       staffs: [],
       showBudget: false,
-      showCal: false,
+      showCal: true,  //just cuz
       calEvents: [],
       info: {
         unit: "",
@@ -50,8 +50,9 @@ class Scenario extends React.Component {
   handleStaffAdd = (staffItem) => {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
-    let events = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end}]
+    let events = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
     this.setState({ calEvents: events});
+    console.log(events);
   };
 
   handleInfoChange = (info) => {
