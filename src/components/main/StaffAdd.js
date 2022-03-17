@@ -84,9 +84,9 @@ class StaffAdd extends React.Component {
 			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
 		}
 		
-		console.log(year);
-		console.log(month);
-		console.log(day);
+		// console.log(year);
+		// console.log(month);
+		// console.log(day);
 		
 		// console.log(formDataObj.shift);
 		// console.log(timeStr);
