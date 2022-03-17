@@ -48,17 +48,10 @@ class Scenario extends React.Component {
 
 
   handleStaffAdd = (staffItem) => {
-    console.log(staffItem);
-    console.log(staffItem.days);
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
-    let events = [...this.state.calEvents, {title: staffItem.type, start: '2022-03-02', end: '2018-03-08'}]
-    console.log(events)
+    let events = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end}]
     this.setState({ calEvents: events});
-
-    // console.log(events);
-    // console.log(this.state.calEvents);
-
   };
 
   handleInfoChange = (info) => {

@@ -60,10 +60,33 @@ class StaffAdd extends React.Component {
 
 		var uuid = this.generateUUID();
 		var shiftTotal = parseInt(formDataObj.quantity) * this.getShiftValue(formDataObj.shift);
-		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, days: formDataObj.days };
-
+		var timeStart = formDataObj.date;
+		var timeEnd = formDataObj.date;
+		let year = timeStart.substring(0,4)
+		let month = timeStart.substring(5,7)
+		let day = timeStart.substring(8,10)
+		if(formDataObj.shift === "12 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T19:00:00";
+		}else if (formDataObj.shift === "12 Hours Night"){
+			timeStart = timeStart+"T19:00:00";
+			day++;
+			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+		}else if (formDataObj.shift === "8 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T15:00:00";
+		}else if (formDataObj.shift === "8 Hours Evening"){
+			timeStart = timeStart+"T15:00:00";
+			timeEnd = timeEnd+"T23:00:00";
+		}else if (formDataObj.shift === "8 Hours Night"){
+			timeStart = timeStart+"T23:00:00";
+			day++;
+			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+		}
+	
+		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, start: timeStart, end: timeEnd, name: formDataObj.name };
+		
 		this.props.onStaffAdd(staff);
-		// this.props.calEvents.push({ title: formDataObj.staffType, date: '2022-03-10' })
 		this.handleClose();
 	}
 
@@ -100,6 +123,14 @@ class StaffAdd extends React.Component {
 							<Modal.Title>Select your staff member</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
+
+						<Form.Group className="mb-3" controlId="name" required>
+							<Tooltip
+                  				content="Name of staff"direction="right">
+								<Form.Label>Staff Name</Form.Label>
+							</Tooltip>
+    							<Form.Control name="name" type="text"/>
+							</Form.Group>
 
 							<Form.Group className="mb-3" controlId="staffType" required>
 							<Tooltip
@@ -138,13 +169,10 @@ class StaffAdd extends React.Component {
 							</Form.Group>
 							<Form.Group className="mb-3" controlId="dayOfWeek" required>
 							<Tooltip
-                  				content="Days of the week they work"direction="right">
-								<Form.Label>Days of the Week</Form.Label>
+                  				content="Date they work"direction="right">
+								<Form.Label>Date</Form.Label>
 							</Tooltip>
-								<Form.Control as="select" name="days" className="caret">
-									<option value="week">M, Tu, W, Th, F</option>
-									<option value="weekend">Sa, Su</option>
-								</Form.Control>
+    							<Form.Control name="date" type="text" placeholder="YYYY-MM-DD" />
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>

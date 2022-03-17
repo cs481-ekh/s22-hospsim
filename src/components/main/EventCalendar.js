@@ -19,7 +19,7 @@ export default class EventCalendar extends Component{
                 plugins={[ dayGridPlugin, interactionPlugin , timeGridPlugin]}
               
                 //selectable
-                initialView = 'dayGridMonth'
+                initialView = 'twoWeekView'
                 headerToolbar={{
                     end: 'dayGridMonth,twoWeekView,timeGridDay,prev,next',
                   }}

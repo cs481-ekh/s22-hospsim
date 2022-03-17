@@ -59,11 +59,12 @@ class StaffList extends React.Component {
     listRemove = (index) =>{
 
         this.props.staffs.splice(index,1)
-        // console.log(this.props.events)
         this.props.events.splice(index,1)
-        // console.log(this.props.events)
-        this.props.onStaffChangeOnUpdate(this.props.staffs)
+
         this.props.onStaffChangeOnUpdateCal(this.props.events)
+
+        this.props.onStaffChangeOnUpdateCal(this.props.events)
+        this.props.onStaffChangeOnUpdate(this.props.staffs)
 
 
     }
@@ -80,9 +81,11 @@ class StaffList extends React.Component {
             })
             .map((staff, i) =>
         <tr key={staff.id} id={staff.id} >
+            
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
             </td>
+            <td>{staff.name}</td>
             <td>{staff.type}</td>
             <td>
                <Plus className="bPlus" data-testid="add-id" onClick={this.listAdd.bind(staff,i)}/> 
@@ -127,6 +130,7 @@ class StaffList extends React.Component {
                 <thead className="table-BSU">
                     {staffList.length > 0 ? <tr data-testid="staffList-id">
                         <th></th>
+                        <th scope="col">Name</th>
                         <th scope="col">Staff Type</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Shift</th>
