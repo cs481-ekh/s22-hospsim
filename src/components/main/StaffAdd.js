@@ -60,8 +60,11 @@ class StaffAdd extends React.Component {
 
 		var uuid = this.generateUUID();
 		var shiftTotal = parseInt(formDataObj.quantity) * this.getShiftValue(formDataObj.shift);
-		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, days: formDataObj.days };
+		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, date: formDataObj.date };
 
+
+		console.log(staff);
+		console.log(typeof(staff.date))
 		this.props.onStaffAdd(staff);
 		// this.props.calEvents.push({ title: formDataObj.staffType, date: '2022-03-10' })
 		this.handleClose();
@@ -138,13 +141,10 @@ class StaffAdd extends React.Component {
 							</Form.Group>
 							<Form.Group className="mb-3" controlId="dayOfWeek" required>
 							<Tooltip
-                  				content="Days of the week they work"direction="right">
-								<Form.Label>Days of the Week</Form.Label>
+                  				content="Date they work"direction="right">
+								<Form.Label>Date</Form.Label>
 							</Tooltip>
-								<Form.Control as="select" name="days" className="caret">
-									<option value="week">M, Tu, W, Th, F</option>
-									<option value="weekend">Sa, Su</option>
-								</Form.Control>
+    							<Form.Control name="date" type="text" placeholder="YYYY-MM-DD" />
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>
