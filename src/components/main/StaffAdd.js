@@ -65,6 +65,16 @@ class StaffAdd extends React.Component {
 		if(formDataObj.shift === "12 Hours Day"){
 			timeStart = timeStart+"T07:00:00";
 			timeEnd = timeEnd+"T19:00:00";
+		}else if (formDataObj.shift === "12 Hours Night"){
+			timeStart = timeStart+"T19:00:00";
+		}else if (formDataObj.shift === "8 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T15:00:00";
+		}else if (formDataObj.shift === "8 Hours Evening"){
+			timeStart = timeStart+"T15:00:00";
+			timeEnd = timeEnd+"T23:00:00";
+		}else if (formDataObj.shift === "8 Hours Night"){
+			timeStart = timeStart+"T23:00:00";
 		}
 		
 		// console.log(formDataObj.shift);
