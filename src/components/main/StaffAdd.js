@@ -62,6 +62,9 @@ class StaffAdd extends React.Component {
 		var shiftTotal = parseInt(formDataObj.quantity) * this.getShiftValue(formDataObj.shift);
 		var timeStart = formDataObj.date;
 		var timeEnd = formDataObj.date;
+		let year = timeStart.substring(0,4)
+		let month = timeStart.substring(5,7)
+		let day = timeStart.substring(8,10)
 		if(formDataObj.shift === "12 Hours Day"){
 			timeStart = timeStart+"T07:00:00";
 			timeEnd = timeEnd+"T19:00:00";
@@ -76,6 +79,10 @@ class StaffAdd extends React.Component {
 		}else if (formDataObj.shift === "8 Hours Night"){
 			timeStart = timeStart+"T23:00:00";
 		}
+		
+		console.log(year);
+		console.log(month);
+		console.log(day);
 		
 		// console.log(formDataObj.shift);
 		// console.log(timeStr);
