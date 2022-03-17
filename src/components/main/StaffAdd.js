@@ -83,20 +83,10 @@ class StaffAdd extends React.Component {
 			day++;
 			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
 		}
-		
-		// console.log(year);
-		// console.log(month);
-		// console.log(day);
-		
-		// console.log(formDataObj.shift);
-		// console.log(timeStr);
+	
 		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, start: timeStart, end: timeEnd, name: formDataObj.name };
-
-
-		console.log(staff);
 		
 		this.props.onStaffAdd(staff);
-		// this.props.calEvents.push({ title: formDataObj.staffType, date: '2022-03-10' })
 		this.handleClose();
 	}
 
