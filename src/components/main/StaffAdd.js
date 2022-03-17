@@ -104,6 +104,14 @@ class StaffAdd extends React.Component {
 						</Modal.Header>
 						<Modal.Body>
 
+						<Form.Group className="mb-3" controlId="name" required>
+							<Tooltip
+                  				content="Name of staff"direction="right">
+								<Form.Label>Staff Name</Form.Label>
+							</Tooltip>
+    							<Form.Control name="name" type="text"/>
+							</Form.Group>
+
 							<Form.Group className="mb-3" controlId="staffType" required>
 							<Tooltip
                   				content="This enables the nurses schedule staff members based on their license (RN, LVN, UNLICENSED)."direction="right">
