@@ -60,11 +60,20 @@ class StaffAdd extends React.Component {
 
 		var uuid = this.generateUUID();
 		var shiftTotal = parseInt(formDataObj.quantity) * this.getShiftValue(formDataObj.shift);
-		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, date: formDataObj.date, name: formDataObj.name };
+		var timeStart = formDataObj.date;
+		var timeEnd = formDataObj.date;
+		if(formDataObj.shift === "12 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T19:00:00";
+		}
+		
+		// console.log(formDataObj.shift);
+		// console.log(timeStr);
+		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, start: timeStart, end: timeEnd, name: formDataObj.name };
 
 
 		console.log(staff);
-		console.log(typeof(staff.date))
+		
 		this.props.onStaffAdd(staff);
 		// this.props.calEvents.push({ title: formDataObj.staffType, date: '2022-03-10' })
 		this.handleClose();

@@ -50,9 +50,9 @@ class Scenario extends React.Component {
   handleStaffAdd = (staffItem) => {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
-    let events = [...this.state.calEvents, {title: staffItem.name, date: staffItem.date}]
+    let events = [...this.state.calEvents, {title: staffItem.name, start: staffItem.start, end:staffItem.end}]
     console.log(events)
-    console.log(typeof(staffItem.date))
+    console.log(staffItem.date)
     this.setState({ calEvents: events});
 
     // console.log(events);
