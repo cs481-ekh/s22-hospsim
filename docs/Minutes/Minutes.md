@@ -6,11 +6,11 @@
 #### Items discussed:
 * Meeting with Dr.Walters
   * Dr. Walters was impressed with the calendar implementation so far.
-  * Andrew walked her through the implementation of the calendar and also suggested other improvements like adding a monthly budget. Dr walters was okay with that but also     wanted daily and maybe weekly budget display as well.
+  * Andrew walked her through the implementation of the calendar and also suggested other improvements like adding a monthly budget. Dr walters was okay with that but    also wanted a two weeks budget display as well.
   * We asked Dr walters about adding more "?" being in front of every tooltip but she was okay with the way it is right now.
-  * Dr. walters wants us to implement the functionality for adding staff daily because scheduling for nurses are done in a 3 days period (12 hours per day) as opposed to the     normal five days (8 hours per day) work week.
-
-
+  * Dr. walters wants us to implement the functionality for adding staff every two weeks and extend it to months if we like.
+  * Dr. walters also wants us to include show budget and show cal in a pop-up menu. So that we can include more settings and not clutter the page.
+  
 ## Meeting Minutes 3/15/2022 (Week 10)
 #### Scrum Master: Jonathan
 #### Scribe: Chinwendum Njoku
