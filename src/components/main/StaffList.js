@@ -1,6 +1,6 @@
 import React from 'react';
 import './StaffList.css';
-import { Dash, Plus, Trash,ArrowUp,ArrowDown } from 'react-bootstrap-icons';
+import { Dash, Plus, Trash } from 'react-bootstrap-icons';
 import { Form } from "react-bootstrap";
 import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
@@ -10,8 +10,12 @@ class StaffList extends React.Component {
         super(props);
      
         this.state = { 
-            shiftFilter: "All" 
+            shiftFilter: "All",
+            filterStaffTypeAsc: false,
+            filterShiftTypeAsc: false,
+            filterQtyAsc: false 
         };
+        
       }
 
     listAdd = (index) =>{
@@ -64,8 +68,8 @@ class StaffList extends React.Component {
 
     }
 
+    //Sorts the tables.
     filter = (criteria,isAscend) => {
-    
         if (criteria === "staff_type"){
            this.props.staffs.sort((a,b)=> {
                 if (a.type === b.type) return 0;
@@ -77,6 +81,7 @@ class StaffList extends React.Component {
            });
         }else if (criteria === "shift_type"){
             this.props.staffs.sort((a,b)=> {
+
                 if (a.shift === b.shift) return 0;
                 //Sorts in ascending order
                 if (a.shift < b.shift && isAscend ) return -1;
@@ -88,18 +93,18 @@ class StaffList extends React.Component {
         else if (criteria === "quantity"){
             this.props.staffs.sort((a,b)=> {
                 if (a.quantity === b.quantity) return 0;
-                //Sorts in ascending order
                 if (a.quantity < b.quantity && isAscend ) return -1;
                 else return 1;
 
 
            });
         }
-        this.props.onStaffChangeOnUpdate(this.props.staffs);
+           this.props.onStaffChangeOnUpdate(this.props.staffs)
     }
 
     //Filter by staff
     render() {
+        
         const staffList = this.props.staffs
         .filter((staff) =>{
             if(this.state.shiftFilter)
@@ -161,49 +166,40 @@ class StaffList extends React.Component {
                         <th scope="col">
 
 								<Form.Label>Staff Type</Form.Label>
-								<select id="DropdownMenu">
-                                var string = [
-                                    "Select",
-                                    "LVN",
-                                    "RN",
-                                    "UNLICENSED",
-                                    "8 Hours Night",
-                                    "12 Hours Night"
-                                ];
-                                {/* var stringArray = string.split('');
-                                stringArray.sort();
-                                stringArray.join(' ');
-                                return stringArray === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All"; */}
-                            </select>								
+						                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
+                                    this.state.filterStaffTypeAsc = !this.state.filterStaffTypeAsc;
+         			    this.state.filterShiftTypeAsc = false;
+            			    this.state.filterQtyAsc = false;
+
+                                    this.filter("staff_type",this.state.filterStaffTypeAsc);
+				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
+                                  }}> <i class={this.state.filterStaffTypeAsc?"arrow up": "arrow down"}></i> </Form.Label>
                         </th>
                         <th scope="col">
-                        <Form.Label>Shift Type</Form.Label>
-                        <ArrowDown className='ml-4' name="toggle_filter"  onClick={e => {
-                                    this.setState({ shiftFilter: e.target.value });
-                                  }}> </ArrowDown>
+                        <Form.Label>Quantity</Form.Label>
+                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
+                                    this.state.filterStaffTypeAsc = false;
+         			    this.state.filterShiftTypeAsc = false;
+            			    this.state.filterQtyAsc = !this.state.filterQtyAsc;
+
+                                    this.filter("quantity",this.state.filterQtyAsc);
+				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
+                                  }}><i class={this.state.filterQtyAsc?"arrow up": "arrow down"}></i> </Form.Label>
                         
                         </th>
                         <th scope="col">
                         <Form.Label>Shift </Form.Label>
-                        <select id="DropdownMenu ">
-                                var string = [
-                                    "Select",
-                                    " Day",                             
-                                    " Evening",
-                                    " Night"                                  
-                                ];
+                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
+                                    this.state.filterStaffTypeAsc = false;
+         			    this.state.filterShiftTypeAsc = !this.state.filterShiftTypeAsc;
+            			    this.state.filterQtyAsc = false;
 
-                        </select>                              
+                                    this.filter("shift_type",this.state.filterShiftTypeAsc);
+				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
+                                  }}> <i class={this.state.filterShiftTypeAsc?"arrow up": "arrow down"}></i></Form.Label>
                         </th>
                         <th scope="col">
                         <Form.Label>Shift Total</Form.Label>
-                        <select id= "DropdownMenu ">
-                                var string = [
-                                    "Select",
-                                    "8 ",
-                                    "12 "
-                                ];
-                            </select>                          
                         </th>
                     </tr> : false}
                 </thead>
@@ -214,7 +210,7 @@ class StaffList extends React.Component {
 
             </table>
             </div>
-: null
+ : null
         
         );
     }
