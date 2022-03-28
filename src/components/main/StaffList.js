@@ -74,8 +74,14 @@ class StaffList extends React.Component {
            this.props.staffs.sort((a,b)=> {
                 if (a.type === b.type) return 0;
                 //Sorts in ascending order
-                if (a.type < b.type && isAscend ) return -1;
-                else return 1;
+                if (isAscend){
+                    if (a.type < b.type ) return -1;
+                    else return 1;
+                }else{
+                    if (a.type < b.type ) return 1;
+                    else return -1;
+                }
+               
 
 
            });
@@ -84,17 +90,26 @@ class StaffList extends React.Component {
 
                 if (a.shift === b.shift) return 0;
                 //Sorts in ascending order
-                if (a.shift < b.shift && isAscend ) return -1;
-                else return 1;
+                if (isAscend){
+                    if (a.shift < b.shift ) return -1;
+                    else return 1;
+                }else{
+                    if (a.shift < b.shift ) return 1;
+                    else return -1;
+                }
 
 
            });
         }
         else if (criteria === "quantity"){
             this.props.staffs.sort((a,b)=> {
-                if (a.quantity === b.quantity) return 0;
-                if (a.quantity < b.quantity && isAscend ) return -1;
-                else return 1;
+                if (isAscend){
+                    if (a.quantity < b.quantity ) return -1;
+                    else return 1;
+                }else{
+                    if (a.quantity < b.quantity ) return 1;
+                    else return -1;
+                }
 
 
            });
@@ -165,22 +180,19 @@ class StaffList extends React.Component {
                         <th></th>
                         <th scope="col">
 
-								<Form.Label>Staff Type</Form.Label>
+								<Form.Label>Staff Type</Form.Label> <span/>
 						                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                    this.state.filterStaffTypeAsc = !this.state.filterStaffTypeAsc;
-         			    this.state.filterShiftTypeAsc = false;
-            			    this.state.filterQtyAsc = false;
+                           
+                            this.setState({ filterStaffTypeAsc: !this.state.filterStaffTypeAsc, filterShiftTypeAsc: false, filterQtyAsc:  false});
 
                                     this.filter("staff_type",this.state.filterStaffTypeAsc);
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
                                   }}> <i class={this.state.filterStaffTypeAsc?"arrow up": "arrow down"}></i> </Form.Label>
                         </th>
                         <th scope="col">
-                        <Form.Label>Quantity</Form.Label>
+                        <Form.Label>Quantity</Form.Label> <span/>
                         <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                    this.state.filterStaffTypeAsc = false;
-         			    this.state.filterShiftTypeAsc = false;
-            			    this.state.filterQtyAsc = !this.state.filterQtyAsc;
+                                     this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: false, filterQtyAsc: !this.state.filterQtyAsc});
 
                                     this.filter("quantity",this.state.filterQtyAsc);
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
@@ -188,11 +200,9 @@ class StaffList extends React.Component {
                         
                         </th>
                         <th scope="col">
-                        <Form.Label>Shift </Form.Label>
+                        <Form.Label>Shift </Form.Label> <span/>
                         <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                    this.state.filterStaffTypeAsc = false;
-         			    this.state.filterShiftTypeAsc = !this.state.filterShiftTypeAsc;
-            			    this.state.filterQtyAsc = false;
+                                     this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: !this.state.filterShiftTypeAsc, filterQtyAsc:  false});
 
                                     this.filter("shift_type",this.state.filterShiftTypeAsc);
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
