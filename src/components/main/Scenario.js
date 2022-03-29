@@ -54,19 +54,29 @@ class Scenario extends React.Component {
   handleStaffAdd = (staffItem) => {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
-    console.log(staffItem);
+    // console.log(staffItem);
     //check for shift type
-		// if(staffItem.type === "RN"){
+		if(staffItem.type === "RN"){
+      let events = [...this.state.eventsRN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+      this.setState({ eventsRN: events});
+      console.log(events);
+		}else if(staffItem.type === "LVN"){
+      let events = [...this.state.eventsLVN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+      this.setState({ eventsLVN: events});
+      console.log(events);
+		}else if(staffItem.type === "Unlicensed"){
+			let events = [...this.state.eventsUN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+      this.setState({ eventsUN: events});
+      console.log(events);
+		}
 
-		// }else if(formDataObj.staffType === "LVN"){
-
-		// }else if(formDataObj.staffType === "Unlicensed"){
-			
-		// }
-
-    let events = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
-    this.setState({ calEvents: events});
-    console.log(events);
+    let eventsAll = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+    this.setState({ calEvents: eventsAll});
+    // console.log(this.state.eventsRN);
+    // console.log(this.state.eventsLVN);
+    // console.log(this.state.eventsUN);
+    // console.log(this.state.eventsAll);
+    
   };
 
   handleInfoChange = (info) => {
