@@ -345,7 +345,6 @@ class Scenario extends React.Component {
             <EventCalendar
             eventsArry={this.state.calEvents}
             showCal={this.state.showCal}
-            tc={this.state.textColor}
             bc={this.state.backgroundColor}>
             
             
