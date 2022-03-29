@@ -24,6 +24,9 @@ class Scenario extends React.Component {
       showBudget: false,
       showCal: true,  //just cuz
       calEvents: [],
+      eventsRN: [],
+      eventsLVN: [],
+      eventsUN: [],
       info: {
         unit: "",
         HPPD: "",
@@ -51,6 +54,16 @@ class Scenario extends React.Component {
   handleStaffAdd = (staffItem) => {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
+    console.log(staffItem);
+    //check for shift type
+		// if(staffItem.type === "RN"){
+
+		// }else if(formDataObj.staffType === "LVN"){
+
+		// }else if(formDataObj.staffType === "Unlicensed"){
+			
+		// }
+
     let events = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
     this.setState({ calEvents: events});
     console.log(events);
