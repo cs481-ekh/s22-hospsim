@@ -20,9 +20,7 @@ class Scenario extends React.Component {
       num: "",
       center: { "text-align": "center" },
       staffs: [],
-      // textColor: ["Red","Green","Yellow"], //0 is RN, 1 is LVN, 2 is Unlic
-      textColor: ["black","black","white"], //0 is RN, 1 is LVN, 2 is Unlic
-      backgroundColor: ["Khaki","DarkGrey","Lavender","DarkOrchid","MidnightBlue"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
+      backgroundColor: ["#ceeafd","#39adf9","#ffe4b3","#ffc14d","#ffa500"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
       showBudget: false,
       showCal: true,  //just cuz
       calEvents: [],
