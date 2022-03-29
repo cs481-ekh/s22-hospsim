@@ -113,7 +113,7 @@ class StaffAdd extends React.Component {
 			start: timeStart, 
 			end: timeEnd, 
 			name: formDataObj.name, 
-			textColor: textColorVar, 
+			textColor: "black", 
 			backgroundColor: backgroundColorVar};
 		
 		this.props.onStaffAdd(staff);
