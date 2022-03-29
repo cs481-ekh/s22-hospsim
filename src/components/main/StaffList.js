@@ -62,7 +62,6 @@ class StaffList extends React.Component {
         this.props.events.splice(index,1)
 
         this.props.onStaffChangeOnUpdateCal(this.props.events)
-
         this.props.onStaffChangeOnUpdateCal(this.props.events)
         this.props.onStaffChangeOnUpdate(this.props.staffs)
 

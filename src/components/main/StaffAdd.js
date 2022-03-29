@@ -65,26 +65,56 @@ class StaffAdd extends React.Component {
 		let year = timeStart.substring(0,4)
 		let month = timeStart.substring(5,7)
 		let day = timeStart.substring(8,10)
+		var textColorVar = "black";
+		var backgroundColorVar = 'lightgrey';
+
+		//check for day times
 		if(formDataObj.shift === "12 Hours Day"){
 			timeStart = timeStart+"T07:00:00";
 			timeEnd = timeEnd+"T19:00:00";
+			backgroundColorVar = this.props.backgroundColor[0];
 		}else if (formDataObj.shift === "12 Hours Night"){
 			timeStart = timeStart+"T19:00:00";
 			day++;
 			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+			backgroundColorVar = this.props.backgroundColor[1];
 		}else if (formDataObj.shift === "8 Hours Day"){
 			timeStart = timeStart+"T07:00:00";
 			timeEnd = timeEnd+"T15:00:00";
+			backgroundColorVar = this.props.backgroundColor[2];
 		}else if (formDataObj.shift === "8 Hours Evening"){
 			timeStart = timeStart+"T15:00:00";
 			timeEnd = timeEnd+"T23:00:00";
+			backgroundColorVar = this.props.backgroundColor[3];
 		}else if (formDataObj.shift === "8 Hours Night"){
 			timeStart = timeStart+"T23:00:00";
 			day++;
 			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+			backgroundColorVar = this.props.backgroundColor[4];
 		}
+
+		//check for shift type
+		if(formDataObj.staffType === "RN"){
+			textColorVar = this.props.textColor[0];
+		}else if(formDataObj.staffType === "LVN"){
+			textColorVar = this.props.textColor[1];
+		}else if(formDataObj.staffType === "Unlicensed"){
+			textColorVar = this.props.textColor[2];
+		}
+
+
 	
-		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, start: timeStart, end: timeEnd, name: formDataObj.name };
+		let staff = {
+			id: uuid,
+			quantity: formDataObj.quantity, 
+			type: formDataObj.staffType, 
+			shift: formDataObj.shift, 
+			shiftTotal: shiftTotal, 
+			start: timeStart, 
+			end: timeEnd, 
+			name: formDataObj.name, 
+			textColor: textColorVar, 
+			backgroundColor: backgroundColorVar};
 		
 		this.props.onStaffAdd(staff);
 		this.handleClose();

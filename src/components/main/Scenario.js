@@ -20,8 +20,11 @@ class Scenario extends React.Component {
       num: "",
       center: { "text-align": "center" },
       staffs: [],
+      // textColor: ["Red","Green","Yellow"], //0 is RN, 1 is LVN, 2 is Unlic
+      textColor: ["black","black","white"], //0 is RN, 1 is LVN, 2 is Unlic
+      backgroundColor: ["Khaki","DarkGrey","Lavender","DarkOrchid","MidnightBlue"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
       showBudget: false,
-      showCal: false,
+      showCal: true,  //just cuz
       calEvents: [],
       info: {
         unit: "",
@@ -50,8 +53,9 @@ class Scenario extends React.Component {
   handleStaffAdd = (staffItem) => {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
-    let events = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end}]
+    let events = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
     this.setState({ calEvents: events});
+    console.log(events);
   };
 
   handleInfoChange = (info) => {
@@ -320,6 +324,8 @@ class Scenario extends React.Component {
                   onStaffChange={this.handleStaffChange}
                   onStaffAdd={this.handleStaffAdd}
                   staffs={this.state.staffs}
+                  backgroundColor = {this.state.backgroundColor}
+                  textColor = {this.state.textColor}
                 />
               </div>
             </div>
@@ -340,7 +346,9 @@ class Scenario extends React.Component {
 
             <EventCalendar
             eventsArry={this.state.calEvents}
-            showCal={this.state.showCal}>
+            showCal={this.state.showCal}
+            tc={this.state.textColor}
+            bc={this.state.backgroundColor}>
             
             
             </EventCalendar>
