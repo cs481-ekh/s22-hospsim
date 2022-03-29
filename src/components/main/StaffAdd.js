@@ -93,15 +93,6 @@ class StaffAdd extends React.Component {
 			backgroundColorVar = this.props.backgroundColor[4];
 		}
 
-		//check for shift type
-		if(formDataObj.staffType === "RN"){
-			textColorVar = this.props.textColor[0];
-		}else if(formDataObj.staffType === "LVN"){
-			textColorVar = this.props.textColor[1];
-		}else if(formDataObj.staffType === "Unlicensed"){
-			textColorVar = this.props.textColor[2];
-		}
-
 
 	
 		let staff = {
