@@ -173,6 +173,7 @@ class Scenario extends React.Component {
     return newErrors;
   };
 
+  //Menu Side-bar
     $route(route) => {
       if (this.device === 'mobile' && this.sidebar.opened) {
         store.dispatch('app/closeSideBar', {
