@@ -65,7 +65,6 @@ class StaffAdd extends React.Component {
 		let year = timeStart.substring(0,4)
 		let month = timeStart.substring(5,7)
 		let day = timeStart.substring(8,10)
-		var textColorVar = "black";
 		var backgroundColorVar = 'lightgrey';
 
 		//check for day times
