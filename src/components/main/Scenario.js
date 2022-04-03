@@ -173,6 +173,15 @@ class Scenario extends React.Component {
     return newErrors;
   };
 
+    $route(route) => {
+      if (this.device === 'mobile' && this.sidebar.opened) {
+        store.dispatch('app/closeSideBar', {
+        withoutAnimation: false
+        })
+      }
+    };
+
+
   //https://paladini.dev/posts/how-to-make-an-extremely-reusable-tooltip-component-with-react--and-nothing-else/
 
   render() {
@@ -182,7 +191,8 @@ class Scenario extends React.Component {
           <div className="col-md-4 ">
             <RandomHPPDInfo onInfoChange={this.handleInfoChange} />
           </div>
-
+          <title> MENU-OPTIONS </title>
+         
           <div className="col-md-8 fs-5">
             <div className="float-sm-end">
               <div id="righticon">
