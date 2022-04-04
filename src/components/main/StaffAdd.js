@@ -3,6 +3,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import './StaffAdd.css';
 import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
+// import EventCalendar from "./EventCalendar";
 
 // also noticing another bug where the url is holding the value of the selected items in the modal. We should look at how to fix this in the next sprint because it might look different after the refactor
 class StaffAdd extends React.Component {
@@ -59,8 +60,52 @@ class StaffAdd extends React.Component {
 
 		var uuid = this.generateUUID();
 		var shiftTotal = parseInt(formDataObj.quantity) * this.getShiftValue(formDataObj.shift);
-		let staff = { id: uuid, quantity: formDataObj.quantity, type: formDataObj.staffType, shift: formDataObj.shift, shiftTotal: shiftTotal, days: formDataObj.days };
+		var timeStart = formDataObj.date;
+		var timeEnd = formDataObj.date;
+		let year = timeStart.substring(0,4)
+		let month = timeStart.substring(5,7)
+		let day = timeStart.substring(8,10)
+		var backgroundColorVar = 'lightgrey';
 
+		//check for day times
+		if(formDataObj.shift === "12 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T19:00:00";
+			backgroundColorVar = this.props.backgroundColor[0];
+		}else if (formDataObj.shift === "12 Hours Night"){
+			timeStart = timeStart+"T19:00:00";
+			day++;
+			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+			backgroundColorVar = this.props.backgroundColor[1];
+		}else if (formDataObj.shift === "8 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T15:00:00";
+			backgroundColorVar = this.props.backgroundColor[2];
+		}else if (formDataObj.shift === "8 Hours Evening"){
+			timeStart = timeStart+"T15:00:00";
+			timeEnd = timeEnd+"T23:00:00";
+			backgroundColorVar = this.props.backgroundColor[3];
+		}else if (formDataObj.shift === "8 Hours Night"){
+			timeStart = timeStart+"T23:00:00";
+			day++;
+			timeEnd = year+'-'+month+'-'+day+"T07:00:00"
+			backgroundColorVar = this.props.backgroundColor[4];
+		}
+
+
+	
+		let staff = {
+			id: uuid,
+			quantity: formDataObj.quantity, 
+			type: formDataObj.staffType, 
+			shift: formDataObj.shift, 
+			shiftTotal: shiftTotal, 
+			start: timeStart, 
+			end: timeEnd, 
+			name: formDataObj.name, 
+			textColor: "black", 
+			backgroundColor: backgroundColorVar};
+		
 		this.props.onStaffAdd(staff);
 		this.handleClose();
 	}
@@ -99,6 +144,14 @@ class StaffAdd extends React.Component {
 						</Modal.Header>
 						<Modal.Body>
 
+						<Form.Group className="mb-3" controlId="name" required>
+							<Tooltip
+                  				content="Name of staff"direction="right">
+								<Form.Label>Staff Name</Form.Label>
+							</Tooltip>
+    							<Form.Control name="name" type="text"/>
+							</Form.Group>
+
 							<Form.Group className="mb-3" controlId="staffType" required>
 							<Tooltip
                   				content="This enables the nurses schedule staff members based on their license (RN, LVN, UNLICENSED)."direction="right">
@@ -136,13 +189,10 @@ class StaffAdd extends React.Component {
 							</Form.Group>
 							<Form.Group className="mb-3" controlId="dayOfWeek" required>
 							<Tooltip
-                  				content="Days of the week they work"direction="right">
-								<Form.Label>Days of the Week</Form.Label>
+                  				content="Date they work"direction="right">
+								<Form.Label>Date</Form.Label>
 							</Tooltip>
-								<Form.Control as="select" name="days" className="caret">
-									<option value="week">M, Tu, W, Th, F</option>
-									<option value="weekend">Sa, Su</option>
-								</Form.Control>
+    							<Form.Control name="date" type="text" placeholder="YYYY-MM-DD" />
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>
