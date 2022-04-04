@@ -3,8 +3,10 @@ import { Modal, Button, Form } from "react-bootstrap";
 import './StaffAdd.css';
 import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
-// import EventCalendar from "./EventCalendar";
+//import EventCalendar from "./EventCalendar";
 
+//global uuid
+let uuid = 0;
 // also noticing another bug where the url is holding the value of the selected items in the modal. We should look at how to fix this in the next sprint because it might look different after the refactor
 class StaffAdd extends React.Component {
 	constructor(props) {
@@ -14,6 +16,8 @@ class StaffAdd extends React.Component {
 			show: false,
 		};
 	}
+
+	
 
 	//Used to generate an ID for each Staff entry.  We might want ID later to manipulate the staffs collection.
 	generateUUID = () => {
@@ -109,6 +113,9 @@ class StaffAdd extends React.Component {
 		this.props.onStaffAdd(staff);
 		this.handleClose();
 	}
+
+	//delete from calendar
+
 
 	
 

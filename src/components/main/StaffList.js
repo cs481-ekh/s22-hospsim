@@ -62,11 +62,13 @@ class StaffList extends React.Component {
         this.props.staffs.splice(index,1)
         this.props.events.splice(index,1)
 
-        this.props.onStaffChangeOnUpdateCal(this.props.events)
+        
+        //this.props.onStaffChangeOnUpdateCal(this.props.events)
         //this.props.onStaffChangeOnUpdateCal(this.props.events)
         this.props.onStaffChangeOnUpdate(this.props.staffs)
-
         //Calendar.getEventByID(this.props.events).remove()
+        //this.props.onStaffChangeOnUpdate(this.props.Calendar.getEventByID)
+        
 
 
     }
@@ -85,7 +87,7 @@ class StaffList extends React.Component {
         <tr key={staff.id} id={staff.id} >
             
             <td >
-                <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
+                <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)}/>
             </td>
             <td>{staff.name}</td>
             <td>{staff.type}</td>
