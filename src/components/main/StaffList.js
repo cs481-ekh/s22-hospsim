@@ -66,8 +66,8 @@ class StaffList extends React.Component {
         //this.props.onStaffChangeOnUpdateCal(this.props.events)
         //this.props.onStaffChangeOnUpdateCal(this.props.events)
         this.props.onStaffChangeOnUpdate(this.props.staffs)
-        //Calendar.getEventByID(this.props.events).remove()
         //this.props.onStaffChangeOnUpdate(this.props.Calendar.getEventByID)
+        //this.props.onStaffRemoveOnUpdateCal(this.props.events)
         
 
 

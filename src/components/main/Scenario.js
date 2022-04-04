@@ -10,6 +10,7 @@ import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
 import logo from "../../assets/noun-help-2492040.png";
 import Tooltip from "./Tooltip";
+import { Calendar } from "react-bootstrap-icons";
 
 class Scenario extends React.Component {
   constructor(props) {
@@ -48,6 +49,8 @@ class Scenario extends React.Component {
   };
   handleStaffChangeCal = (event) => {
     this.setState({ calEvents: event})
+    //this.calendarRef.current.render()
+    
   };
 
 
@@ -357,7 +360,9 @@ class Scenario extends React.Component {
                   staffs={this.state.staffs}
                   onStaffChangeOnUpdate={this.handleStaffChange}
                   onStaffChangeOnUpdateCal={this.handleStaffChangeCal}
+                  
                   events={this.state.calEvents}
+                  
                 ></StaffList>
               </div>
             </div>
@@ -368,7 +373,6 @@ class Scenario extends React.Component {
             <EventCalendar
             eventsArry={this.state.calEvents}
             showCal={this.state.showCal}
-            onStaffChangeOnUpdateCal={this.handleStaffChangeCal}
             events={this.state.calEvents}
             bc={this.state.backgroundColor}>
              

@@ -4,18 +4,25 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import { Calendar } from 'react-bootstrap-icons';
 
 export default class EventCalendar extends Component{
 
+  
+  
+
     render(){
         console.log("rendered cal")
+        
+        //EventCalendar.refetchEvents()
+        let calRefresh = this.calendarRef.current.refetchEvents()
         
         return(
             this.props.showCal ?
                 <div>
 
-                <FullCalendar
-
+                <FullCalendar ref={this.calendarRef}
+                
                 plugins={[ dayGridPlugin, interactionPlugin , timeGridPlugin]}
               
                 //selectable
@@ -51,15 +58,19 @@ export default class EventCalendar extends Component{
 
                 // ]}
                 events={this.props.eventsArry}
+                //let calRefresh = this.calendarRef.current.refetchEvents()
+                
 
                 />
                 </div>
             :
             null
 
+
         )
 
     }
+   
     
 
 }
