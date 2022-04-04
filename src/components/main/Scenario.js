@@ -215,7 +215,7 @@ class Scenario extends React.Component {
                 </Tooltip>
 </Dropdown.Item>
     
- {/*Added a onClick listener to toggle the check chenge budget*/}
+ {/*Added a onClick listener to toggle the check change budget*/}
 <Dropdown.Item 
                     onClick={this.handleCheckChangeCal}>
 
@@ -238,7 +238,7 @@ class Scenario extends React.Component {
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
                 </Tooltip>
 </Dropdown.Item>
-  </Dropdown.Menu>
+</Dropdown.Menu>
 </Dropdown>              
 
 <div id="righticon">
