@@ -10,7 +10,8 @@ import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
 import logo from "../../assets/noun-help-2492040.png";
 import Tooltip from "./Tooltip";
-
+import Dropdown from 'react-bootstrap/Dropdown'
+import { MenuUp } from 'react-bootstrap-icons';
 class Scenario extends React.Component {
   constructor(props) {
     super(props);
@@ -126,23 +127,21 @@ class Scenario extends React.Component {
 
   // handle show budget check change
   handleCheckChangeBudget = (event) => {
-    const target = event.target;
-    const value = target.checked;
-
+    // Changed this listener to work with the dropdown menu
+    var val = !this.state.showBudget;
     this.setState((prevState) => {
       let showBudget = Object.assign({}, prevState.showBudget);
-      showBudget = value;
+      showBudget = val;
       return { showBudget };
     });
   };
   // handle show budget check change
   handleCheckChangeCal = (event) => {
-    const target = event.target;
-    const value = target.checked;
-
+    var val = !this.state.showCal;
+    // Changed this listener to work with the dropdown menu
     this.setState((prevState) => {
       let showCal = Object.assign({}, prevState.showCal);
-      showCal = value;
+      showCal = val;
       return { showCal };
     });
 
@@ -173,16 +172,6 @@ class Scenario extends React.Component {
     return newErrors;
   };
 
-  //Menu Side-bar
-    $route(route) => {
-      if (this.device === 'mobile' && this.sidebar.opened) {
-        store.dispatch('app/closeSideBar', {
-        withoutAnimation: false
-        })
-      }
-    };
-
-
   //https://paladini.dev/posts/how-to-make-an-extremely-reusable-tooltip-component-with-react--and-nothing-else/
 
   render() {
@@ -192,12 +181,19 @@ class Scenario extends React.Component {
           <div className="col-md-4 ">
             <RandomHPPDInfo onInfoChange={this.handleInfoChange} />
           </div>
-          <title> MENU-OPTIONS </title>
-         
+
           <div className="col-md-8 fs-5">
             <div className="float-sm-end">
-              <div id="righticon">
-                <label>
+<Dropdown>
+  <Dropdown.Toggle variant="primary" id="dropdown-basic">
+   <MenuUp/>
+</Dropdown.Toggle>
+ {/*Added a drop down menu*/}
+  <Dropdown.Menu>
+ {/*Added a onClick listener to toggle the check chenge budget*/}
+    <Dropdown.Item 
+                    onClick={this.handleCheckChangeBudget}
+ >
                   <input
                     type="checkbox"
 
@@ -205,12 +201,11 @@ class Scenario extends React.Component {
                     label="Show Budget"
                     name="showBudget"
                     data-testid="showbudget-id"
+                    
                     checked={this.state.showBudget}
-                    onChange={this.handleCheckChangeBudget}
 
                   />
                   Show Budget
-                </label>
                 <Tooltip
                   content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
                           and time of day (Day shift hours, evening shift hours, and night shift hours)"
@@ -218,8 +213,12 @@ class Scenario extends React.Component {
                 >
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
                 </Tooltip>
-              </div>
-              <div id="show cal">
+</Dropdown.Item>
+    
+ {/*Added a onClick listener to toggle the check chenge budget*/}
+<Dropdown.Item 
+                    onClick={this.handleCheckChangeCal}>
+
                 <label>
                   <input
                     type="checkbox"
@@ -228,7 +227,6 @@ class Scenario extends React.Component {
                     name="showCal"
                     data-testid="showcal-id"
                     checked={this.state.showCal}
-                    onChange={this.handleCheckChangeCal}
 
                   />
                   Show Calender
@@ -239,6 +237,13 @@ class Scenario extends React.Component {
                 >
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
                 </Tooltip>
+</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>              
+
+<div id="righticon">
+              </div>
+              <div id="show cal">
               </div>
 
               <div></div>

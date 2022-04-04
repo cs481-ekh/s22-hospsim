@@ -81,6 +81,7 @@ class StaffList extends React.Component {
             .map((staff, i) =>
         <tr key={staff.id} id={staff.id} >
             
+        
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
             </td>
