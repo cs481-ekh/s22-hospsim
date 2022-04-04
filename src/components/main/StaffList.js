@@ -1,6 +1,7 @@
 import React from 'react';
 import './StaffList.css';
-import { Dash, Plus, Trash } from 'react-bootstrap-icons';
+import './StaffAdd.js';
+import { Calendar, Dash, Plus, Trash } from 'react-bootstrap-icons';
 import { Form } from "react-bootstrap";
 import logo from '../../assets/noun-help-2492040.png';
 import Tooltip from "./Tooltip";
@@ -62,8 +63,10 @@ class StaffList extends React.Component {
         this.props.events.splice(index,1)
 
         this.props.onStaffChangeOnUpdateCal(this.props.events)
-        this.props.onStaffChangeOnUpdateCal(this.props.events)
+        //this.props.onStaffChangeOnUpdateCal(this.props.events)
         this.props.onStaffChangeOnUpdate(this.props.staffs)
+
+        //Calendar.getEventByID(this.props.events).remove()
 
 
     }
