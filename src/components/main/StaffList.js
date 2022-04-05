@@ -71,6 +71,7 @@ class StaffList extends React.Component {
     
      //Sorts the tables.
      filter = (criteria,isAscend) => {
+
         if (criteria === "staff_type"){
            this.props.staffs.sort((a,b)=> {
                 if (a.type === b.type) return 0;
@@ -117,6 +118,7 @@ class StaffList extends React.Component {
         }
            this.props.onStaffChangeOnUpdate(this.props.staffs)
     }
+
 
 
     //Filter by staff
@@ -178,11 +180,14 @@ class StaffList extends React.Component {
                 <thead className="table-BSU">
                     {staffList.length > 0 ? <tr data-testid="staffList-id">
                         <th></th>
+
                         <th scope="col">
 
 								<Form.Label>Staff Type</Form.Label> <span/>
 						                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
+
                                     this.setState({ filterStaffTypeAsc: !this.state.filterStaffTypeAsc, filterShiftTypeAsc: false, filterQtyAsc:  false});
+
                                     this.filter("staff_type",this.state.filterStaffTypeAsc);
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
                                   }}> <i class={this.state.filterStaffTypeAsc?"arrow up": "arrow down"}></i> </Form.Label>
@@ -200,14 +205,19 @@ class StaffList extends React.Component {
                         <th scope="col">
                         <Form.Label>Shift </Form.Label> <span/>
                         <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
+
                                     this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: !this.state.filterShiftTypeAsc, filterQtyAsc:  false});
+
                                     this.filter("shift_type",this.state.filterShiftTypeAsc);
+
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
                                   }}> <i class={this.state.filterShiftTypeAsc?"arrow up": "arrow down"}></i></Form.Label>
                         </th>
                         <th scope="col">
                         <Form.Label>Shift Total</Form.Label>
                         </th>
+
+
                     </tr> : false}
                 </thead>
                 <tbody>
