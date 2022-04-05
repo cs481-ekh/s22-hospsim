@@ -67,8 +67,6 @@ class StaffList extends React.Component {
 
 
     }
-
-    
      //Sorts the tables.
      filter = (criteria,isAscend) => {
 
@@ -83,8 +81,6 @@ class StaffList extends React.Component {
                     if (a.type < b.type ) return 1;
                     else return -1;
                 }
-               
-
 
            });
         }else if (criteria === "shift_type"){
@@ -99,7 +95,6 @@ class StaffList extends React.Component {
                     if (a.shift < b.shift ) return 1;
                     else return -1;
                 }
-
 
            });
         }
@@ -118,8 +113,6 @@ class StaffList extends React.Component {
         }
            this.props.onStaffChangeOnUpdate(this.props.staffs)
     }
-
-
 
     //Filter by staff
     render() {
