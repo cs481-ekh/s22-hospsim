@@ -63,17 +63,14 @@ class StaffList extends React.Component {
     listRemove = (index) =>{
 
         this.props.staffs.splice(index,1)
-        this.props.events.splice(index,1)
-
-        this.props.onStaffChangeOnUpdateCal(this.props.events)
-        this.props.onStaffChangeOnUpdateCal(this.props.events)
         this.props.onStaffChangeOnUpdate(this.props.staffs)
 
 
     }
 
-    //Sorts the tables.
-    filter = (criteria,isAscend) => {
+    
+     //Sorts the tables.
+     filter = (criteria,isAscend) => {
         if (criteria === "staff_type"){
            this.props.staffs.sort((a,b)=> {
                 if (a.type === b.type) return 0;
@@ -121,6 +118,7 @@ class StaffList extends React.Component {
            this.props.onStaffChangeOnUpdate(this.props.staffs)
     }
 
+
     //Filter by staff
     render() {
         
@@ -135,11 +133,9 @@ class StaffList extends React.Component {
 
         .map((staff, i) =>
         <tr key={staff.id} id={staff.id} >
-            
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
             </td>
-            <td>{staff.name}</td>
             <td>{staff.type}</td>
             <td>
                <Plus className="bPlus" data-testid="add-id" onClick={this.listAdd.bind(staff,i)}/> 
@@ -162,9 +158,7 @@ class StaffList extends React.Component {
                                 <Tooltip content="This helps nurses filter the shift schedule by various groupings" direction="right">
                                     <img src={logo} alt="Filter shift Tooltip" width="50" height="50"/>
                                 </Tooltip>
-								<Form.Control as="select" name="shift" 
-
-                                
+								<Form.Control as="select" name="shift"                 
                                 onChange={e => {
                                     this.setState({ shiftFilter: e.target.value });
                                   }}
@@ -184,14 +178,11 @@ class StaffList extends React.Component {
                 <thead className="table-BSU">
                     {staffList.length > 0 ? <tr data-testid="staffList-id">
                         <th></th>
-
                         <th scope="col">
 
 								<Form.Label>Staff Type</Form.Label> <span/>
 						                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                           
-                            this.setState({ filterStaffTypeAsc: !this.state.filterStaffTypeAsc, filterShiftTypeAsc: false, filterQtyAsc:  false});
-
+                                    this.setState({ filterStaffTypeAsc: !this.state.filterStaffTypeAsc, filterShiftTypeAsc: false, filterQtyAsc:  false});
                                     this.filter("staff_type",this.state.filterStaffTypeAsc);
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
                                   }}> <i class={this.state.filterStaffTypeAsc?"arrow up": "arrow down"}></i> </Form.Label>
@@ -199,7 +190,7 @@ class StaffList extends React.Component {
                         <th scope="col">
                         <Form.Label>Quantity</Form.Label> <span/>
                         <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                     this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: false, filterQtyAsc: !this.state.filterQtyAsc});
+                                    this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: false, filterQtyAsc: !this.state.filterQtyAsc});
 
                                     this.filter("quantity",this.state.filterQtyAsc);
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
@@ -209,8 +200,7 @@ class StaffList extends React.Component {
                         <th scope="col">
                         <Form.Label>Shift </Form.Label> <span/>
                         <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                     this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: !this.state.filterShiftTypeAsc, filterQtyAsc:  false});
-
+                                    this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: !this.state.filterShiftTypeAsc, filterQtyAsc:  false});
                                     this.filter("shift_type",this.state.filterShiftTypeAsc);
 				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
                                   }}> <i class={this.state.filterShiftTypeAsc?"arrow up": "arrow down"}></i></Form.Label>
@@ -218,13 +208,6 @@ class StaffList extends React.Component {
                         <th scope="col">
                         <Form.Label>Shift Total</Form.Label>
                         </th>
-
-                        <th scope="col">Name</th>
-                        <th scope="col">Staff Type</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Shift</th>
-                        <th scope="col">Shift Total</th>
-
                     </tr> : false}
                 </thead>
                 <tbody>
