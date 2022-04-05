@@ -10,12 +10,8 @@ class StaffList extends React.Component {
         super(props);
      
         this.state = { 
-            shiftFilter: "All",
-            filterStaffTypeAsc: false,
-            filterShiftTypeAsc: false,
-            filterQtyAsc: false 
+            shiftFilter: "All" 
         };
-        
       }
 
     listAdd = (index) =>{
@@ -34,7 +30,7 @@ class StaffList extends React.Component {
            this.props.staffs[index].quantity = quantity
            this.props.staffs[index].shiftTotal = shiftTotal
            this.props.onStaffChangeOnUpdate(this.props.staffs)
-       } 
+       }
        
     }
 
@@ -72,68 +68,17 @@ class StaffList extends React.Component {
 
     }
 
-    //Sorts the tables.
-    filter = (criteria,isAscend) => {
-        if (criteria === "staff_type"){
-           this.props.staffs.sort((a,b)=> {
-                if (a.type === b.type) return 0;
-                //Sorts in ascending order
-                if (isAscend){
-                    if (a.type < b.type ) return -1;
-                    else return 1;
-                }else{
-                    if (a.type < b.type ) return 1;
-                    else return -1;
-                }
-               
 
-
-           });
-        }else if (criteria === "shift_type"){
-            this.props.staffs.sort((a,b)=> {
-
-                if (a.shift === b.shift) return 0;
-                //Sorts in ascending order
-                if (isAscend){
-                    if (a.shift < b.shift ) return -1;
-                    else return 1;
-                }else{
-                    if (a.shift < b.shift ) return 1;
-                    else return -1;
-                }
-
-
-           });
-        }
-        else if (criteria === "quantity"){
-            this.props.staffs.sort((a,b)=> {
-                if (isAscend){
-                    if (a.quantity < b.quantity ) return -1;
-                    else return 1;
-                }else{
-                    if (a.quantity < b.quantity ) return 1;
-                    else return -1;
-                }
-
-
-           });
-        }
-           this.props.onStaffChangeOnUpdate(this.props.staffs)
-    }
-
-    //Filter by staff
     render() {
-        
         const staffList = this.props.staffs
-        .filter((staff) =>{
-            if(this.state.shiftFilter)
-            {
-                return staff.shift === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All";  
-            }
-            return true;
-        })
-
-        .map((staff, i) =>
+            .filter((staff) =>{
+                if(this.state.shiftFilter)
+                {
+                    return staff.shift === this.state.shiftFilter || staff.type === this.state.shiftFilter ||this.state.shiftFilter === "All";  
+                }  
+                return true;
+            })
+            .map((staff, i) =>
         <tr key={staff.id} id={staff.id} >
             
             <td >
@@ -184,47 +129,11 @@ class StaffList extends React.Component {
                 <thead className="table-BSU">
                     {staffList.length > 0 ? <tr data-testid="staffList-id">
                         <th></th>
-
-                        <th scope="col">
-
-								<Form.Label>Staff Type</Form.Label> <span/>
-						                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                           
-                            this.setState({ filterStaffTypeAsc: !this.state.filterStaffTypeAsc, filterShiftTypeAsc: false, filterQtyAsc:  false});
-
-                                    this.filter("staff_type",this.state.filterStaffTypeAsc);
-				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
-                                  }}> <i class={this.state.filterStaffTypeAsc?"arrow up": "arrow down"}></i> </Form.Label>
-                        </th>
-                        <th scope="col">
-                        <Form.Label>Quantity</Form.Label> <span/>
-                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                     this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: false, filterQtyAsc: !this.state.filterQtyAsc});
-
-                                    this.filter("quantity",this.state.filterQtyAsc);
-				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
-                                  }}><i class={this.state.filterQtyAsc?"arrow up": "arrow down"}></i> </Form.Label>
-                        
-                        </th>
-                        <th scope="col">
-                        <Form.Label>Shift </Form.Label> <span/>
-                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                     this.setState({ filterStaffTypeAsc: false, filterShiftTypeAsc: !this.state.filterShiftTypeAsc, filterQtyAsc:  false});
-
-                                    this.filter("shift_type",this.state.filterShiftTypeAsc);
-				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
-                                  }}> <i class={this.state.filterShiftTypeAsc?"arrow up": "arrow down"}></i></Form.Label>
-                        </th>
-                        <th scope="col">
-                        <Form.Label>Shift Total</Form.Label>
-                        </th>
-
                         <th scope="col">Name</th>
                         <th scope="col">Staff Type</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Shift</th>
                         <th scope="col">Shift Total</th>
-
                     </tr> : false}
                 </thead>
                 <tbody>
@@ -234,7 +143,7 @@ class StaffList extends React.Component {
 
             </table>
             </div>
- : null
+: null
         
         );
     }
