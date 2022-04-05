@@ -20,8 +20,13 @@ class Scenario extends React.Component {
       num: "",
       center: { "text-align": "center" },
       staffs: [],
+      backgroundColor: ["#ceeafd","#39adf9","#ffe4b3","#ffc14d","#ffa500"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
       showBudget: false,
-      showCal: false,
+      showCal: true,  //just cuz
+      calEvents: [],
+      eventsRN: [],
+      eventsLVN: [],
+      eventsUN: [],
       info: {
         unit: "",
         HPPD: "",
@@ -41,15 +46,43 @@ class Scenario extends React.Component {
   handleStaffChange = (staff) => {
     this.setState({ staffs: staff });
   };
+  handleStaffChangeCal = (event) => {
+    this.setState({ calEvents: event})
+  };
+
 
   handleStaffAdd = (staffItem) => {
-    console.log(staffItem);
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
+    // console.log(staffItem);
+    //check for shift type
+		if(staffItem.type === "RN"){
+      let events = [...this.state.eventsRN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+      this.setState({ eventsRN: events});
+      console.log(events);
+		}else if(staffItem.type === "LVN"){
+      let events = [...this.state.eventsLVN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+      this.setState({ eventsLVN: events});
+      console.log(events);
+		}else if(staffItem.type === "Unlicensed"){
+			let events = [...this.state.eventsUN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+      this.setState({ eventsUN: events});
+      console.log(events);
+		}
+
+    let eventsAll = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+    this.setState({ calEvents: eventsAll});
+    // console.log(this.state.eventsRN);
+    // console.log(this.state.eventsLVN);
+    // console.log(this.state.eventsUN);
+    // console.log(this.state.eventsAll);
+    
   };
 
   handleInfoChange = (info) => {
     this.setState({ info: info });
+
+    
   };
 
   handleInputChange(event) {
@@ -312,6 +345,8 @@ class Scenario extends React.Component {
                   onStaffChange={this.handleStaffChange}
                   onStaffAdd={this.handleStaffAdd}
                   staffs={this.state.staffs}
+                  backgroundColor = {this.state.backgroundColor}
+                  textColor = {this.state.textColor}
                 />
               </div>
             </div>
@@ -321,6 +356,8 @@ class Scenario extends React.Component {
                 <StaffList
                   staffs={this.state.staffs}
                   onStaffChangeOnUpdate={this.handleStaffChange}
+                  onStaffChangeOnUpdateCal={this.handleStaffChangeCal}
+                  events={this.state.calEvents}
                 ></StaffList>
               </div>
             </div>
@@ -329,8 +366,10 @@ class Scenario extends React.Component {
         <div id='calendar'>
 
             <EventCalendar
+            eventsArry={this.state.calEvents}
+            showCal={this.state.showCal}
+            bc={this.state.backgroundColor}>
             
-            showCal={this.state.showCal}>
             
             </EventCalendar>
           </div>
