@@ -13,12 +13,11 @@
   color: #fff;
 }
 
+
 .staffType li :hover{
   cursor: pointer;
   color: #fff;
 }
-
-
 
 .arrow {
   border: solid white;
@@ -46,6 +45,7 @@
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
 
 .blue {background-color: #648FFF;}
 .purple {background-color: #785EF0;}
