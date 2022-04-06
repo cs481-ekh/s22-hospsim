@@ -7,7 +7,7 @@
 * Meeting with Dr.Walters
   * Dr. Walters did not have any specific concerns with the project so far, but possiably will have some when she uses it for feild testing
   * Derek walked her through with what we have and what we dont have, in not so many words
-  * Derek will email Dr. Walters with the live link to our repo page to test and will reply with feedback
+  - [x]Derek will email Dr. Walters with the live link to our repo page to test and will reply with feedback
   * She confirmed the color palet of the calender
 
 ## Meeting Minutes 3/16/2022 (Week 10)
