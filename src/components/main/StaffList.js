@@ -10,7 +10,11 @@ class StaffList extends React.Component {
         super(props);
      
         this.state = { 
-            shiftFilter: "All" 
+            shiftFilter: "All",
+	    filterStaffTypeAsc: false, 
+            filterNameAsc: false, 
+            filterShiftTypeAsc: false, 
+            filterQtyAsc:  false 
         };
       }
 
@@ -113,24 +117,7 @@ class StaffList extends React.Component {
 
            });
         }
-
         else if (criteria === "quantity"){
-            this.props.staffs.sort((a,b)=> {
-
-                if (a.shift === b.shift) return 0;
-                //Sorts in ascending order
-                if (isAscend){
-                    if (a.shift < b.shift ) return -1;
-                    else return 1;
-                }else{
-                    if (a.shift < b.shift ) return 1;
-                    else return -1;
-                }
-
-
-           });
-        }
-lse if (criteria === "quantity"){
             this.props.staffs.sort((a,b)=> {
                 if (isAscend){
                     if (a.quantity < b.quantity ) return -1;
