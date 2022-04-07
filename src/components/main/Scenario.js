@@ -61,15 +61,15 @@ class Scenario extends React.Component {
 		if(staffItem.type === "RN"){
       let events = [...this.state.eventsRN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
       this.setState({ eventsRN: events});
-      console.log(events);
+      //console.log(events);
 		}else if(staffItem.type === "LVN"){
       let events = [...this.state.eventsLVN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
       this.setState({ eventsLVN: events});
-      console.log(events);
+      //console.log(events);
 		}else if(staffItem.type === "Unlicensed"){
 			let events = [...this.state.eventsUN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
       this.setState({ eventsUN: events});
-      console.log(events);
+      //console.log(events);
 		}
 
     let eventsAll = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
@@ -188,11 +188,11 @@ class Scenario extends React.Component {
           <div className="col-md-8 fs-5">
             <div className="float-sm-end">
 <Dropdown>
-  <Dropdown.Toggle variant="primary" id="dropdown-basic">
+  <Dropdown.Toggle variant="primary" id="dropdown-basic" data-testid="DD-id">
    <MenuUp/>
 </Dropdown.Toggle>
  {/*Added a drop down menu*/}
-  <Dropdown.Menu>
+  <Dropdown.Menu  data-testid="dropdown-basic-id" >
                 <label>
                   <input
                     type="checkbox"
@@ -219,7 +219,7 @@ class Scenario extends React.Component {
                   <input
                     type="checkbox"
                     id="showCal"
-                    label="Show Calender"
+                    label="Show Calendar"
                     name="showCal"
                     data-testid="showcal-id"
                     checked={this.state.showCal}
