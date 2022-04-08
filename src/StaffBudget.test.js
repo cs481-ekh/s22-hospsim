@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Scenario from './components/main/Scenario.js';
 import StaffAdd from './components/main/StaffAdd.js';
@@ -7,22 +7,23 @@ import StaffAdd from './components/main/StaffAdd.js';
 describe("<StaffBudget />", () => {
     test('Test show budget', () => {
         render(<Scenario />);
-        const showBudget = screen.getByTestId("showbudget-id");
+        const showDropDown = screen.queryByTestId("DD-id");
+        userEvent.click(screen.queryByTestId('DD-id'));
 
-        // initial expected value - budget shouldn't be on page
-        expect(screen.queryByText("Total Staff Expenses")).toBeNull();
+        const showBudget = screen.queryByTestId('showbudget-id')
+        userEvent.click(showBudget);
 
         // show budget checked
-        userEvent.click(showBudget);
         expect(showBudget).toBeChecked();
         expect(screen.getByText("Total Staff Expenses")).toBeInTheDocument();
     });
 
     test('Test budget accuracy', () => {
         render(<Scenario/>);
-        const showBudget = screen.getByTestId("showbudget-id");
+        const showDropDown = screen.queryByTestId("DD-id");
+        userEvent.click(screen.queryByTestId('DD-id'));
 
-        // initial budget should be 0
+        const showBudget = screen.queryByTestId('showbudget-id')
         userEvent.click(showBudget);
         expect(showBudget).toBeChecked();
         expect(screen.getByText("$0")).toBeInTheDocument();
