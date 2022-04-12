@@ -23,4 +23,30 @@ header .bg-primary {
     
 }
 
+#sdp {
+    position: absolute;
+    margin: 10px;
+}
+#sdp img {
+    width: 80px;
+    cursor: pointer;
+    display: block;
+}
+#sdp > div {
+    background-color: #0033A0;
+    color: white;
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    visibility: hidden;
+    position: relative;
+}
+
+#sdp a {
+    text-decoration: none;
+    color: #D64309;
+    font-weight: bold;
+}
+
 

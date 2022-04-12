@@ -1,6 +1,7 @@
 import './Header.css';
 import React from 'react';
 import logo from '../../assets/Left-aligned-square-gray-2.png';
+import logoIn from "../../assets/sdp-logo-infinity.png";
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -22,12 +23,16 @@ class Header extends React.Component {
                             <Link className="text-dark nav-link" to="/">Home</Link>
                             <Link className="text-dark nav-link" to="/about">About</Link>
                             <Nav.Link className="text-dark" href="https://www.boisestate.edu/nursing/">BSU Nursing Department</Nav.Link>
-                        </Nav>
+                           </Nav>
+                           <img src={logoIn} alt="att" width="150px" />
                     </Container>
                 </Navbar>
+                
+                
 
                 <div className="p-5 bg-primary text-white rounded">
                     <h1>Inpatient Nurse Staffing Simulator</h1>
+                    
                 </div>
             </header>
 
