@@ -152,7 +152,7 @@ class StaffAdd extends React.Component {
 
 							<Form.Group className="mb-3" controlId="staffType" required>
 							<Tooltip
-                  				content="This enables the nurses schedule staff members based on their license (RN, LVN, UNLICENSED)."direction="right">
+                  				content="Type of staff."direction="right">
 								<Form.Label>Staff Type</Form.Label>
 							</Tooltip>
 								<Form.Control as="select" name="staffType" className="caret">
@@ -164,7 +164,7 @@ class StaffAdd extends React.Component {
 
 							<Form.Group className="mb-3" controlId="shiftType" required>
 							<Tooltip
-                  				content="The work schedule that employees complete at different rotations. It can be an 8 hour or a 12 hour rotation."direction="right">
+                  				content="Type of shift."direction="right">
 								<Form.Label>Shift Type</Form.Label>
 							</Tooltip>
 								<Form.Control as="select" name="shift" className="caret">
@@ -178,7 +178,7 @@ class StaffAdd extends React.Component {
 
 							<Form.Group className="mb-3" controlId="quantity" required>
 							<Tooltip
-                  				content="The total amount of rotations a nurse completes in a day."direction="right">
+                  				content="Total amount of shift a nurse completes."direction="right">
 								<Form.Label>Quantity</Form.Label>
 							</Tooltip>
 								<Form.Control as="select" name="quantity">
@@ -198,7 +198,7 @@ class StaffAdd extends React.Component {
 								Close
 							</Button>
 							<Button variant="outline-primary" data-testid = "addStaffConfirm-id" type="submit">
-							<Tooltip content="This button enables nurses add the budget information to the staffing simulator." direction="top">
+							<Tooltip content="Adds staff to the staffing simulator." direction="top">
 								Add New Staff
 							</Tooltip>
 							</Button>			
