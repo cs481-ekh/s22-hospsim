@@ -2,6 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import "./Scenario.css";
 import StaffAdd from "./StaffAdd";
+import StaffAddCal from "./StaffAddCal";
 import StaffList from "./StaffList";
 import EventCalendar from "./EventCalendar";
 import Result from "./Result";
@@ -52,10 +53,13 @@ class Scenario extends React.Component {
     this.setState({ calEvents: event})
   };
 
-
   handleStaffAdd = (staffItem) => {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
+  }
+
+  handleStaffAddCal = (staffItem) => {
+    
     // console.log(staffItem);
     //check for shift type
 		if(staffItem.type === "RN"){
@@ -362,13 +366,23 @@ class Scenario extends React.Component {
                 <StaffList
                   staffs={this.state.staffs}
                   onStaffChangeOnUpdate={this.handleStaffChange}
-                  onStaffChangeOnUpdateCal={this.handleStaffChangeCal}
+                  calChange={this.handleStaffChangeCal}
                   events={this.state.calEvents}
                 ></StaffList>
               </div>
             </div>
           </div>
         </div>
+        <div className="row">
+              <div className="col-md-4 mt-4 ">
+                <StaffAddCal
+                  onStaffAdd={this.handleStaffAddCal}
+                  staffs={this.state.staffs}
+                  backgroundColor = {this.state.backgroundColor}
+                  textColor = {this.state.textColor}
+                />
+              </div>
+            </div>
         <div id='calendar'>
 
             <EventCalendar

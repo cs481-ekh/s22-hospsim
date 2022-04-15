@@ -94,7 +94,6 @@ class StaffAdd extends React.Component {
 	
 		let staff = {
 			id: uuid,
-			quantity: formDataObj.quantity, 
 			type: formDataObj.staffType, 
 			shift: formDataObj.shift, 
 			shiftTotal: shiftTotal, 
@@ -120,17 +119,9 @@ class StaffAdd extends React.Component {
 	render() {
 
 
-		let qtyVals = [];
-		for (let i = 1; i <= 50; i++) {
-			qtyVals.push(i);
-		}
-		const qtyList = qtyVals.map((qty) =>
-			<option key={qty} value={qty}>{qty}</option>
-		);
-
 		return (
             <div>  
-			<button type="button" className="btn btn-outline-primary" data-testid="addstaff-id" onClick={this.handleShow}>Add Staff to Budget</button>
+			<button type="button" className="btn btn-outline-primary" data-testid="addstaff-id" onClick={this.handleShow}>Add Staff To Calendar</button>
 			<Tooltip content="This button adds staff to the budget information used in the staffing simulator" direction="right">
                 <img src={logo} alt="Add Staff Tooltip" width="50" height="50"/>
             </Tooltip>
@@ -141,6 +132,14 @@ class StaffAdd extends React.Component {
 							<Modal.Title>Select your staff member</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
+
+						<Form.Group className="mb-3" controlId="name" required>
+							<Tooltip
+                  				content="Name of staff"direction="right">
+								<Form.Label>Staff Name</Form.Label>
+							</Tooltip>
+    							<Form.Control name="name" type="text"/>
+							</Form.Group>
 
 							<Form.Group className="mb-3" controlId="staffType" required>
 							<Tooltip
@@ -167,15 +166,12 @@ class StaffAdd extends React.Component {
 									<option value="8 Hours Night">8 Hours Night</option>
 								</Form.Control>
 							</Form.Group>
-
-							<Form.Group className="mb-3" controlId="quantity" required>
+							<Form.Group className="mb-3" controlId="dayOfWeek" required>
 							<Tooltip
-                  				content="The total amount of rotations a nurse completes in a day."direction="right">
-								<Form.Label>Quantity</Form.Label>
+                  				content="Date they work"direction="right">
+								<Form.Label>Date</Form.Label>
 							</Tooltip>
-								<Form.Control as="select" name="quantity">
-									{qtyList}
-								</Form.Control>
+    							<Form.Control name="date" type="text" placeholder="YYYY-MM-DD" />
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>
