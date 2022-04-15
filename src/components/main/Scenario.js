@@ -380,6 +380,7 @@ class Scenario extends React.Component {
                   staffs={this.state.staffs}
                   backgroundColor = {this.state.backgroundColor}
                   textColor = {this.state.textColor}
+                  showCal={this.state.showCal}
                 />
               </div>
             </div>

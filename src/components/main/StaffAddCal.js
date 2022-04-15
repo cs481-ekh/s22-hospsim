@@ -120,6 +120,7 @@ class StaffAdd extends React.Component {
 
 
 		return (
+			this.props.showCal ?
             <div>  
 			<button type="button" className="btn btn-outline-primary" data-testid="addstaff-id" onClick={this.handleShow}>Add Staff To Calendar</button>
 			<Tooltip content="This button adds staff to the budget information used in the staffing simulator" direction="right">
@@ -187,6 +188,7 @@ class StaffAdd extends React.Component {
 					</Form>
 				</Modal>
 				</div>  
+				: null
 		);
 	}
 
