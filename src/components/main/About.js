@@ -18,6 +18,18 @@ class About extends React.Component {
     render() {
         return (
             <div className="container">
+
+                <div className="row mt-3">
+                    <h3>Senior Design Project</h3>
+                    <h3>CS 481 Spring 2022</h3>
+                    <h3>Boise State University</h3>
+                </div>
+                <div className="row mt-3">
+                    <h4>Project Members</h4>
+                    <p>Spring 2022: Derek Valenzuela, Jonathan McLeod, Andrew Gerber, and Chinwendum Njoku</p>
+                    <p>Fall 2021: Emma Lytle, Lih Wei Liang, and Becka Seevers</p>
+                </div>
+
                 <img src={logoIn} alt="senior design project logo" width="300px"/>
         <div id="sdp_info" onmouseleave="$('#sdp_info').css('visibility', 'collapse')">
             <br/>
@@ -34,6 +46,7 @@ class About extends React.Component {
             For information about sponsoring a project go to<br/>
             <a href="https://www.boisestate.edu/coen-cs/community/cs481-senior-design-project/">https://www.boisestate.edu/coen-cs/community/cs481-senior-design-project/</a>
         </div>
+        main
                 <div className="row mt-3">
                     <h4>Sponsor</h4>
                     <p>Dr. Renee Walters - reneewalters@boisestate.edu</p>
@@ -52,13 +65,14 @@ class About extends React.Component {
                         is to staff the unit so that the HPPD is met, or is 0. If HPPD is a negative value, the unit is overstaffed and if it is positive, then it is understaffed. The purpose
                         of the simulator was to take the math component out of the equation, to allow students to just focus on allocating resources appropriately. The simulator will usually be
                         used in class where the instructor is providing the scenario values, but students have the option to create values with the "Random Scenario" button for more practice.
+                        Students have the option of putting staff into a generated calendar which will provide the student with a visual representation of the scenario.
                     </p>
                     <p>
                         Students can prepopulate the hospital staffing scenario fields by clicking the "Random Scenario" button or they can enter values manually.
                         Once values are entered in the scenario fields, the HPPD value will change in the "Hours Remaining in the Day" box. Students are then expected to add staff members to determine how to
                         staff for this scenario while still remaining within budget. If they schedule too many staff members, the HPPD value will become negative and display red.
                         Students can also choose to show the salary budget by selecting the "Show Budget" checkbox. This will display the total cost to staff the unit based off of their staffing decisions.
-                        For this application's calculations, RNs are $35/hour, LVNs are $24/hour, and Unlicensed are $15/hour. Once students add staff members, they appear in the table
+                        For this application's calculations, RNs are $35/hour, LVNs are $24/hour, and Unlicensed are $15/hour. Once students add staff members, they appear in the table as well as the calendar
                         below the scenario fields and total staff hours for each shift are shown to the right of the page. Calculations used for this project are shown below:
                     </p>
                     <Card className="mb-4">
@@ -84,12 +98,15 @@ class About extends React.Component {
                                         <li>Header.js </li>
                                         <li>Scenario.js </li>
                                         <ul>
+                                            <li>EvenCalendar.js </li>
                                             <li>RandomHPPDInfo.js </li>
                                             <li>Result.js</li>
+                                            <li>Scenario.js </li>
                                             <li>StaffBudget.js </li>
                                             <li>ShiftTotals.js </li>
                                             <li>StaffAdd.js </li>
                                             <li>StaffList.js  </li>
+                                            <li>Tooltip.js  </li>
                                         </ul>
                                         <li>About.js </li>
                                         <li>Footer.js</li>
@@ -185,7 +202,7 @@ class About extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <p><a href="https://boisestate.github.io/nursestaffingsim/">Nurse Staffing Simulator</a> is maintained by <a href="https://github.com/cs481-ekh">Dr. Eric Henderson</a>  - ehenderson@boisestate.edu</p>
+                <p><a href="https://cs481-ekh.github.io/s22-hospsim/" >Nurse Staffing Simulator</a> is maintained by <a href="https://github.com/cs481-ekh">Dr. Eric Henderson</a>  - ehenderson@boisestate.edu</p>
             </div>
         );
     }
