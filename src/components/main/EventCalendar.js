@@ -6,6 +6,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 
 export default class EventCalendar extends Component{
+    
 
     render(){
         
@@ -16,6 +17,8 @@ export default class EventCalendar extends Component{
                 <FullCalendar
 
                 plugins={[ dayGridPlugin, interactionPlugin , timeGridPlugin]}
+
+                // dateClick={this.props.handleDateClick}
               
                 //selectable
                 initialView = 'twoWeekView'

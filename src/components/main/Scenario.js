@@ -91,6 +91,10 @@ class Scenario extends React.Component {
     
   };
 
+  handleEventClick = (event) =>{
+    console.log(event)
+  }
+
   handleInputChange(event) {
     const target = event.target;
     const value = target.value;
@@ -366,8 +370,6 @@ class Scenario extends React.Component {
                 <StaffList
                   staffs={this.state.staffs}
                   onStaffChangeOnUpdate={this.handleStaffChange}
-                  calChange={this.handleStaffChangeCal}
-                  events={this.state.calEvents}
                 ></StaffList>
               </div>
             </div>
@@ -377,6 +379,7 @@ class Scenario extends React.Component {
               <div className="col-md-4 mt-4 ">
                 <StaffAddCal
                   onStaffAdd={this.handleStaffAddCal}
+                  calChange={this.handleStaffChangeCal}
                   staffs={this.state.staffs}
                   backgroundColor = {this.state.backgroundColor}
                   textColor = {this.state.textColor}
@@ -390,6 +393,7 @@ class Scenario extends React.Component {
             eventsArry={this.state.calEvents}
             showCal={this.state.showCal}
             bc={this.state.backgroundColor}>
+            handleDateClick={this.handleEventClick}
             
             
             </EventCalendar>

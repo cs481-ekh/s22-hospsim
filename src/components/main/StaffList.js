@@ -58,14 +58,14 @@ class StaffList extends React.Component {
            this.props.staffs[index].shiftTotal = shiftTotal
        }
         this.props.onStaffChangeOnUpdate(this.props.staffs)
-        this.props.calChange(this.props.events)
+        // this.props.calChange(this.props.events)
     }
 
     listRemove = (index) =>{
 
         this.props.staffs.splice(index,1)
         this.props.onStaffChangeOnUpdate(this.props.staffs)
-        this.props.calChance(this.props.events)
+        // this.props.calChange(this.props.events)
 
 
     }
