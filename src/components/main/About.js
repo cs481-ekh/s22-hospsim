@@ -1,4 +1,5 @@
 import React from 'react';
+import './About.css';
 import { Card, Figure } from 'react-bootstrap';
 import budget from '../../assets/budget.jpeg';
 import error from '../../assets/error.jpeg';
@@ -7,12 +8,17 @@ import input from '../../assets/input.jpeg';
 import shifts from '../../assets/shifts.jpeg';
 import staffModal from '../../assets/staffModal.jpeg';
 
+import logoIn from "../../assets/sdp-logo-infinity.png";
+
 
 class About extends React.Component {
+
+    
 
     render() {
         return (
             <div className="container">
+
                 <div className="row mt-3">
                     <h3>Senior Design Project</h3>
                     <h3>CS 481 Spring 2022</h3>
@@ -23,6 +29,24 @@ class About extends React.Component {
                     <p>Spring 2022: Derek Valenzuela, Jonathan McLeod, Andrew Gerber, and Chinwendum Njoku</p>
                     <p>Fall 2021: Emma Lytle, Lih Wei Liang, and Becka Seevers</p>
                 </div>
+
+                <img src={logoIn} alt="senior design project logo" width="300px"/>
+        <div id="sdp_info" onmouseleave="$('#sdp_info').css('visibility', 'collapse')">
+            <br/>
+            <h4>Site Information:</h4>
+            This website was created for a<br/>
+            Boise State University<br/>
+            Computer Science Senior Design Project by<br/><br/>
+            Fall 2021:<br/>
+
+            <p>Emma Lytle, Lih Wei Liang, and Becka Seevers</p><br/>
+            Spring 2022:<br/>
+            <p> Derek Valenzuela, Andrew Gerber, Jonathan McLeod, and Chinwendum Njoku
+            </p>
+            For information about sponsoring a project go to<br/>
+            <a href="https://www.boisestate.edu/coen-cs/community/cs481-senior-design-project/">https://www.boisestate.edu/coen-cs/community/cs481-senior-design-project/</a>
+        </div>
+        main
                 <div className="row mt-3">
                     <h4>Sponsor</h4>
                     <p>Dr. Renee Walters - reneewalters@boisestate.edu</p>
