@@ -34,7 +34,7 @@ class StaffBudget extends React.Component {
 
                    
 
-                    <Tooltip content="The total amount of money budgeted by the hospital for staff welfare" direction="left">
+                    <Tooltip content="Total amount of money budgeted by the hospital for the staff welfare" direction="top">
                     <div className="card-header">Total Staff Expenses</div>
                     </Tooltip>
                     <Tooltip content="(Total number of RNs x 35) + (Total number of LVNs x 24) + (Total Unlicensed Staff x 15)" direction="left">

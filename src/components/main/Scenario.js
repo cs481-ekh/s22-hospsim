@@ -208,8 +208,7 @@ class Scenario extends React.Component {
                   Show Budget
                 </label>
                 <Tooltip
-                  content="This displays the budget of Hours for days remaining, total staff expenses, shift per hours
-                          and time of day (Day shift hours, evening shift hours, and night shift hours)"
+                  content="This displays the staffing budget."
                   direction="left"
                 >
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
@@ -260,7 +259,7 @@ class Scenario extends React.Component {
               <div className="col-md-6 mt-3 fs-5">
 
                 <Tooltip
-                  content="These are wards where patients are admitted depending on the severity of their health condition."
+                  content="Wards where patients are admitted."
                   direction="right">
                   <Form.Label htmlFor="unit">Hospital unit</Form.Label>
                 </Tooltip>
@@ -280,7 +279,7 @@ class Scenario extends React.Component {
 
               <div className="col-md-6 mt-3 fs-5">
               <Tooltip
-                  content="The total number of beds available in the hospital wards." direction="top">
+                  content="Total number of beds available in the hospital wards." direction="top">
                 <Form.Label htmlFor="bedUnit">Number of beds</Form.Label>
               </Tooltip>
                 <Form.Control
@@ -302,7 +301,7 @@ class Scenario extends React.Component {
               <div className="col-md-6 mt-3 fs-5">
 
               <Tooltip
-                  content="This is the measurement of the average number of hours needed to care for each patient on the unit." direction="right">
+                  content="Average number of hours needed to care for each patient on the unit." direction="right">
                 <Form.Label htmlFor="HPPD">HPPD</Form.Label>
               </Tooltip>
                 <Form.Control
@@ -324,7 +323,7 @@ class Scenario extends React.Component {
               <div className="col-md-6 mt-3 fs-5">
 
               <Tooltip
-                  content="This is the total number of patients admitted to the health facility at any time of the day.
+                  content="Total number of patients admitted to the health facility at any time of the day.
                   " direction="right">
                 <Form.Label htmlFor="census">Census</Form.Label>
               </Tooltip>

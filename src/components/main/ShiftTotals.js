@@ -57,7 +57,7 @@ class ShiftTotals extends React.Component {
                 <div className="card mt-4">
 
                 <Tooltip
-                  content="The shift that is done during the day. It usually occur between morning - afternoon period."direction="top">
+                  content="Day shift is the shift between morning to afternoon."direction="top">
                     <div className="card-header"> Day Shift Hours</div>
                 </Tooltip>
                     <div id="dayTotal" className="card-body">
@@ -67,7 +67,7 @@ class ShiftTotals extends React.Component {
 
                 <div className="card mt-4">
                 <Tooltip
-                  content="This can also be called swing shift. It's a shift that starts in the evenings and ends sometimes in the early hours of the night."direction="left">
+                  content="Evening shift starts in the evening and ends in the night."direction="top">
                     <div className="card-header">Evening Shift Hours</div>
                 </Tooltip>
                     <div id="eveningTotal" className="card-body">
@@ -77,7 +77,7 @@ class ShiftTotals extends React.Component {
 
                 <div className="card mt-4">
                 <Tooltip
-                  content="This shift can also be called graveyard shift. It's a shift that starts at midnight and ends in the early hours of the morning ."direction="left">
+                  content="Night shift is a shift that starts at midnight and ends in the morning ."direction="top">
                     <div className="card-header"> Night Shift Hours</div>
                 </Tooltip>
                     <div id="nightTotal" className="card-body">
