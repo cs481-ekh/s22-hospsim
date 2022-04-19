@@ -60,13 +60,48 @@ class StaffAdd extends React.Component {
 
 		var uuid = this.generateUUID();
 		var shiftTotal = parseInt(formDataObj.quantity) * this.getShiftValue(formDataObj.shift);
+		var timeStart = formDataObj.date;
+		var timeEnd = formDataObj.date;
+		//let year = timeStart.substring(0,4)
+		//let month = timeStart.substring(5,7)
+		//let day = timeStart.substring(8,10)
+		var backgroundColorVar = 'lightgrey';
 
+		//check for day times
+		if(formDataObj.shift === "12 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T19:00:00";
+			backgroundColorVar = this.props.backgroundColor[0];
+		}else if (formDataObj.shift === "12 Hours Night"){
+			timeStart = timeStart+"T00:00:00";
+			timeEnd = timeEnd+"T12:00:00";
+			backgroundColorVar = this.props.backgroundColor[1];
+		}else if (formDataObj.shift === "8 Hours Day"){
+			timeStart = timeStart+"T07:00:00";
+			timeEnd = timeEnd+"T15:00:00";
+			backgroundColorVar = this.props.backgroundColor[2];
+		}else if (formDataObj.shift === "8 Hours Evening"){
+			timeStart = timeStart+"T15:00:00";
+			timeEnd = timeEnd+"T23:00:00";
+			backgroundColorVar = this.props.backgroundColor[3];
+		}else if (formDataObj.shift === "8 Hours Night"){
+			timeStart = timeStart+"T00:00:00";
+			timeEnd = timeEnd+"T08:00:00";
+			backgroundColorVar = this.props.backgroundColor[4];
+		}
+
+
+	
 		let staff = {
 			id: uuid,
-			quantity: formDataObj.quantity, 
 			type: formDataObj.staffType, 
 			shift: formDataObj.shift, 
-			shiftTotal: shiftTotal};
+			shiftTotal: shiftTotal, 
+			start: timeStart, 
+			end: timeEnd, 
+			name: formDataObj.name, 
+			textColor: "black", 
+			backgroundColor: backgroundColorVar};
 		
 		this.props.onStaffAdd(staff);
 		this.handleClose();
@@ -84,18 +119,10 @@ class StaffAdd extends React.Component {
 	render() {
 
 
-		let qtyVals = [];
-		for (let i = 1; i <= 50; i++) {
-			qtyVals.push(i);
-		}
-		const qtyList = qtyVals.map((qty) =>
-			<option key={qty} value={qty}>{qty}</option>
-		);
-
 		return (
-			this.props.showBud ?
+			this.props.showCal ?
             <div>  
-			<button type="button" className="btn btn-outline-primary" data-testid="addstaff-id" onClick={this.handleShow}>Add Staff to Budget</button>
+			<button type="button" className="btn btn-outline-primary" data-testid="addstaff-id" onClick={this.handleShow}>Add Staff To Calendar</button>
 			<Tooltip content="This button adds staff to the budget information used in the staffing simulator" direction="right">
                 <img src={logo} alt="Add Staff Tooltip" width="50" height="50"/>
             </Tooltip>
@@ -107,9 +134,17 @@ class StaffAdd extends React.Component {
 						</Modal.Header>
 						<Modal.Body>
 
+						<Form.Group className="mb-3" controlId="name" required>
+							<Tooltip
+                  				content="Name of staff"direction="right">
+								<Form.Label>Staff Name</Form.Label>
+							</Tooltip>
+    							<Form.Control name="name" type="text"/>
+							</Form.Group>
+
 							<Form.Group className="mb-3" controlId="staffType" required>
 							<Tooltip
-                  				content="Type of staff."direction="right">
+                  				content="This enables the nurses schedule staff members based on their license (RN, LVN, UNLICENSED)."direction="right">
 								<Form.Label>Staff Type</Form.Label>
 							</Tooltip>
 								<Form.Control as="select" name="staffType" className="caret">
@@ -121,7 +156,7 @@ class StaffAdd extends React.Component {
 
 							<Form.Group className="mb-3" controlId="shiftType" required>
 							<Tooltip
-                  				content="Type of shift."direction="right">
+                  				content="The work schedule that employees complete at different rotations. It can be an 8 hour or a 12 hour rotation."direction="right">
 								<Form.Label>Shift Type</Form.Label>
 							</Tooltip>
 								<Form.Control as="select" name="shift" className="caret">
@@ -132,15 +167,12 @@ class StaffAdd extends React.Component {
 									<option value="8 Hours Night">8 Hours Night</option>
 								</Form.Control>
 							</Form.Group>
-
-							<Form.Group className="mb-3" controlId="quantity" required>
+							<Form.Group className="mb-3" controlId="dayOfWeek" required>
 							<Tooltip
-                  				content="Total amount of shift a nurse completes."direction="right">
-								<Form.Label>Quantity</Form.Label>
+                  				content="Date they work"direction="right">
+								<Form.Label>Date</Form.Label>
 							</Tooltip>
-								<Form.Control as="select" name="quantity">
-									{qtyList}
-								</Form.Control>
+    							<Form.Control name="date" type="text" placeholder="YYYY-MM-DD" />
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>
@@ -148,7 +180,7 @@ class StaffAdd extends React.Component {
 								Close
 							</Button>
 							<Button variant="outline-primary" data-testid = "addStaffConfirm-id" type="submit">
-							<Tooltip content="Adds staff to the staffing simulator." direction="top">
+							<Tooltip content="This button enables nurses add the budget information to the staffing simulator." direction="top">
 								Add New Staff
 							</Tooltip>
 							</Button>			
@@ -157,7 +189,7 @@ class StaffAdd extends React.Component {
 				</Modal>
 				</div>  
 				: null
-		); 
+		);
 	}
 
 

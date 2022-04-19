@@ -2,6 +2,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import "./Scenario.css";
 import StaffAdd from "./StaffAdd";
+import StaffAddCal from "./StaffAddCal";
 import StaffList from "./StaffList";
 import EventCalendar from "./EventCalendar";
 import Result from "./Result";
@@ -10,8 +11,6 @@ import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
 import logo from "../../assets/noun-help-2492040.png";
 import Tooltip from "./Tooltip";
-import Dropdown from 'react-bootstrap/Dropdown';
-import { MenuUp } from 'react-bootstrap-icons';
 
 class Scenario extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class Scenario extends React.Component {
       staffs: [],
       backgroundColor: ["#ceeafd","#39adf9","#ffe4b3","#ffc14d","#ffa500"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
       showBudget: false,
-      showCal: true,  //just cuz
+      showCal: false,
       calEvents: [],
       eventsRN: [],
       eventsLVN: [],
@@ -52,10 +51,13 @@ class Scenario extends React.Component {
     this.setState({ calEvents: event})
   };
 
-
   handleStaffAdd = (staffItem) => {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
+  }
+
+  handleStaffAddCal = (staffItem) => {
+    
     // console.log(staffItem);
     //check for shift type
 		if(staffItem.type === "RN"){
@@ -86,6 +88,10 @@ class Scenario extends React.Component {
 
     
   };
+
+  handleEventClick = (event) =>{
+    console.log(event)
+  }
 
   handleInputChange(event) {
     const target = event.target;
@@ -187,12 +193,7 @@ class Scenario extends React.Component {
 
           <div className="col-md-8 fs-5">
             <div className="float-sm-end">
-<Dropdown>
-  <Dropdown.Toggle variant="primary" id="dropdown-basic" data-testid="DD-id">
-   <MenuUp/>
-</Dropdown.Toggle>
- {/*Added a drop down menu*/}
-  <Dropdown.Menu  data-testid="dropdown-basic-id" >
+
                 <label>
                   <input
                     type="checkbox"
@@ -233,8 +234,7 @@ class Scenario extends React.Component {
                 >
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
                 </Tooltip>
-</Dropdown.Menu>
-</Dropdown>
+
               <div></div>
             </div>
           </div>
@@ -352,6 +352,7 @@ class Scenario extends React.Component {
                   staffs={this.state.staffs}
                   backgroundColor = {this.state.backgroundColor}
                   textColor = {this.state.textColor}
+                  showBud = {this.state.showBudget}
                 />
               </div>
             </div>
@@ -361,19 +362,30 @@ class Scenario extends React.Component {
                 <StaffList
                   staffs={this.state.staffs}
                   onStaffChangeOnUpdate={this.handleStaffChange}
-                  onStaffChangeOnUpdateCal={this.handleStaffChangeCal}
-                  events={this.state.calEvents}
                 ></StaffList>
               </div>
             </div>
           </div>
         </div>
+        <div className="row">
+              <div className="col-md-4 mt-4 ">
+                <StaffAddCal
+                  onStaffAdd={this.handleStaffAddCal}
+                  calChange={this.handleStaffChangeCal}
+                  staffs={this.state.staffs}
+                  backgroundColor = {this.state.backgroundColor}
+                  textColor = {this.state.textColor}
+                  showCal={this.state.showCal}
+                />
+              </div>
+            </div>
         <div id='calendar'>
 
             <EventCalendar
             eventsArry={this.state.calEvents}
             showCal={this.state.showCal}
             bc={this.state.backgroundColor}>
+            handleDateClick={this.handleEventClick}
             
             
             </EventCalendar>
