@@ -150,7 +150,6 @@ class StaffList extends React.Component {
             <td >
                 <Trash className="bTrash" data-testid="delete-id" onClick={this.listRemove.bind(staff,i)} />
             </td>
-            <td>{staff.name}</td>
             <td>{staff.type}</td>
             <td>
                <Plus className="bPlus" data-testid="add-id" onClick={this.listAdd.bind(staff,i)}/> 
@@ -193,14 +192,6 @@ class StaffList extends React.Component {
                 <thead className="table-BSU">
                     {staffList.length > 0 ? <tr data-testid="staffList-id">
                         <th></th>
-                        <th scope="col">
-								<Form.Label>Name</Form.Label> <span/>
-						                        <Form.Label className='bi bi-arrow-down-square' name="toggle_filter"  onClick={e => {
-                                    this.setState({ filterStaffTypeAsc: false, filterNameAsc: !this.state.filterNameAsc, filterShiftTypeAsc: false, filterQtyAsc:  false});
-                                    this.filter("name",this.state.filterNameAsc);
-				    //e.target.className = e.target.className == "bi bi-arrow-up-square" ? "bi bi-arrow-down-square": "bi bi-arrow-down-square";
-                                  }}> <i class={this.state.filterNameAsc?"arrow up": "arrow down"}></i> </Form.Label>
-</th>
                         <th scope="col">
 
 								<Form.Label>Staff Type</Form.Label> <span/>
