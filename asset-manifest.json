@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/s22-hospsim/static/css/main.b1d0fcad.chunk.css",
-    "main.js": "/s22-hospsim/static/js/main.0bd72766.chunk.js",
-    "main.js.map": "/s22-hospsim/static/js/main.0bd72766.chunk.js.map",
-    "runtime-main.js": "/s22-hospsim/static/js/runtime-main.9756ed52.js",
-    "runtime-main.js.map": "/s22-hospsim/static/js/runtime-main.9756ed52.js.map",
+    "main.js": "/s22-hospsim/static/js/main.d69a61f7.chunk.js",
+    "main.js.map": "/s22-hospsim/static/js/main.d69a61f7.chunk.js.map",
+    "runtime-main.js": "/s22-hospsim/static/js/runtime-main.4b2c51bc.js",
+    "runtime-main.js.map": "/s22-hospsim/static/js/runtime-main.4b2c51bc.js.map",
     "static/css/2.be7bdfa4.chunk.css": "/s22-hospsim/static/css/2.be7bdfa4.chunk.css",
-    "static/js/2.c29b47f9.chunk.js": "/s22-hospsim/static/js/2.c29b47f9.chunk.js",
-    "static/js/2.c29b47f9.chunk.js.map": "/s22-hospsim/static/js/2.c29b47f9.chunk.js.map",
-    "static/js/3.13cb8b57.chunk.js": "/s22-hospsim/static/js/3.13cb8b57.chunk.js",
-    "static/js/3.13cb8b57.chunk.js.map": "/s22-hospsim/static/js/3.13cb8b57.chunk.js.map",
+    "static/js/2.6b0b1fad.chunk.js": "/s22-hospsim/static/js/2.6b0b1fad.chunk.js",
+    "static/js/2.6b0b1fad.chunk.js.map": "/s22-hospsim/static/js/2.6b0b1fad.chunk.js.map",
+    "static/js/3.dbd43920.chunk.js": "/s22-hospsim/static/js/3.dbd43920.chunk.js",
+    "static/js/3.dbd43920.chunk.js.map": "/s22-hospsim/static/js/3.dbd43920.chunk.js.map",
     "index.html": "/s22-hospsim/index.html",
     "static/css/2.be7bdfa4.chunk.css.map": "/s22-hospsim/static/css/2.be7bdfa4.chunk.css.map",
     "static/css/main.b1d0fcad.chunk.css.map": "/s22-hospsim/static/css/main.b1d0fcad.chunk.css.map",
-    "static/js/2.c29b47f9.chunk.js.LICENSE.txt": "/s22-hospsim/static/js/2.c29b47f9.chunk.js.LICENSE.txt",
+    "static/js/2.6b0b1fad.chunk.js.LICENSE.txt": "/s22-hospsim/static/js/2.6b0b1fad.chunk.js.LICENSE.txt",
     "static/media/Left-aligned-square-gray-2.11bbe62b.png": "/s22-hospsim/static/media/Left-aligned-square-gray-2.11bbe62b.png",
     "static/media/budget.adcb126c.jpeg": "/s22-hospsim/static/media/budget.adcb126c.jpeg",
     "static/media/error.eba8aeea.jpeg": "/s22-hospsim/static/media/error.eba8aeea.jpeg",
@@ -25,10 +25,10 @@
     "static/media/staffModal.211817ac.jpeg": "/s22-hospsim/static/media/staffModal.211817ac.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9756ed52.js",
+    "static/js/runtime-main.4b2c51bc.js",
     "static/css/2.be7bdfa4.chunk.css",
-    "static/js/2.c29b47f9.chunk.js",
+    "static/js/2.6b0b1fad.chunk.js",
     "static/css/main.b1d0fcad.chunk.css",
-    "static/js/main.0bd72766.chunk.js"
+    "static/js/main.d69a61f7.chunk.js"
   ]
 }
