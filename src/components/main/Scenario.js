@@ -11,8 +11,6 @@ import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
 import logo from "../../assets/noun-help-2492040.png";
 import Tooltip from "./Tooltip";
-import Dropdown from 'react-bootstrap/Dropdown';
-import { MenuUp } from 'react-bootstrap-icons';
 
 class Scenario extends React.Component {
   constructor(props) {
@@ -195,12 +193,7 @@ class Scenario extends React.Component {
 
           <div className="col-md-8 fs-5">
             <div className="float-sm-end">
-<Dropdown>
-  <Dropdown.Toggle variant="primary" id="dropdown-basic" data-testid="DD-id">
-   <MenuUp/>
-</Dropdown.Toggle>
- {/*Added a drop down menu*/}
-  <Dropdown.Menu  data-testid="dropdown-basic-id" >
+
                 <label>
                   <input
                     type="checkbox"
@@ -242,8 +235,7 @@ class Scenario extends React.Component {
                 >
                   <img src={logo} alt="Budget Tooltip" width="50" height="50" />
                 </Tooltip>
-</Dropdown.Menu>
-</Dropdown>
+
               <div></div>
             </div>
           </div>
