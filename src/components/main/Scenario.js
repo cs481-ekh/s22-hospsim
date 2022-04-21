@@ -1,4 +1,5 @@
 import React from "react";
+
 import Form from "react-bootstrap/Form";
 import "./Scenario.css";
 import StaffAdd from "./StaffAdd";
@@ -11,8 +12,11 @@ import StaffBudget from "./StaffBudget";
 import ShiftTotals from "./ShiftTotals";
 import logo from "../../assets/noun-help-2492040.png";
 import Tooltip from "./Tooltip";
+// import { Calendar } from "fullcalendar";
 
 class Scenario extends React.Component {
+  
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +27,7 @@ class Scenario extends React.Component {
       staffs: [],
       backgroundColor: ["#ceeafd","#39adf9","#ffe4b3","#ffc14d","#ffa500"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
       showBudget: false,
-      showCal: false,
+      showCal: true,
       calEvents: [],
       eventsRN: [],
       eventsLVN: [],
@@ -43,6 +47,8 @@ class Scenario extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
   }
+  
+  
 
   handleStaffChange = (staff) => {
     this.setState({ staffs: staff });
@@ -55,6 +61,13 @@ class Scenario extends React.Component {
     let staffCopy = [...this.state.staffs, staffItem];
     this.setState({ staffs: staffCopy });
   }
+   
+  handleCallback = (childData) =>{
+    // console.log(childData)
+    // console.log(this.state.calEvents)
+    this.setState({calEvents: childData})
+    // console.log(this.state.calEvents)
+} 
 
   handleStaffAddCal = (staffItem) => {
     
@@ -74,24 +87,17 @@ class Scenario extends React.Component {
       //console.log(events);
 		}
 
-    let eventsAll = [...this.state.calEvents, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
+    let eventsAll = [...this.state.calEvents, {id: staffItem.id,type:staffItem.type ,title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
     this.setState({ calEvents: eventsAll});
-    // console.log(this.state.eventsRN);
-    // console.log(this.state.eventsLVN);
-    // console.log(this.state.eventsUN);
-    // console.log(this.state.eventsAll);
-    
   };
 
   handleInfoChange = (info) => {
     this.setState({ info: info });
-
-    
   };
 
   handleEventClick = (event) =>{
     console.log(event)
-  }
+  };
 
   handleInputChange(event) {
     const target = event.target;
@@ -181,9 +187,12 @@ class Scenario extends React.Component {
     return newErrors;
   };
 
+
+
   //https://paladini.dev/posts/how-to-make-an-extremely-reusable-tooltip-component-with-react--and-nothing-else/
 
   render() {
+    
     return (
       <div className="App">
         <div className="row mt-3">
@@ -381,12 +390,13 @@ class Scenario extends React.Component {
             </div>
         <div id='calendar'>
 
+
             <EventCalendar
             eventsArry={this.state.calEvents}
             showCal={this.state.showCal}
-            bc={this.state.backgroundColor}>
-            handleDateClick={this.handleEventClick}
-            
+            bc={this.state.backgroundColor}
+            parentCallback = {this.handleCallback}
+            >
             
             </EventCalendar>
           </div>
