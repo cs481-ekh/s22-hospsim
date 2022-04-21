@@ -63,28 +63,21 @@ class Scenario extends React.Component {
   }
    
   handleCallback = (childData) =>{
-    // console.log(childData)
-    // console.log(this.state.calEvents)
     this.setState({calEvents: childData})
-    // console.log(this.state.calEvents)
 } 
 
   handleStaffAddCal = (staffItem) => {
     
-    // console.log(staffItem);
     //check for shift type
 		if(staffItem.type === "RN"){
       let events = [...this.state.eventsRN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
       this.setState({ eventsRN: events});
-      //console.log(events);
 		}else if(staffItem.type === "LVN"){
       let events = [...this.state.eventsLVN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
       this.setState({ eventsLVN: events});
-      //console.log(events);
 		}else if(staffItem.type === "Unlicensed"){
 			let events = [...this.state.eventsUN, {title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
       this.setState({ eventsUN: events});
-      //console.log(events);
 		}
 
     let eventsAll = [...this.state.calEvents, {id: staffItem.id,type:staffItem.type ,title: staffItem.name+", "+staffItem.type, start: staffItem.start, end:staffItem.end, textColor: staffItem.textColor, backgroundColor: staffItem.backgroundColor}]
@@ -93,10 +86,6 @@ class Scenario extends React.Component {
 
   handleInfoChange = (info) => {
     this.setState({ info: info });
-  };
-
-  handleEventClick = (event) =>{
-    console.log(event)
   };
 
   handleInputChange(event) {

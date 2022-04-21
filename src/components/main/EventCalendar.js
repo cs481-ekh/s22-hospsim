@@ -9,8 +9,6 @@ export default class EventCalendar extends Component{
     
     onTrigger = (event) => {
         const events = this.props.eventsArry;
-        // console.log(event)
-        // console.log(events)
         let list = []
         for (let index = 0; index < events.length; index++) {
             if(event.event.id !== events[index].id){

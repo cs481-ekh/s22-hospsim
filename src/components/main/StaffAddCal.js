@@ -105,7 +105,6 @@ class StaffAdd extends React.Component {
 		
 		this.props.onStaffAdd(staff);
 		this.handleClose();
-		// console.log(staff)
 	}
 
 	
