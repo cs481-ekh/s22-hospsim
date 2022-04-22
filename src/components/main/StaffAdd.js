@@ -66,6 +66,7 @@ class StaffAdd extends React.Component {
 			quantity: formDataObj.quantity, 
 			type: formDataObj.staffType, 
 			shift: formDataObj.shift, 
+			shiftsPerWeek: formDataObj.shiftsPerWeek,
 			shiftTotal: shiftTotal};
 		
 		this.props.onStaffAdd(staff);
@@ -141,6 +142,14 @@ class StaffAdd extends React.Component {
 								<Form.Control as="select" name="quantity">
 									{qtyList}
 								</Form.Control>
+							</Form.Group>
+
+							<Form.Group className="mb-3" controlId="dayOfWeek" required>
+							<Tooltip
+                  				content="shiftsPerWeek"direction="right">
+								<Form.Label>Shifts Per Week</Form.Label>
+							</Tooltip>
+    							<Form.Control name="shiftsPerWeek" type="text" placeholder="Whole Number" />
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>

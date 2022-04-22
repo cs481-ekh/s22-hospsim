@@ -58,7 +58,6 @@ class StaffList extends React.Component {
            this.props.staffs[index].shiftTotal = shiftTotal
        }
         this.props.onStaffChangeOnUpdate(this.props.staffs)
-        // this.props.calChange(this.props.events)
     }
 
     listRemove = (index) =>{
@@ -158,6 +157,7 @@ class StaffList extends React.Component {
             </td>
             <td>{staff.shift}</td>
             <td>{staff.shiftTotal}</td>
+            <td>{staff.shiftsPerWeek}</td>
         </tr>
 
     );
@@ -220,7 +220,10 @@ class StaffList extends React.Component {
                                   }}> <i class={this.state.filterShiftTypeAsc?"arrow up": "arrow down"}></i></Form.Label>
                         </th>
                         <th scope="col">
-                        <Form.Label>Shift Total</Form.Label>
+                        <Form.Label>Total Hours</Form.Label>
+                        </th>
+                        <th scope="col">
+                        <Form.Label>Shifts per Week</Form.Label>
                         </th>
                     </tr> : false}
                 </thead>
