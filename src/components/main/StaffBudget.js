@@ -54,14 +54,17 @@ class StaffBudget extends React.Component {
                 
                 
                 <div className="card mt-4">
-                    <button type="button" onClick={this.props.up}>+</button>
-                    <button onClick={this.props.down}>-</button>
+                    
                     <Tooltip content="Total amount of money budgeted by the hospital for the staff welfare for a week" direction="top">
-                    <div className="card-header">Total Staff Expenses for {this.props.weeks} weeks</div>
+                    <div className="card-header">Total Staff Expenses for {this.props.weeks} week <br></br>
+                    <button type="button" className="btn btn-outline-primary" onClick={this.props.up}>+</button>
+                    <button className="btn btn-outline-primary" onClick={this.props.down}>-</button></div>
+                    
                     </Tooltip>
                     <Tooltip content="(Total number of RNs x 35 x WeekShifts) + (Total number of LVNs x 24 x WeekShifts) + (Total Unlicensed Staff x 15 x WeekShifts)" direction="left">
                     <div id="budget" className="card-body">
                         <h1 data-testid="shiftBudgetValue-id">${shiftBudgetWeek}</h1>
+                        
                     </div>
                     </Tooltip>
 
