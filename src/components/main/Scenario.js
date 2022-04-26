@@ -26,12 +26,13 @@ class Scenario extends React.Component {
       center: { "text-align": "center" },
       staffs: [],
       backgroundColor: ["#ceeafd","#39adf9","#ffe4b3","#ffc14d","#ffa500"], //0 is 12 day, 1 is 12 night, 2 is 8 day, 3 is 8 evening, 4 is 8 night
-      showBudget: false,
-      showCal: true,
+      showBudget: true,
+      showCal: false,
       calEvents: [],
       eventsRN: [],
       eventsLVN: [],
       eventsUN: [],
+      weeks: 1,
       info: {
         unit: "",
         HPPD: "",
@@ -176,7 +177,16 @@ class Scenario extends React.Component {
     return newErrors;
   };
 
-
+  counterInc = () => {
+    let num = this.state.weeks +1
+    this.setState({weeks: num})
+    // console.log(this.state.weeks)
+}
+counterDec = () => {
+  let num = this.state.weeks -1
+    this.setState({weeks: num})
+  // console.log(this.state.weeks)
+}
 
   //https://paladini.dev/posts/how-to-make-an-extremely-reusable-tooltip-component-with-react--and-nothing-else/
 
@@ -244,6 +254,9 @@ class Scenario extends React.Component {
             <StaffBudget
               staffs={this.state.staffs}
               showBudget={this.state.showBudget}
+              weeks={this.state.weeks}
+              up ={this.counterInc}
+              down = {this.counterDec}
             ></StaffBudget>
             <ShiftTotals staffs={this.state.staffs}></ShiftTotals>
           </div>

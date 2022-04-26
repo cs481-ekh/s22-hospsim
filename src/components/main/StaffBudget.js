@@ -3,9 +3,10 @@ import React from 'react';
 import Tooltip from './Tooltip';
 
 class StaffBudget extends React.Component {
-
+    
+    
     // grab staff info and add up budget
-    getShiftBudget = (staffs) => {
+    getShiftBudgetDay = (staffs) => {
         let shiftBudget = 0;
 
         for (var i = 0; i < staffs.length; i++) {
@@ -21,25 +22,60 @@ class StaffBudget extends React.Component {
 
         return shiftBudget;
     }
+
+    getShiftBudgetWeek = (staffs) => {
+        let shiftBudget = 0;
+
+        for (var i = 0; i < staffs.length; i++) {
+            let shiftTotal = parseInt(staffs[i].shiftTotal);
+            let shifts = parseInt(staffs[i].shiftsPerWeek)
+            if (staffs[i].type === 'RN') {
+                shiftBudget += shiftTotal * 35 * shifts;
+            } else if (staffs[i].type === 'LVN') {
+                shiftBudget += shiftTotal * 24 * shifts;
+            } else {
+                shiftBudget += shiftTotal * 15 * shifts;
+            }
+        }
+
+        return shiftBudget;
+    }
+  
   
 
     render() {
 
-        const shiftBudget = this.getShiftBudget(this.props.staffs);
+        const shiftBudgetDay = this.getShiftBudgetDay(this.props.staffs) * this.props.weeks;
+        const shiftBudgetWeek = this.getShiftBudgetWeek(this.props.staffs) * this.props.weeks;
         return (
             
                 this.props.showBudget ?
+
+                
                 
                 <div className="card mt-4">
+                    
+                    <Tooltip content="Total amount of money budgeted by the hospital for the staff welfare for a week" direction="top">
+                    <div className="card-header">Total Staff Expenses for {this.props.weeks} week <br></br>
+                    <button type="button" className="btn btn-outline-primary" onClick={this.props.up}>+</button>
+                    <button className="btn btn-outline-primary" onClick={this.props.down}>-</button></div>
+                    
+                    </Tooltip>
+                    <Tooltip content="(Total number of RNs x 35 x WeekShifts) + (Total number of LVNs x 24 x WeekShifts) + (Total Unlicensed Staff x 15 x WeekShifts)" direction="left">
+                    <div id="budget" className="card-body">
+                        <h1 data-testid="shiftBudgetValue-id">${shiftBudgetWeek}</h1>
+                        
+                    </div>
+                    </Tooltip>
 
-                   
+
 
                     <Tooltip content="Total amount of money budgeted by the hospital for the staff welfare" direction="top">
-                    <div className="card-header">Total Staff Expenses</div>
+                    <div className="card-header">Total Staff Expenses for Day</div>
                     </Tooltip>
                     <Tooltip content="(Total number of RNs x 35) + (Total number of LVNs x 24) + (Total Unlicensed Staff x 15)" direction="left">
                     <div id="budget" className="card-body">
-                        <h1 data-testid="shiftBudgetValue-id">${shiftBudget}</h1>
+                        <h1 data-testid="shiftBudgetValue-id">${shiftBudgetDay}</h1>
                     </div>
                     </Tooltip>
                 </div>
