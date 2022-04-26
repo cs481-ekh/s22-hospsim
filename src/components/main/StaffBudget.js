@@ -3,7 +3,8 @@ import React from 'react';
 import Tooltip from './Tooltip';
 
 class StaffBudget extends React.Component {
-
+    
+    
     // grab staff info and add up budget
     getShiftBudgetDay = (staffs) => {
         let shiftBudget = 0;
@@ -44,8 +45,8 @@ class StaffBudget extends React.Component {
 
     render() {
 
-        const shiftBudgetDay = this.getShiftBudgetDay(this.props.staffs);
-        const shiftBudgetWeek = this.getShiftBudgetWeek(this.props.staffs);
+        const shiftBudgetDay = this.getShiftBudgetDay(this.props.staffs) * this.props.weeks;
+        const shiftBudgetWeek = this.getShiftBudgetWeek(this.props.staffs) * this.props.weeks;
         return (
             
                 this.props.showBudget ?
@@ -53,10 +54,12 @@ class StaffBudget extends React.Component {
                 
                 
                 <div className="card mt-4">
+                    <button type="button" onClick={this.props.up}>+</button>
+                    <button onClick={this.props.down}>-</button>
                     <Tooltip content="Total amount of money budgeted by the hospital for the staff welfare for a week" direction="top">
-                    <div className="card-header">Total Staff Expenses for Week</div>
+                    <div className="card-header">Total Staff Expenses for {this.props.weeks} weeks</div>
                     </Tooltip>
-                    <Tooltip content="(Total number of RNs x 35 * WeekShifts) + (Total number of LVNs x 24) + (Total Unlicensed Staff x 15)" direction="left">
+                    <Tooltip content="(Total number of RNs x 35 x WeekShifts) + (Total number of LVNs x 24 x WeekShifts) + (Total Unlicensed Staff x 15 x WeekShifts)" direction="left">
                     <div id="budget" className="card-body">
                         <h1 data-testid="shiftBudgetValue-id">${shiftBudgetWeek}</h1>
                     </div>
