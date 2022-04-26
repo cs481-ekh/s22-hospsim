@@ -2,6 +2,7 @@ import React from 'react';
 import './About.css';
 import { Card, Figure } from 'react-bootstrap';
 import budget from '../../assets/budget.jpeg';
+import calendar from '../../assets/Calendar1.jpeg';
 import error from '../../assets/error.jpeg';
 import initialpg from '../../assets/initialpg.jpeg';
 import input from '../../assets/input.jpeg';
@@ -34,7 +35,6 @@ class About extends React.Component {
         <div id="sdp_info" onmouseleave="$('#sdp_info').css('visibility', 'collapse')">
             <br/>
             <h4>Site Information:</h4>
-            This website was created for a<br/>
             Boise State University<br/>
             Computer Science Senior Design Project by<br/><br/>
             Fall 2021:<br/>
@@ -188,6 +188,17 @@ class About extends React.Component {
                         />
                         <Figure.Caption>
                             Budget is displayed.
+                        </Figure.Caption>
+                    </Figure>
+                    <Figure>
+                    <Figure.Image
+                            width="60%"
+                            height="60%"
+                            alt="calendar"
+                            src={calendar}
+                        />
+                        <Figure.Caption>
+                            Calendar is displayed.
                         </Figure.Caption>
                     </Figure>
                 </div>
