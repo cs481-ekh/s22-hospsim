@@ -147,9 +147,9 @@ class StaffAdd extends React.Component {
 							<Form.Group className="mb-3" controlId="dayOfWeek" required>
 							<Tooltip
                   				content="shiftsPerWeek"direction="right">
-								<Form.Label>Shifts Per Week</Form.Label>
+								<Form.Label required>Shifts Per Week</Form.Label>
 							</Tooltip>
-    							<Form.Control name="shiftsPerWeek" type="text" placeholder="Whole Number" />
+    							<Form.Control required name="shiftsPerWeek" type="text" placeholder="Whole Number" />
 							</Form.Group>
 						</Modal.Body>
 						<Modal.Footer>
